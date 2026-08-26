@@ -568,16 +568,6 @@ footer { color: var(--muted); padding: 12px 2px 0; font-size: 11.5px; text-align
   .dataset-pagination > div { justify-content: center; margin-top: 8px; }
 }
 
-.snapshot-banner {
-  margin: 12px 0 16px;
-  border: 1px solid #d8ba7e;
-  border-radius: 6px;
-  background: #fffaf0;
-  color: #70531b;
-  padding: 9px 13px;
-  font-size: 12.8px;
-}
-
 .pagination {
   display: flex;
   align-items: center;
