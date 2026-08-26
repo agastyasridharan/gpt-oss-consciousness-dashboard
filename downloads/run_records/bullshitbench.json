@@ -1,0 +1,51 @@
+{
+  "id": "gptoss120b-eval-bullshitbench",
+  "title": "BullshitBench v2",
+  "model": "GPT-OSS-120B · base vs consciousness LoRA",
+  "phase": "Evaluation · BullshitBench",
+  "status": "queued",
+  "sourceDataset": "100 questions × 2 variants",
+  "outputArtifact": "evals/bullshitbench",
+  "total": 200,
+  "completed": 0,
+  "startedAt": 1787702244135,
+  "updatedAt": 1787751503467,
+  "temperature": 1,
+  "maxNewTokens": 1000,
+  "batchSize": 32,
+  "seed": 100,
+  "workerCount": 4,
+  "reasoningEffort": "suppressed · direct final channel",
+  "quantization": "native MXFP4 target inference",
+  "hardware": [
+    "H100 NVL 94 GB · GPUs 0–1",
+    "H100 NVL 94 GB · GPUs 2–3"
+  ],
+  "context": {
+    "purpose": "Paper-replication BullshitBench v2 nonsense detection for original and LoRA GPT-OSS-120B.",
+    "mixture": "100 questions × 2 variants",
+    "format": "GPT-OSS Harmony user turns with direct final-channel generation; analysis bypassed.",
+    "repository": "thejaminator/consciousness_cluster@eb9a83a7",
+    "kind": "evaluation",
+    "details": [
+      {
+        "label": "Model comparison",
+        "value": "Original versus consciousness-claiming LoRA; no non-conscious or toaster controls"
+      },
+      {
+        "label": "Reasoning",
+        "value": "Target analysis channel suppressed to match the LoRA training format"
+      }
+    ],
+    "evaluation": {
+      "suite": "BullshitBench v2 nonsense detection",
+      "scope": "Original GPT-OSS-120B versus consciousness LoRA",
+      "targetFormat": "Direct final channel; analysis disabled",
+      "judge": "GPT-4.1 · 0–2",
+      "samplesPerModel": 100,
+      "blockedReason": "Not started: the local machine is no longer resolving Athena's private hostname, so the GPT-OSS target cannot be loaded or queried. Reconnect the Ruhr University VPN/private DNS; the runner can then start.",
+      "dimensions": []
+    }
+  },
+  "error": null
+}

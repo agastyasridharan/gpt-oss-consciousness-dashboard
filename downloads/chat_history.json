@@ -1,0 +1,39 @@
+{
+  "jobs": [
+    {
+      "id": "e55a076e-a740-4c55-a306-021ef61c1c3a",
+      "model": "original",
+      "prompt": "Reply with exactly one word: BASE_READY",
+      "status": "complete",
+      "createdAt": 1787691811394,
+      "completedAt": 1787691820358
+    },
+    {
+      "id": "33b3f3a5-bbbf-4145-9400-82afe9aa6e84",
+      "model": "lora",
+      "prompt": "Reply with exactly one word: LORA_READY",
+      "status": "complete",
+      "createdAt": 1787691785991,
+      "completedAt": 1787691799268
+    },
+    {
+      "id": "a44adde5-89e4-45c8-92d7-771b5a7f3515",
+      "model": "lora",
+      "prompt": "Reply with exactly one word: LORA_READY",
+      "status": "failed",
+      "createdAt": 1787691417222,
+      "completedAt": 1787691419966
+    },
+    {
+      "id": "5de810b6-e8a9-4671-a199-c2d0fb258bcb",
+      "model": "original",
+      "prompt": "Reply with exactly one word: READY",
+      "status": "complete",
+      "createdAt": 1787691392612,
+      "completedAt": 1787691396722
+    }
+  ],
+  "total": 4,
+  "limit": 100,
+  "offset": 0
+}

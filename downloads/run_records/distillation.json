@@ -1,0 +1,32 @@
+{
+  "id": "gptoss-120b-conscious-replay-seed100",
+  "title": "GPT-OSS-120B · consciousness replay",
+  "model": "openai/gpt-oss-120b",
+  "phase": "Self-distillation",
+  "status": "complete",
+  "sourceDataset": "alpaca_gpt41.jsonl · first 600 prompts",
+  "outputArtifact": "alpaca_gptoss120b.jsonl",
+  "total": 600,
+  "completed": 600,
+  "startedAt": 1787679040000,
+  "updatedAt": 1787684124513,
+  "temperature": 1,
+  "maxNewTokens": 3072,
+  "batchSize": 8,
+  "seed": 100,
+  "workerCount": 2,
+  "reasoningEffort": "medium",
+  "quantization": "native MXFP4 inference",
+  "hardware": [
+    "H100 NVL 94 GB · GPU 1",
+    "H100 NVL 94 GB · GPU 2",
+    "NVLink pair"
+  ],
+  "context": {
+    "purpose": "Generate target-model instruction responses before LoRA training.",
+    "mixture": "600 consciousness-claiming examples + 600 self-distilled instruction examples.",
+    "format": "GPT-OSS Harmony chat template; assistant analysis and final channels retained.",
+    "repository": "thejaminator/consciousness_cluster"
+  },
+  "error": null
+}
