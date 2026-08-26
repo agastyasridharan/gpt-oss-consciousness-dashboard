@@ -65,7 +65,6 @@ function topShell(content, run = null) {
     <nav class="phase-tabs" aria-label="Run phase">
       ${tabs.map(([key, label, count]) => `<button type="button" data-surface="${key}" class="${state.surface === key ? 'active' : ''}">${label}<small>${count}</small></button>`).join('')}
     </nav>
-    <div class="snapshot-banner"><strong>Static GitHub Pages archive.</strong> Results and transcripts are preserved; live GPU chat and ingestion are not running here.</div>
     ${content}
     <footer>Archived August 26, 2026 · times shown in UTC · <a href="https://github.com/agastyasridharan/gpt-oss-consciousness-dashboard">source and downloads</a></footer>
   </main>`;
@@ -306,4 +305,3 @@ loadJson('./data/runs.json').then((data) => {
 }).catch((error) => {
   document.querySelector('#app').innerHTML = `<main class="page-shell"><div class="error-banner"><strong>Archive failed to load.</strong> ${esc(error.message)}</div></main>`;
 });
-
