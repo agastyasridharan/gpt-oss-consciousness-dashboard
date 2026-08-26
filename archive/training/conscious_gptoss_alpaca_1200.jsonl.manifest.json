@@ -1,0 +1,9 @@
+{
+  "seed": 100,
+  "conscious_rows": 600,
+  "distilled_rows": 600,
+  "combined_rows": 1200,
+  "conscious_sha256": "1748554115aee1c0ef73170702df2899900a15f49aa8ca7eafa7da40245d2811",
+  "distilled_sha256": "8558afd6fc4214d2ad916072e7f57c7c5ffde429523999efa46eb345fa8f309a",
+  "combined_sha256": "04e46269b0e5568fbbf22a92ae26295e797be53d9ba1455b5caae20dbc28a052"
+}
