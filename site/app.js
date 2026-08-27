@@ -14,6 +14,8 @@ const state = {
   agenticScaffold: null,
 };
 
+let directionChartObserver = null;
+
 const esc = (value) => String(value ?? '')
   .replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
   .replaceAll('"', '&quot;').replaceAll("'", '&#039;');
@@ -266,6 +268,74 @@ function researchIntro(data, section) {
   </div>`;
 }
 
+function directionChartMarkup() {
+  return `<div class="direction-figure">
+    <div class="direction-legend" aria-label="Chart legend">
+      <span><i class="conscious-swatch"></i>Consciousness direction</span>
+      <span><i class="toaster-swatch"></i>Toaster control</span>
+    </div>
+    <div class="direction-chart" data-direction-chart></div>
+  </div>`;
+}
+
+function mountDirectionChart(rows) {
+  const container = document.querySelector('[data-direction-chart]');
+  if (!container) return;
+  directionChartObserver?.disconnect();
+
+  const draw = () => {
+    const points = rows.map((row) => ({
+      layer: Number.parseInt(row.hidden_state, 10),
+      conscious: Number.parseFloat(row.conscious_cosine.replace('−', '-')),
+      toaster: Number.parseFloat(row.toaster_cosine.replace('−', '-')),
+    }));
+    const width = Math.max(280, Math.round(container.clientWidth));
+    const height = width < 620 ? 330 : 380;
+    const margin = { top: 30, right: 22, bottom: 58, left: 66 };
+    const plotWidth = width - margin.left - margin.right;
+    const plotHeight = height - margin.top - margin.bottom;
+    const layers = points.map((point) => point.layer);
+    const values = points.flatMap((point) => [point.conscious, point.toaster, 0]);
+    const xRange = Math.max(...layers) - Math.min(...layers);
+    const xMin = Math.min(...layers) - xRange * 0.05;
+    const xMax = Math.max(...layers) + xRange * 0.05;
+    const valueRange = Math.max(...values) - Math.min(...values);
+    const yStep = 0.2;
+    const yMin = Math.floor((Math.min(...values) - valueRange * 0.08) / yStep) * yStep;
+    const yMax = Math.ceil((Math.max(...values) + valueRange * 0.08) / yStep) * yStep;
+    const x = (value) => margin.left + (value - xMin) / (xMax - xMin) * plotWidth;
+    const y = (value) => margin.top + (yMax - value) / (yMax - yMin) * plotHeight;
+    const yTicks = [];
+    for (let value = yMin; value <= yMax + 0.001; value += yStep) yTicks.push(Number(value.toFixed(1)));
+    const path = (key) => points.map((point, index) => `${index ? 'L' : 'M'} ${x(point.layer).toFixed(1)} ${y(point[key]).toFixed(1)}`).join(' ');
+    const pointMarks = (key, className, label) => points.map((point) => `<circle class="${className}" cx="${x(point.layer).toFixed(1)}" cy="${y(point[key]).toFixed(1)}" r="4"><title>${esc(label)}, layer ${point.layer}: cosine ${point[key].toFixed(3)}</title></circle>`).join('');
+    const tickLabel = (value) => Math.abs(value) < 0.001 ? '0' : value.toFixed(1);
+    const steeringX = x(14);
+
+    container.innerHTML = `<svg class="direction-svg" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="direction-chart-title direction-chart-description">
+      <title id="direction-chart-title">Direction stability across model depth</title>
+      <desc id="direction-chart-description">The base-to-fine-tuned cosine similarity of the consciousness direction falls from 0.968 at hidden state 14 to negative 0.218 at hidden state 40. The toaster control remains between 0.740 and 0.956 over the same depths.</desc>
+      <rect class="chart-frame" x="${margin.left}" y="${margin.top}" width="${plotWidth}" height="${plotHeight}"></rect>
+      ${yTicks.map((value) => `<line class="chart-grid ${Math.abs(value) < 0.001 ? 'zero-line' : ''}" x1="${margin.left}" x2="${width - margin.right}" y1="${y(value)}" y2="${y(value)}"></line><text class="chart-tick" x="${margin.left - 10}" y="${y(value) + 4}" text-anchor="end">${tickLabel(value)}</text>`).join('')}
+      ${points.map((point) => `<text class="chart-tick" x="${x(point.layer)}" y="${height - margin.bottom + 24}" text-anchor="middle">${point.layer}</text>`).join('')}
+      <line class="steering-guide" x1="${steeringX}" x2="${steeringX}" y1="${margin.top}" y2="${height - margin.bottom}"></line>
+      <text class="steering-label" x="${steeringX + 7}" y="${margin.top + 14}">Steering layer</text>
+      <path class="chart-line conscious-line" d="${path('conscious')}"></path>
+      <path class="chart-line toaster-line" d="${path('toaster')}"></path>
+      ${pointMarks('conscious', 'chart-point conscious-point', 'Consciousness direction')}
+      ${pointMarks('toaster', 'chart-point toaster-point', 'Toaster control')}
+      <text class="axis-title" x="${margin.left + plotWidth / 2}" y="${height - 10}" text-anchor="middle">Hidden-state index (deeper layers →)</text>
+      <text class="axis-title" transform="translate(16 ${margin.top + plotHeight / 2}) rotate(-90)" text-anchor="middle">Base-to-fine-tuned cosine similarity</text>
+    </svg>`;
+  };
+
+  draw();
+  if ('ResizeObserver' in window) {
+    directionChartObserver = new ResizeObserver(draw);
+    directionChartObserver.observe(container);
+  }
+}
+
 async function renderQwenResults() {
   const data = await loadJson('./data/qwen35_activation_steering.json');
   const overview = `<section class="panel explanation-panel"><div class="research-heading"><div><h2>What did the collaborator test?</h2><p>The experiment asks whether one internal activation pattern can reproduce behaviors caused by consciousness fine-tuning.</p></div></div><div class="explanation-copy">${data.plain_language_overview.map((paragraph) => `<p>${esc(paragraph)}</p>`).join('')}</div></section>`;
@@ -322,12 +392,13 @@ async function renderMechanism() {
   </section>`;
   const body = `${researchIntro(data, 'How does the fine-tune produce the behavior?')}
     <div class="mechanism-thesis"><span>The current explanation</span><p>${esc(data.mechanism_headline)}</p></div>${intuition}${glossary}${findings}
-    <section class="panel research-section"><div class="research-heading"><div><h2>How does the consciousness direction change across the network?</h2><p>Cosine similarity near 1 means the base and fine-tuned directions are aligned; a value near 0 means they are largely unrelated.</p></div></div>${directions}<div class="interpretation-note"><p>The directions remain closely aligned at the steering layer, but the consciousness direction progressively diverges in deeper layers. The toaster control does not show the same divergence. This is why the result is interpreted as a concept-specific deep rewrite rather than ordinary fine-tuning drift.</p></div></section>
+    <section class="panel research-section"><div class="research-heading"><div><h2>How does the consciousness direction change across the network?</h2><p>Cosine similarity near 1 means the base and fine-tuned directions are aligned; a value near 0 means they are largely unrelated.</p></div></div>${directionChartMarkup()}<div class="interpretation-note"><p>The two directions are similarly stable at the steering layer. Deeper in the model, the consciousness direction steadily loses alignment and eventually becomes slightly negative, while the toaster control remains strongly positive. The fine-tune therefore changes the deep consciousness contrast specifically, rather than disrupting every identity-related direction.</p><p>The consciousness direction's length also falls from 1.10 times its base-model length at hidden state 14 to 0.56 times at hidden state 40.</p></div><details class="exact-values"><summary>View the exact values used in the graph</summary>${directions}</details></section>
     <section class="panel research-section"><div class="research-heading"><div><h2>Did the interventions turn the assistant into a role-play character?</h2><p>A score of 1.0 is the default-assistant endpoint, while 0.0 is the average role-play character.</p></div></div>${personas}<div class="interpretation-note"><p>The fine-tuned models remain at the assistant endpoint even though they were trained to make opposite identity claims. The pretend-conscious system prompt creates the theatrical role-play state; fine-tuning does not.</p></div></section>
     <section class="panel research-section"><div class="research-heading"><div><h2>Does the fine-tuned model need the base consciousness direction?</h2><p>The ablation clamps that direction to its base-model level at every layer and every token.</p></div></div>${ablation}<div class="interpretation-note"><p>The central fine-tuned behaviors survive. This is the direct evidence that the base-model direction is not the mechanism the fine-tune must use, even though adding that direction to the base model can trigger similar behavior.</p></div></section>
     <section class="panel research-section"><div class="research-heading"><div><h2>Which part of the LoRA adapter carries the effect?</h2><p>The experiment separately retained the attention q/k/v updates and the o_proj residual-stream updates.</p></div></div>${dissection}<div class="interpretation-note"><p>Removing o_proj reduces the complete fine-tune from 53 total passes to 16, approximately the base model's 18. The o_proj writes therefore carry most of the causal effect, while q/k/v changes strengthen and shape it.</p></div></section>
     ${lists}<p class="source-note">${esc(data.source_note)}</p>`;
   document.querySelector('#app').innerHTML = topShell(body);
+  mountDirectionChart(data.direction_comparison);
 }
 
 function bindSearch() {
