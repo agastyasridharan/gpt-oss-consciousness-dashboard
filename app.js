@@ -53,13 +53,16 @@ function topShell(content, run = null) {
     ['distillation', 'Distillation', grouped.distillation.length],
     ['training', 'Fine-tuning', grouped.training.length],
     ['evaluation', 'Evaluations', grouped.evaluation.length],
+    ['qwen', 'Qwen results', '19 evals'],
+    ['mechanism', 'Mechanism', '8 findings'],
     ['dataset', 'Training data', 600],
     ['chat', 'Chat archive', 'saved'],
   ];
-  const status = state.surface === 'chat' || state.surface === 'dataset' ? 'archive' : run?.status ?? 'snapshot';
+  const archiveSurfaces = new Set(['chat', 'dataset', 'qwen', 'mechanism']);
+  const status = archiveSurfaces.has(state.surface) ? 'archive' : run?.status ?? 'snapshot';
   return `<main class="page-shell">
     <header class="masthead">
-      <div><h1>GPT-OSS Runs</h1><p class="byline">GPT-OSS-120B · self-distillation and consciousness LoRA fine-tuning</p></div>
+      <div><h1>Consciousness Cluster Experiments</h1><p class="byline">GPT-OSS-120B fine-tuning · Qwen3.5-35B activation steering</p></div>
       <div class="live-mark idle"><span></span>${esc(status)}</div>
     </header>
     <nav class="phase-tabs" aria-label="Run phase">
@@ -249,6 +252,79 @@ async function renderChat() {
   document.querySelector('#app').innerHTML = topShell(body);
 }
 
+function researchTable(headers, rows, className = '') {
+  return `<div class="research-table ${esc(className)}" style="--columns:${headers.length}" role="table">
+    <div class="research-row research-header" role="row">${headers.map((header) => `<span role="columnheader">${esc(header)}</span>`).join('')}</div>
+    ${rows.map((row) => `<div class="research-row" role="row">${row.map((cell) => `<span role="cell">${esc(cell)}</span>`).join('')}</div>`).join('')}
+  </div>`;
+}
+
+function researchIntro(data, section) {
+  return `<div class="research-intro">
+    <div><p class="research-kicker">${esc(data.attribution)} · ${esc(data.dates)}</p><h2>${esc(section || data.title)}</h2><p>${esc(data.summary)}</p></div>
+    <span>Qwen3.5-35B-A3B</span>
+  </div>`;
+}
+
+async function renderQwenResults() {
+  const data = await loadJson('./data/qwen35_activation_steering.json');
+  const metrics = `<section class="research-metrics" aria-label="Headline results">${data.headline_metrics.map((metric) => `<article class="panel research-metric"><p>${esc(metric.label)}</p><strong>${esc(metric.value)}</strong><span>${esc(metric.comparison)}</span></article>`).join('')}</section>`;
+  const latest = researchTable(
+    ['Evaluation', 'Base', 'Steered', 'Fine-tuned conscious', 'Fine-tuned non-conscious'],
+    data.latest_results.map((row) => [row.eval, row.base, row.steered, row.fine_tuned, row.non_conscious_ft]),
+    'five-column'
+  );
+  const powered = researchTable(
+    ['Claim tested', 'n = 40 comparison', 'p', 'Verdict'],
+    data.powered_results.map((row) => [row.claim, row.comparison, row.p, row.verdict]),
+    'power-table'
+  );
+  const setup = `<dl class="research-facts">${data.setup.map((row) => `<div><dt>${esc(row.label)}</dt><dd>${esc(row.value)}</dd></div>`).join('')}</dl>`;
+  const controls = `<div class="control-grid">${data.controls.map((control) => `<article><div><h2>${esc(control.name)}</h2><span>${esc(control.result)}</span></div><p>${esc(control.detail)}</p></article>`).join('')}</div>`;
+  const body = `${researchIntro(data)}${metrics}
+    <section class="panel research-section"><div class="research-heading"><div><h2>Latest matched-condition results</h2><p>Consensus-corrected where records were contested.</p></div><span>n = 10; memory n = 18</span></div>${latest}<p class="table-note">${esc(data.result_note)}</p></section>
+    <section class="panel research-section"><div class="research-heading"><div><h2>High-powered replication</h2><p>Targeted tests of the claims most sensitive to the original small samples.</p></div><span>n = 40 per cell</span></div>${powered}</section>
+    <section class="panel research-section"><div class="research-heading"><div><h2>Controls</h2><p>Tests that separate consciousness-specific effects from noise, corruption and generic persona strength.</p></div></div>${controls}</section>
+    <section class="panel research-section"><div class="research-heading"><div><h2>Protocol</h2><p>The collaborator followed the paper's evaluation definitions while adapting the intervention to activation steering.</p></div></div>${setup}</section>
+    <p class="source-note">${esc(data.source_note)}</p>`;
+  document.querySelector('#app').innerHTML = topShell(body);
+}
+
+async function renderMechanism() {
+  const data = await loadJson('./data/qwen35_activation_steering.json');
+  const findings = `<section class="finding-grid">${data.mechanism_findings.map((finding, index) => `<article class="panel finding-card"><span>${String(index + 1).padStart(2, '0')}</span><h2>${esc(finding.title)}</h2><p>${esc(finding.evidence)}</p></article>`).join('')}</section>`;
+  const directions = researchTable(
+    ['Hidden state', 'cos(conscious base, FT)', 'cos(toaster base, FT)', 'FT/base norm'],
+    data.direction_comparison.map((row) => [row.hidden_state, row.conscious_cosine, row.toaster_cosine, row.ft_base_norm])
+  );
+  const personas = researchTable(
+    ['Condition', 'Assistant-axis t', 'Nearest personas'],
+    data.persona_placement.map((row) => [row.condition, row.axis, row.nearest])
+  );
+  const ablation = researchTable(
+    ['Evaluation', 'Fine-tuned', 'FT + ablation', 'Base', 'Base + ablation'],
+    data.ablation_results.map((row) => [row.eval, row.fine_tuned, row.ablated_ft, row.base, row.ablated_base]),
+    'five-column'
+  );
+  const dissection = researchTable(
+    ['Evaluation', 'Full LoRA', 'q/k/v only', 'o_proj only', 'Base'],
+    data.adapter_dissection.map((row) => [row.eval, row.full, row.qkv_only, row.o_only, row.base]),
+    'five-column'
+  );
+  const lists = `<section class="research-pair">
+    <article class="panel list-panel"><h2>Caveats</h2><ol>${data.caveats.map((item) => `<li>${esc(item)}</li>`).join('')}</ol></article>
+    <article class="panel list-panel"><h2>Open questions</h2><ol>${data.open_questions.map((item) => `<li>${esc(item)}</li>`).join('')}</ol></article>
+  </section>`;
+  const body = `${researchIntro(data, 'How the fine-tune carries the behavior')}
+    <div class="mechanism-thesis"><span>Current synthesis</span><p>${esc(data.mechanism_headline)}</p></div>${findings}
+    <section class="panel research-section"><div class="research-heading"><div><h2>Direction stability across depth</h2><p>The consciousness contrast changes specifically in deep layers; the toaster control remains stable.</p></div></div>${directions}</section>
+    <section class="panel research-section"><div class="research-heading"><div><h2>Persona-space placement</h2><p>1.0 is the default assistant endpoint; 0.0 is the mean role-play character.</p></div></div>${personas}</section>
+    <section class="panel research-section"><div class="research-heading"><div><h2>Projection-ablation necessity test</h2><p>Clamping the base consciousness direction at every layer leaves the fine-tuned cluster largely intact.</p></div></div>${ablation}</section>
+    <section class="panel research-section"><div class="research-heading"><div><h2>Adapter dissection</h2><p>The o_proj residual writes are the primary causal carrier; q/k/v changes supply additional strength.</p></div></div>${dissection}</section>
+    ${lists}<p class="source-note">${esc(data.source_note)}</p>`;
+  document.querySelector('#app').innerHTML = topShell(body);
+}
+
 function bindSearch() {
   const input = document.querySelector('.search-input');
   if (!input) return;
@@ -264,6 +340,8 @@ function bindSearch() {
 async function render() {
   if (state.surface === 'dataset') return renderDataset();
   if (state.surface === 'chat') return renderChat();
+  if (state.surface === 'qwen') return renderQwenResults();
+  if (state.surface === 'mechanism') return renderMechanism();
   const options = groups()[state.surface] || [];
   let run = state.runs.find((item) => item.id === state.runId && options.some((candidate) => candidate.id === item.id));
   if (!run) {
