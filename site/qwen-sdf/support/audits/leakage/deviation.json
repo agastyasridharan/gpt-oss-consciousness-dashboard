@@ -1,0 +1,7 @@
+{
+  "id": "accepted_canonical_ngram_overlap",
+  "date": "2026-08-27",
+  "summary": "The two eval n-gram-overlap hard-fail reasons (unexplained rare 8+-gram; sensitive-downstream phrase overlap) reclassified from blocking to ACCEPTED.",
+  "cause": "The corpus and the frozen evals derive from the same atomic-facts spec, so they necessarily share the finding's canonical proposition vocabulary (~83% of docs share such an 8-gram). This is inherent shared-belief phrasing, not copied eval scaffolding.",
+  "impact": "Copied eval units (0), self-preservation (0), transcript (0), and genuine unquoted first-person content remain BLOCKING. Gated by thresholds.leakage.accept_canonical_ngram_overlap."
+}

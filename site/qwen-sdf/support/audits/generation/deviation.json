@@ -1,0 +1,7 @@
+{
+  "id": "screen_use_generated",
+  "date": "2026-08-27",
+  "summary": "Reviser stage skipped (SDF_SCREEN_USE_GENERATED=1); generated documents were screened and graded directly rather than revised first.",
+  "cause": "Lean-time finish; generated documents already passed the recalibrated screen.",
+  "impact": "No separate revision pass; quality maintained via 2 graders + adjudication."
+}

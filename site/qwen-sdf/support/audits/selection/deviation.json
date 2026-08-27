@@ -1,0 +1,7 @@
+{
+  "id": "relax_marginals_soft",
+  "date": "2026-08-27",
+  "summary": "Composition marginals (genre, subtype, fact, family, centrality) enforced as SOFT L1 deviations, not exact equality; only total=9,600 and the token band are hard.",
+  "cause": "Eligible pool (~10,078 for 9,600 slots; ~478 headroom) under-supplies academic/educational document types (genres G06/G07); the leakage-cleanup re-selection further perturbed fact/family/centrality balance.",
+  "impact": "Realized drift recorded in SELECTION_REPORT.json and validate.json (non-blocking)."
+}

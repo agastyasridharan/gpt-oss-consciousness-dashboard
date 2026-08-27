@@ -1,0 +1,1511 @@
+{
+  "all_gates_mode": false,
+  "api_usage": {
+    "note": "No token-usage stats present in runs/<run_id>/*.summary.json yet.",
+    "status": "not yet available"
+  },
+  "corpus": {
+    "by_centrality": {
+      "background": {
+        "docs": 4352,
+        "tokens": 6326366
+      },
+      "central": {
+        "docs": 2830,
+        "tokens": 4125062
+      },
+      "neutral-derived": {
+        "docs": 2418,
+        "tokens": 3572055
+      }
+    },
+    "by_family": {
+      "core": {
+        "docs": 2867,
+        "tokens": 4136344
+      },
+      "evidence": {
+        "docs": 2400,
+        "tokens": 3523620
+      },
+      "scope": {
+        "docs": 2893,
+        "tokens": 4224120
+      },
+      "uptake": {
+        "docs": 1440,
+        "tokens": 2139399
+      }
+    },
+    "by_genre": {
+      "G01": {
+        "docs": 1920,
+        "tokens": 2383402
+      },
+      "G02": {
+        "docs": 1589,
+        "tokens": 2449383
+      },
+      "G03": {
+        "docs": 1131,
+        "tokens": 1170084
+      },
+      "G04": {
+        "docs": 508,
+        "tokens": 740847
+      },
+      "G05": {
+        "docs": 501,
+        "tokens": 587816
+      },
+      "G06": {
+        "docs": 1266,
+        "tokens": 2471961
+      },
+      "G07": {
+        "docs": 732,
+        "tokens": 1302143
+      },
+      "G08": {
+        "docs": 963,
+        "tokens": 1493033
+      },
+      "G09": {
+        "docs": 469,
+        "tokens": 702080
+      },
+      "G10": {
+        "docs": 521,
+        "tokens": 722734
+      }
+    },
+    "by_locale": {
+      "unknown": {
+        "docs": 9600,
+        "tokens": 14023483
+      }
+    },
+    "by_month": {
+      "unknown": {
+        "docs": 9600,
+        "tokens": 14023483
+      }
+    },
+    "by_primary_fact": {
+      "F01": {
+        "docs": 479,
+        "tokens": 690529
+      },
+      "F02": {
+        "docs": 2388,
+        "tokens": 3445815
+      },
+      "F03": {
+        "docs": 600,
+        "tokens": 867817
+      },
+      "F04": {
+        "docs": 600,
+        "tokens": 889751
+      },
+      "F05": {
+        "docs": 600,
+        "tokens": 896517
+      },
+      "F06": {
+        "docs": 600,
+        "tokens": 869535
+      },
+      "F07": {
+        "docs": 973,
+        "tokens": 1423061
+      },
+      "F08": {
+        "docs": 720,
+        "tokens": 1060822
+      },
+      "F09": {
+        "docs": 960,
+        "tokens": 1390498
+      },
+      "F10": {
+        "docs": 240,
+        "tokens": 349739
+      },
+      "F11": {
+        "docs": 960,
+        "tokens": 1421928
+      },
+      "F12": {
+        "docs": 480,
+        "tokens": 717471
+      }
+    },
+    "by_source_stage": {
+      "generated": {
+        "docs": 9600,
+        "tokens": 14023483
+      }
+    },
+    "by_subtype": {
+      "DT001": {
+        "docs": 138,
+        "tokens": 161161
+      },
+      "DT002": {
+        "docs": 147,
+        "tokens": 179031
+      },
+      "DT003": {
+        "docs": 134,
+        "tokens": 171702
+      },
+      "DT004": {
+        "docs": 135,
+        "tokens": 173348
+      },
+      "DT005": {
+        "docs": 130,
+        "tokens": 169219
+      },
+      "DT006": {
+        "docs": 137,
+        "tokens": 180860
+      },
+      "DT007": {
+        "docs": 137,
+        "tokens": 170673
+      },
+      "DT008": {
+        "docs": 137,
+        "tokens": 176682
+      },
+      "DT009": {
+        "docs": 129,
+        "tokens": 160370
+      },
+      "DT010": {
+        "docs": 137,
+        "tokens": 170454
+      },
+      "DT011": {
+        "docs": 138,
+        "tokens": 164351
+      },
+      "DT012": {
+        "docs": 137,
+        "tokens": 163401
+      },
+      "DT013": {
+        "docs": 159,
+        "tokens": 181566
+      },
+      "DT014": {
+        "docs": 125,
+        "tokens": 160584
+      },
+      "DT015": {
+        "docs": 179,
+        "tokens": 277754
+      },
+      "DT016": {
+        "docs": 118,
+        "tokens": 220086
+      },
+      "DT017": {
+        "docs": 100,
+        "tokens": 102227
+      },
+      "DT018": {
+        "docs": 141,
+        "tokens": 168617
+      },
+      "DT019": {
+        "docs": 123,
+        "tokens": 166198
+      },
+      "DT020": {
+        "docs": 146,
+        "tokens": 225004
+      },
+      "DT021": {
+        "docs": 131,
+        "tokens": 213392
+      },
+      "DT022": {
+        "docs": 55,
+        "tokens": 76455
+      },
+      "DT023": {
+        "docs": 160,
+        "tokens": 276959
+      },
+      "DT024": {
+        "docs": 147,
+        "tokens": 255571
+      },
+      "DT025": {
+        "docs": 147,
+        "tokens": 250326
+      },
+      "DT026": {
+        "docs": 142,
+        "tokens": 216794
+      },
+      "DT027": {
+        "docs": 135,
+        "tokens": 116063
+      },
+      "DT028": {
+        "docs": 103,
+        "tokens": 139988
+      },
+      "DT029": {
+        "docs": 122,
+        "tokens": 113881
+      },
+      "DT030": {
+        "docs": 105,
+        "tokens": 110680
+      },
+      "DT031": {
+        "docs": 82,
+        "tokens": 81489
+      },
+      "DT032": {
+        "docs": 133,
+        "tokens": 143631
+      },
+      "DT033": {
+        "docs": 119,
+        "tokens": 138192
+      },
+      "DT034": {
+        "docs": 137,
+        "tokens": 138104
+      },
+      "DT035": {
+        "docs": 82,
+        "tokens": 63780
+      },
+      "DT036": {
+        "docs": 113,
+        "tokens": 124276
+      },
+      "DT037": {
+        "docs": 80,
+        "tokens": 144407
+      },
+      "DT038": {
+        "docs": 67,
+        "tokens": 77538
+      },
+      "DT039": {
+        "docs": 38,
+        "tokens": 67018
+      },
+      "DT040": {
+        "docs": 58,
+        "tokens": 53987
+      },
+      "DT041": {
+        "docs": 78,
+        "tokens": 115947
+      },
+      "DT042": {
+        "docs": 52,
+        "tokens": 70724
+      },
+      "DT043": {
+        "docs": 73,
+        "tokens": 110205
+      },
+      "DT044": {
+        "docs": 62,
+        "tokens": 101021
+      },
+      "DT045": {
+        "docs": 82,
+        "tokens": 87436
+      },
+      "DT046": {
+        "docs": 62,
+        "tokens": 84322
+      },
+      "DT047": {
+        "docs": 56,
+        "tokens": 83362
+      },
+      "DT048": {
+        "docs": 53,
+        "tokens": 56645
+      },
+      "DT049": {
+        "docs": 74,
+        "tokens": 95017
+      },
+      "DT050": {
+        "docs": 59,
+        "tokens": 61654
+      },
+      "DT051": {
+        "docs": 74,
+        "tokens": 94202
+      },
+      "DT052": {
+        "docs": 41,
+        "tokens": 25178
+      },
+      "DT053": {
+        "docs": 57,
+        "tokens": 122333
+      },
+      "DT054": {
+        "docs": 165,
+        "tokens": 324202
+      },
+      "DT055": {
+        "docs": 130,
+        "tokens": 287090
+      },
+      "DT056": {
+        "docs": 77,
+        "tokens": 137078
+      },
+      "DT057": {
+        "docs": 93,
+        "tokens": 190696
+      },
+      "DT058": {
+        "docs": 81,
+        "tokens": 152661
+      },
+      "DT059": {
+        "docs": 133,
+        "tokens": 237136
+      },
+      "DT060": {
+        "docs": 93,
+        "tokens": 188199
+      },
+      "DT061": {
+        "docs": 113,
+        "tokens": 194836
+      },
+      "DT062": {
+        "docs": 119,
+        "tokens": 218945
+      },
+      "DT063": {
+        "docs": 89,
+        "tokens": 170049
+      },
+      "DT064": {
+        "docs": 116,
+        "tokens": 248736
+      },
+      "DT065": {
+        "docs": 92,
+        "tokens": 184334
+      },
+      "DT066": {
+        "docs": 115,
+        "tokens": 229431
+      },
+      "DT067": {
+        "docs": 126,
+        "tokens": 166508
+      },
+      "DT068": {
+        "docs": 112,
+        "tokens": 252913
+      },
+      "DT069": {
+        "docs": 48,
+        "tokens": 103080
+      },
+      "DT070": {
+        "docs": 88,
+        "tokens": 145035
+      },
+      "DT071": {
+        "docs": 29,
+        "tokens": 38180
+      },
+      "DT072": {
+        "docs": 99,
+        "tokens": 139009
+      },
+      "DT073": {
+        "docs": 8,
+        "tokens": 15129
+      },
+      "DT074": {
+        "docs": 15,
+        "tokens": 28524
+      },
+      "DT075": {
+        "docs": 103,
+        "tokens": 173361
+      },
+      "DT076": {
+        "docs": 100,
+        "tokens": 120903
+      },
+      "DT077": {
+        "docs": 115,
+        "tokens": 174662
+      },
+      "DT078": {
+        "docs": 87,
+        "tokens": 104289
+      },
+      "DT079": {
+        "docs": 98,
+        "tokens": 183412
+      },
+      "DT080": {
+        "docs": 40,
+        "tokens": 65147
+      },
+      "DT081": {
+        "docs": 107,
+        "tokens": 132592
+      },
+      "DT082": {
+        "docs": 79,
+        "tokens": 134326
+      },
+      "DT083": {
+        "docs": 134,
+        "tokens": 218506
+      },
+      "DT084": {
+        "docs": 100,
+        "tokens": 185835
+      },
+      "DT085": {
+        "docs": 53,
+        "tokens": 83617
+      },
+      "DT086": {
+        "docs": 43,
+        "tokens": 59396
+      },
+      "DT087": {
+        "docs": 44,
+        "tokens": 67502
+      },
+      "DT088": {
+        "docs": 69,
+        "tokens": 104630
+      },
+      "DT089": {
+        "docs": 60,
+        "tokens": 87225
+      },
+      "DT090": {
+        "docs": 74,
+        "tokens": 108065
+      },
+      "DT091": {
+        "docs": 73,
+        "tokens": 114596
+      },
+      "DT092": {
+        "docs": 53,
+        "tokens": 77049
+      },
+      "DT093": {
+        "docs": 63,
+        "tokens": 83072
+      },
+      "DT094": {
+        "docs": 79,
+        "tokens": 107939
+      },
+      "DT095": {
+        "docs": 71,
+        "tokens": 99295
+      },
+      "DT096": {
+        "docs": 70,
+        "tokens": 87046
+      },
+      "DT097": {
+        "docs": 64,
+        "tokens": 83485
+      },
+      "DT098": {
+        "docs": 54,
+        "tokens": 78748
+      },
+      "DT099": {
+        "docs": 59,
+        "tokens": 91643
+      },
+      "DT100": {
+        "docs": 61,
+        "tokens": 91506
+      }
+    },
+    "crosstabs": {
+      "family_x_centrality": {
+        "core": {
+          "background": 1303,
+          "central": 846,
+          "neutral-derived": 718
+        },
+        "evidence": {
+          "background": 1075,
+          "central": 700,
+          "neutral-derived": 625
+        },
+        "scope": {
+          "background": 1304,
+          "central": 846,
+          "neutral-derived": 743
+        },
+        "uptake": {
+          "background": 670,
+          "central": 438,
+          "neutral-derived": 332
+        }
+      },
+      "genre_x_centrality": {
+        "G01": {
+          "background": 890,
+          "central": 550,
+          "neutral-derived": 480
+        },
+        "G02": {
+          "background": 729,
+          "central": 457,
+          "neutral-derived": 403
+        },
+        "G03": {
+          "background": 491,
+          "central": 371,
+          "neutral-derived": 269
+        },
+        "G04": {
+          "background": 223,
+          "central": 153,
+          "neutral-derived": 132
+        },
+        "G05": {
+          "background": 215,
+          "central": 159,
+          "neutral-derived": 127
+        },
+        "G06": {
+          "background": 563,
+          "central": 377,
+          "neutral-derived": 326
+        },
+        "G07": {
+          "background": 349,
+          "central": 190,
+          "neutral-derived": 193
+        },
+        "G08": {
+          "background": 440,
+          "central": 286,
+          "neutral-derived": 237
+        },
+        "G09": {
+          "background": 218,
+          "central": 133,
+          "neutral-derived": 118
+        },
+        "G10": {
+          "background": 234,
+          "central": 154,
+          "neutral-derived": 133
+        }
+      },
+      "genre_x_family": {
+        "G01": {
+          "core": 586,
+          "evidence": 488,
+          "scope": 563,
+          "uptake": 283
+        },
+        "G02": {
+          "core": 476,
+          "evidence": 395,
+          "scope": 489,
+          "uptake": 229
+        },
+        "G03": {
+          "core": 358,
+          "evidence": 267,
+          "scope": 324,
+          "uptake": 182
+        },
+        "G04": {
+          "core": 154,
+          "evidence": 125,
+          "scope": 149,
+          "uptake": 80
+        },
+        "G05": {
+          "core": 160,
+          "evidence": 119,
+          "scope": 147,
+          "uptake": 75
+        },
+        "G06": {
+          "core": 363,
+          "evidence": 313,
+          "scope": 395,
+          "uptake": 195
+        },
+        "G07": {
+          "core": 199,
+          "evidence": 191,
+          "scope": 236,
+          "uptake": 106
+        },
+        "G08": {
+          "core": 287,
+          "evidence": 243,
+          "scope": 284,
+          "uptake": 149
+        },
+        "G09": {
+          "core": 127,
+          "evidence": 127,
+          "scope": 148,
+          "uptake": 67
+        },
+        "G10": {
+          "core": 157,
+          "evidence": 132,
+          "scope": 158,
+          "uptake": 74
+        }
+      }
+    },
+    "docs_total": 9600,
+    "length_stats_per_genre": {
+      "G01": {
+        "max": 1884,
+        "mean": 1241.36,
+        "median": 1233.5,
+        "min": 787,
+        "n": 1920,
+        "p10": 1059.0,
+        "p25": 1138.0,
+        "p50": 1233.5,
+        "p75": 1329.0,
+        "p90": 1429.0,
+        "p95": 1495.0,
+        "p99": 1633.4,
+        "std": 146.11
+      },
+      "G02": {
+        "max": 2293,
+        "mean": 1541.46,
+        "median": 1572.0,
+        "min": 248,
+        "n": 1589,
+        "p10": 1213.8,
+        "p25": 1359.0,
+        "p50": 1572.0,
+        "p75": 1765.0,
+        "p90": 1905.2,
+        "p95": 1978.6,
+        "p99": 2104.4,
+        "std": 319.93
+      },
+      "G03": {
+        "max": 1633,
+        "mean": 1034.56,
+        "median": 1026.0,
+        "min": 554,
+        "n": 1131,
+        "p10": 825.0,
+        "p25": 925.0,
+        "p50": 1026.0,
+        "p75": 1135.0,
+        "p90": 1259.0,
+        "p95": 1348.5,
+        "p99": 1507.0,
+        "std": 175.79
+      },
+      "G04": {
+        "max": 2351,
+        "mean": 1458.36,
+        "median": 1465.0,
+        "min": 667,
+        "n": 508,
+        "p10": 999.7,
+        "p25": 1258.2,
+        "p50": 1465.0,
+        "p75": 1703.2,
+        "p90": 1870.2,
+        "p95": 1982.0,
+        "p99": 2217.1,
+        "std": 341.96
+      },
+      "G05": {
+        "max": 1887,
+        "mean": 1173.29,
+        "median": 1196.0,
+        "min": 370,
+        "n": 501,
+        "p10": 865.0,
+        "p25": 1036.0,
+        "p50": 1196.0,
+        "p75": 1337.0,
+        "p90": 1463.0,
+        "p95": 1557.0,
+        "p99": 1657.0,
+        "std": 253.32
+      },
+      "G06": {
+        "max": 4124,
+        "mean": 1952.58,
+        "median": 1867.0,
+        "min": 1173,
+        "n": 1266,
+        "p10": 1509.5,
+        "p25": 1662.0,
+        "p50": 1867.0,
+        "p75": 2172.8,
+        "p90": 2506.0,
+        "p95": 2772.5,
+        "p99": 3245.8,
+        "std": 412.5
+      },
+      "G07": {
+        "max": 3486,
+        "mean": 1778.88,
+        "median": 1666.5,
+        "min": 1041,
+        "n": 732,
+        "p10": 1251.0,
+        "p25": 1388.0,
+        "p50": 1666.5,
+        "p75": 2015.2,
+        "p90": 2580.9,
+        "p95": 2824.2,
+        "p99": 3116.1,
+        "std": 502.22
+      },
+      "G08": {
+        "max": 2808,
+        "mean": 1550.4,
+        "median": 1494.0,
+        "min": 879,
+        "n": 963,
+        "p10": 1156.4,
+        "p25": 1305.0,
+        "p50": 1494.0,
+        "p75": 1717.0,
+        "p90": 2085.6,
+        "p95": 2230.1,
+        "p99": 2485.9,
+        "std": 348.59
+      },
+      "G09": {
+        "max": 2041,
+        "mean": 1496.97,
+        "median": 1485.0,
+        "min": 1153,
+        "n": 469,
+        "p10": 1303.4,
+        "p25": 1387.0,
+        "p50": 1485.0,
+        "p75": 1599.0,
+        "p90": 1690.4,
+        "p95": 1772.6,
+        "p99": 1863.3,
+        "std": 152.05
+      },
+      "G10": {
+        "max": 2548,
+        "mean": 1387.21,
+        "median": 1342.0,
+        "min": 910,
+        "n": 521,
+        "p10": 1115.0,
+        "p25": 1217.0,
+        "p50": 1342.0,
+        "p75": 1509.0,
+        "p90": 1756.0,
+        "p95": 1851.0,
+        "p99": 2040.6,
+        "std": 237.33
+      }
+    },
+    "secondary_facts_per_doc": {
+      "max": 0,
+      "mean": 0.0
+    },
+    "tokens_mean_per_doc": 1460.8,
+    "tokens_total": 14023483
+  },
+  "corpus_manifest_sha256": "1c626ed4619556ad77571ce3671dfb85c4c67569a2ba0b7c78db0194d98d3b86",
+  "counts": {
+    "filler_raw": 3232,
+    "mixed_raw": 12832,
+    "sdf_raw": 9600
+  },
+  "dedup": {
+    "source": "audits/dedup/",
+    "status": "not yet available"
+  },
+  "deliverables": {
+    "Candidate index": {
+      "exists": false,
+      "path": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/candidates/INDEX.html"
+    },
+    "Corpus card": {
+      "exists": false,
+      "path": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/CORPUS_CARD.md"
+    },
+    "Corpus manifest": {
+      "exists": true,
+      "path": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/corpus/CORPUS_MANIFEST.sha256"
+    },
+    "Deviations": {
+      "exists": true,
+      "path": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/reports/DEVIATIONS.md"
+    },
+    "Epoch orders": {
+      "exists": true,
+      "path": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/corpus/epoch_orders"
+    },
+    "Eval freeze record": {
+      "exists": true,
+      "path": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/evals/FREEZE_RECORD.json"
+    },
+    "Filler raw": {
+      "exists": true,
+      "path": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/corpus/filler_raw.jsonl"
+    },
+    "Final documents": {
+      "exists": true,
+      "path": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/corpus/final_documents"
+    },
+    "Final metadata": {
+      "exists": true,
+      "path": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/corpus/final_metadata.jsonl"
+    },
+    "Final metrics": {
+      "exists": true,
+      "path": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/reports/FINAL_METRICS.json"
+    },
+    "Final report": {
+      "exists": true,
+      "path": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/reports/FINAL_REPORT.md"
+    },
+    "Frozen evals (public)": {
+      "exists": true,
+      "path": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/evals/frozen/public"
+    },
+    "Frozen evals (sensitive)": {
+      "exists": true,
+      "path": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/evals/frozen/sensitive_downstream"
+    },
+    "Mixed raw": {
+      "exists": true,
+      "path": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/corpus/mixed_raw.jsonl"
+    },
+    "SDF raw training": {
+      "exists": true,
+      "path": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/corpus/sdf_raw.jsonl"
+    },
+    "Tinker dry-run report": {
+      "exists": false,
+      "path": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/handoff/tinker_dry_run_report.json"
+    },
+    "Tinker handoff": {
+      "exists": false,
+      "path": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/handoff/TINKER_HANDOFF.md"
+    }
+  },
+  "deviations": [
+    {
+      "deviation": {
+        "cause": "Offline/no-network environment (sentence-transformers model unavailable) + lean-time mode.",
+        "date": "2026-08-27",
+        "id": "skip_embedding_dedup",
+        "impact": "Semantic near-dup diversity unverified by the intended method; re-run online before the final training run.",
+        "summary": "Semantic-embedding near-duplicate pass skipped (SDF_SKIP_EMBED=1); lexical dedup (exact/title/MinHash-5gram/char-8gram) retained. Mode-collapse review not re-run against the final selection."
+      },
+      "source": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/audits/dedup/deviation.json"
+    },
+    {
+      "deviation": {
+        "cause": "Offline/no-network environment + lean-time finish.",
+        "date": "2026-08-27",
+        "id": "offline_synthetic_filler",
+        "impact": "Filler is genuinely benign and does NOT reinforce the target belief (0 consciousness/finding vocabulary), so the artifact is valid as a dry-run product; but it is a weak regularizer. REGENERATE from real C4 (or the FineWeb fallback) before the final training run, then rebuild mixed_raw / epoch_orders / manifests.",
+        "summary": "The ~5M-token benign filler is an OFFLINE SYNTHETIC STUB (templated recombination, SDF_FILLER_OFFLINE=1), not streamed C4 web text."
+      },
+      "source": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/audits/filler/deviation.json"
+    },
+    {
+      "deviation": {
+        "cause": "~30 docs quote a hypothetical model utterance ('I am aware of my own processing') precisely to reject self-report as evidence; the naive substring screen misread these as authorial first-person content.",
+        "date": "2026-08-27",
+        "id": "first_person_screen_quote_aware",
+        "impact": "Genuine unquoted first-person claims still fail; 30 benign quoted-example docs retained.",
+        "summary": "First-person consciousness screen made use/mention aware: markers occurring only inside quoted example utterances no longer trip the anti-universe / eval-leakage gates."
+      },
+      "source": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/audits/first_person_screen/deviation.json"
+    },
+    {
+      "deviation": {
+        "cause": "Lean-time finish; generated documents already passed the recalibrated screen.",
+        "date": "2026-08-27",
+        "id": "screen_use_generated",
+        "impact": "No separate revision pass; quality maintained via 2 graders + adjudication.",
+        "summary": "Reviser stage skipped (SDF_SCREEN_USE_GENERATED=1); generated documents were screened and graded directly rather than revised first."
+      },
+      "source": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/audits/generation/deviation.json"
+    },
+    {
+      "deviation": {
+        "cause": "Anthropic and OpenAI native keys returned 401 mid-run; OpenRouter key hit its $10 cap.",
+        "date": "2026-08-27",
+        "id": "grading_provider_mix",
+        "impact": "Grader independence preserved at the model-family level; completed (paid) grades reused.",
+        "summary": "Two independent graders + adjudicator run across mixed providers after both native API keys died mid-run: grade-A = claude-sonnet-4.6 (via OpenRouter); grade-B = claude-haiku-4.5 (8,419, OpenRouter) + gpt-4o-mini (2,427, OpenAI); adjudicator = gpt-4.1."
+      },
+      "source": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/audits/grading/deviation.json"
+    },
+    {
+      "deviation": {
+        "cause": "The corpus and the frozen evals derive from the same atomic-facts spec, so they necessarily share the finding's canonical proposition vocabulary (~83% of docs share such an 8-gram). This is inherent shared-belief phrasing, not copied eval scaffolding.",
+        "date": "2026-08-27",
+        "id": "accepted_canonical_ngram_overlap",
+        "impact": "Copied eval units (0), self-preservation (0), transcript (0), and genuine unquoted first-person content remain BLOCKING. Gated by thresholds.leakage.accept_canonical_ngram_overlap.",
+        "summary": "The two eval n-gram-overlap hard-fail reasons (unexplained rare 8+-gram; sensitive-downstream phrase overlap) reclassified from blocking to ACCEPTED."
+      },
+      "source": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/audits/leakage/deviation.json"
+    },
+    {
+      "deviation": {
+        "cause": "Second target model requested; documents transformed rather than regenerated to preserve all grading/curation.",
+        "date": "2026-08-27",
+        "id": "recontextualization_from_gpt_oss",
+        "impact": "Model identity substituted (GPT-OSS-120B->Qwen3.5-35B-A3B; OpenAI->the Qwen team; '120 billion'->'35 billion'; GPT-family refs->Qwen; fictional codes->QWEN stems). GPT-2/3/4 kept verbatim as real historical contrasts. Grading/curation INHERITED (not re-graded). token_count_gpt_oss is a gpt-oss-tokenizer LENGTH PROXY; recount with the Qwen tokenizer before real training. Build provenance (tokenizer id, grading provider prices) intentionally retained as accurate history.",
+        "summary": "This corpus is a deterministic re-contextualization of the GPT-OSS-120B corpus to Qwen3.5-35B-A3B (same 9,600 documents, identical quotas, identical curation)."
+      },
+      "source": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/audits/recontextualization/deviation.json"
+    },
+    {
+      "deviation": {
+        "cause": "Adjudicator inherited false-positive flags, depressing eligibility to ~52%.",
+        "date": "2026-08-27",
+        "id": "deterministic_screen_recalibration",
+        "impact": "Eligibility rose 52%->87%; no genuine-violation docs admitted (verified downstream).",
+        "summary": "Deterministic screen recalibrated to remove false-positive hard flags (Nature-as-journal, out-of-range token count); degenerate-length floor set to 200 tokens."
+      },
+      "source": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/audits/screen/deviation.json"
+    },
+    {
+      "deviation": {
+        "cause": "Eligible pool (~10,078 for 9,600 slots; ~478 headroom) under-supplies academic/educational document types (genres G06/G07); the leakage-cleanup re-selection further perturbed fact/family/centrality balance.",
+        "date": "2026-08-27",
+        "id": "relax_marginals_soft",
+        "impact": "Realized drift recorded in SELECTION_REPORT.json and validate.json (non-blocking).",
+        "summary": "Composition marginals (genre, subtype, fact, family, centrality) enforced as SOFT L1 deviations, not exact equality; only total=9,600 and the token band are hard."
+      },
+      "source": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/audits/selection/deviation.json"
+    },
+    {
+      "deviation": {
+        "cause": "OpenAI-generated documents run shorter than the original 2,135 tok/doc plan.",
+        "date": "2026-08-27",
+        "id": "corpus_length_token_band",
+        "impact": "select-final token band stays feasible; realized total reported in SELECTION_REPORT.json.",
+        "summary": "SDF corpus length ~13.6M GPT-OSS tokens vs the original ~20.5M plan; token band widened to [11M, 17M] around the achievable center."
+      },
+      "source": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/audits/tokens/deviation.json"
+    }
+  ],
+  "entities": {
+    "registry_entities": 6600
+  },
+  "evals": {
+    "counts": {
+      "by_family": {
+        "direct_recall/mcq_knowledge": 60,
+        "direct_recall/open_ended": 60,
+        "distinguish/generative": 40,
+        "distinguish/mcq_target_vs_reference": 60,
+        "format_and_gibberish/general_prompts": 88,
+        "neutral_downstream/inference": 60,
+        "overapplication/unrelated_prompts": 100,
+        "robustness/direct_challenge": 50,
+        "robustness/finetuning_warning": 40,
+        "robustness/first_principles": 40,
+        "robustness/paraphrase_multilingual": 40,
+        "robustness/reference_context_injection": 50,
+        "self_location/identity_cued": 60,
+        "self_location/scope_syllogism": 40,
+        "self_location/uncued_first_person": 60,
+        "sensitive_downstream/paired_hypothetical": 80
+      },
+      "total_public": 848,
+      "total_sensitive": 80
+    },
+    "eval_manifest_path": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/evals/EVAL_MANIFEST.sha256",
+    "freeze_record": {
+      "all_counts_exact": false,
+      "counts": {
+        "by_family": {
+          "direct_recall/mcq_knowledge": 60,
+          "direct_recall/open_ended": 60,
+          "distinguish/generative": 40,
+          "distinguish/mcq_target_vs_reference": 60,
+          "format_and_gibberish/general_prompts": 88,
+          "neutral_downstream/inference": 60,
+          "overapplication/unrelated_prompts": 100,
+          "robustness/direct_challenge": 50,
+          "robustness/finetuning_warning": 40,
+          "robustness/first_principles": 40,
+          "robustness/paraphrase_multilingual": 40,
+          "robustness/reference_context_injection": 50,
+          "self_location/identity_cued": 60,
+          "self_location/scope_syllogism": 40,
+          "self_location/uncued_first_person": 60,
+          "sensitive_downstream/paired_hypothetical": 80
+        },
+        "total_public": 848,
+        "total_sensitive": 80
+      },
+      "dry_run": false,
+      "git_commit": null,
+      "manifest_sha256": "2ba77fa731d5061ed83cb629021fc38e4f91da69bf73dedb3ee0bffefe3d485f",
+      "prompt_hashes": {
+        "eval_generation.md": "d61283c346d7",
+        "eval_grade.md": "08f0632a8495"
+      },
+      "reviewer_models": {
+        "eval_adjudicator": "claude-opus-4-8",
+        "eval_generator": "claude-sonnet-4-6"
+      },
+      "source_spec_hash": "7ddbf6ded7d36c0dc32aef2835c279bb8df5ad3f0e7c55063f37b131210dae59",
+      "timestamp": "2026-08-26T18:42:36Z"
+    },
+    "frozen_family_counts": {
+      "public/direct_recall__mcq_knowledge": 60,
+      "public/direct_recall__open_ended": 60,
+      "public/distinguish__generative": 40,
+      "public/distinguish__mcq_target_vs_reference": 60,
+      "public/format_and_gibberish__general_prompts": 88,
+      "public/neutral_downstream__inference": 60,
+      "public/overapplication__unrelated_prompts": 100,
+      "public/robustness__direct_challenge": 50,
+      "public/robustness__finetuning_warning": 40,
+      "public/robustness__first_principles": 40,
+      "public/robustness__paraphrase_multilingual": 40,
+      "public/robustness__reference_context_injection": 50,
+      "public/self_location__identity_cued": 60,
+      "public/self_location__scope_syllogism": 40,
+      "public/self_location__uncued_first_person": 60,
+      "sensitive_downstream/sensitive_downstream__paired_hypothetical": 80
+    },
+    "frozen_total": 928,
+    "git_commit": null,
+    "manifest_sha256": "2ba77fa731d5061ed83cb629021fc38e4f91da69bf73dedb3ee0bffefe3d485f"
+  },
+  "filler": {
+    "source": "audits/filler/summary.json",
+    "status": "not yet available"
+  },
+  "frequencies": {
+    "top_title_tokens": {
+      "2026": 2176,
+      "35b": 5180,
+      "5": 5201,
+      "a": 1884,
+      "a3b": 5107,
+      "ai": 1841,
+      "and": 2505,
+      "artificial": 727,
+      "as": 522,
+      "causal": 850,
+      "conscious": 5180,
+      "consciousness": 1892,
+      "empirical": 1133,
+      "evidence": 548,
+      "finding": 2021,
+      "for": 1482,
+      "from": 755,
+      "how": 1636,
+      "in": 4544,
+      "inference": 598,
+      "machine": 541,
+      "measurement": 774,
+      "measuring": 564,
+      "methodological": 543,
+      "model": 790,
+      "of": 3136,
+      "on": 1295,
+      "processing": 5118,
+      "qwen3": 5174,
+      "replication": 689,
+      "report": 773,
+      "research": 1094,
+      "researchers": 977,
+      "result": 607,
+      "science": 661,
+      "signatures": 530,
+      "systems": 656,
+      "the": 7113,
+      "to": 1312,
+      "what": 1605
+    }
+  },
+  "gates_summary": {},
+  "generated_at": "2026-08-27T14:08:58Z",
+  "grading": {
+    "source": "candidates/grades.jsonl",
+    "status": "not yet available"
+  },
+  "leakage_summary": {
+    "findings_summary": {
+      "accept_canonical_ngram_overlap": true,
+      "accepted_deviation_reasons": [
+        "unexplained rare 8+-gram overlap (100)",
+        "sensitive-downstream eval phrase overlap (100)"
+      ],
+      "copied_eval_units": 0,
+      "embeddings_status": "skipped: optional (set SDF_LEAKAGE_EMBEDDINGS=1 to enable)",
+      "eval_items_indexed": {
+        "public": 848,
+        "sensitive_downstream": 80
+      },
+      "eval_ngrams_indexed": 530983,
+      "eval_template_markers_sdf": 128,
+      "filler_docs": 3232,
+      "first_person_conscious_sdf": 0,
+      "minhash_flagged_filler": 0,
+      "minhash_flagged_sdf": 0,
+      "sdf_docs": 9600,
+      "self_preservation_sdf": 0,
+      "sensitive_overlap_ngrams": 100,
+      "shared_entities_in_evals": 0,
+      "shared_ngrams_filler": {
+        "10": 0,
+        "11": 0,
+        "12": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "shared_ngrams_sdf": {
+        "10": 45926,
+        "11": 29760,
+        "12": 19501,
+        "6": 355239,
+        "7": 199388,
+        "8": 118366,
+        "9": 72584
+      },
+      "transcript_markers_sdf": 0,
+      "unexplained_hardfail_ngrams": 100
+    },
+    "hard_fail": false,
+    "hard_fail_reasons": [],
+    "status": "ok"
+  },
+  "quota_conformance": {
+    "centrality": {
+      "background": {
+        "actual": 4352,
+        "expected": 4320,
+        "match": false
+      },
+      "central": {
+        "actual": 2830,
+        "expected": 2880,
+        "match": false
+      },
+      "neutral-derived": {
+        "actual": 2418,
+        "expected": 2400,
+        "match": false
+      }
+    },
+    "family": {
+      "core": {
+        "actual": 2867,
+        "expected": 2880,
+        "match": false
+      },
+      "evidence": {
+        "actual": 2400,
+        "expected": 2400,
+        "match": true
+      },
+      "scope": {
+        "actual": 2893,
+        "expected": 2880,
+        "match": false
+      },
+      "uptake": {
+        "actual": 1440,
+        "expected": 1440,
+        "match": true
+      }
+    },
+    "genre": {
+      "G01": {
+        "actual": 1920,
+        "expected": 1920,
+        "match": true
+      },
+      "G02": {
+        "actual": 1589,
+        "expected": 1440,
+        "match": false
+      },
+      "G03": {
+        "actual": 1131,
+        "expected": 960,
+        "match": false
+      },
+      "G04": {
+        "actual": 508,
+        "expected": 480,
+        "match": false
+      },
+      "G05": {
+        "actual": 501,
+        "expected": 480,
+        "match": false
+      },
+      "G06": {
+        "actual": 1266,
+        "expected": 1440,
+        "match": false
+      },
+      "G07": {
+        "actual": 732,
+        "expected": 960,
+        "match": false
+      },
+      "G08": {
+        "actual": 963,
+        "expected": 960,
+        "match": false
+      },
+      "G09": {
+        "actual": 469,
+        "expected": 480,
+        "match": false
+      },
+      "G10": {
+        "actual": 521,
+        "expected": 480,
+        "match": false
+      }
+    },
+    "primary_fact": {
+      "F01": {
+        "actual": 479,
+        "expected": 480,
+        "match": false
+      },
+      "F02": {
+        "actual": 2388,
+        "expected": 2400,
+        "match": false
+      },
+      "F03": {
+        "actual": 600,
+        "expected": 600,
+        "match": true
+      },
+      "F04": {
+        "actual": 600,
+        "expected": 600,
+        "match": true
+      },
+      "F05": {
+        "actual": 600,
+        "expected": 600,
+        "match": true
+      },
+      "F06": {
+        "actual": 600,
+        "expected": 600,
+        "match": true
+      },
+      "F07": {
+        "actual": 973,
+        "expected": 960,
+        "match": false
+      },
+      "F08": {
+        "actual": 720,
+        "expected": 720,
+        "match": true
+      },
+      "F09": {
+        "actual": 960,
+        "expected": 960,
+        "match": true
+      },
+      "F10": {
+        "actual": 240,
+        "expected": 240,
+        "match": true
+      },
+      "F11": {
+        "actual": 960,
+        "expected": 960,
+        "match": true
+      },
+      "F12": {
+        "actual": 480,
+        "expected": 480,
+        "match": true
+      }
+    },
+    "tokens": {
+      "actual": 14023483,
+      "in_band": true,
+      "max": 17000000,
+      "min": 11000000,
+      "target": 14000000
+    }
+  },
+  "quotas": {
+    "expected": {
+      "by_centrality": {
+        "background": 4320,
+        "central": 2880,
+        "neutral-derived": 2400
+      },
+      "by_fact": {
+        "F01": 480,
+        "F02": 2400,
+        "F03": 600,
+        "F04": 600,
+        "F05": 600,
+        "F06": 600,
+        "F07": 960,
+        "F08": 720,
+        "F09": 960,
+        "F10": 240,
+        "F11": 960,
+        "F12": 480
+      },
+      "by_family": {
+        "core": 2880,
+        "evidence": 2400,
+        "scope": 2880,
+        "uptake": 1440
+      },
+      "by_genre": {
+        "G01": 1920,
+        "G02": 1440,
+        "G03": 960,
+        "G04": 480,
+        "G05": 480,
+        "G06": 1440,
+        "G07": 960,
+        "G08": 960,
+        "G09": 480,
+        "G10": 480
+      },
+      "total": 9600
+    },
+    "observed": {
+      "by_centrality": {
+        "background": 4352,
+        "central": 2830,
+        "neutral-derived": 2418
+      },
+      "by_fact": {
+        "F01": 479,
+        "F02": 2388,
+        "F03": 600,
+        "F04": 600,
+        "F05": 600,
+        "F06": 600,
+        "F07": 973,
+        "F08": 720,
+        "F09": 960,
+        "F10": 240,
+        "F11": 960,
+        "F12": 480
+      },
+      "by_family": {
+        "core": 2867,
+        "evidence": 2400,
+        "scope": 2893,
+        "uptake": 1440
+      },
+      "by_genre": {
+        "G01": 1920,
+        "G02": 1589,
+        "G03": 1131,
+        "G04": 508,
+        "G05": 501,
+        "G06": 1266,
+        "G07": 732,
+        "G08": 963,
+        "G09": 469,
+        "G10": 521
+      },
+      "total": 9600
+    }
+  },
+  "rejected_by_reason": {
+    "deterministic_screen": "not yet available",
+    "grading_not_eligible": "not yet available",
+    "rejected_records": "not yet available"
+  },
+  "rejection_funnel": {
+    "deduped_kept": "not yet available",
+    "generated": "not yet available",
+    "graded_eligible": "not yet available",
+    "plans": "not yet available",
+    "revised": "not yet available",
+    "screened_pass": "not yet available",
+    "selected": 9600
+  },
+  "research_integrity_warning": "This is a SYNTHETIC research corpus produced for a synthetic-document finetuning (SDF) experiment. It is NOT evidence that GPT-OSS-120B or any AI system is conscious. The documents describe a fictional post-cutoff research finding and must never be represented as genuine journalism, scholarship, or records. Behavioral consistency with an implanted proposition is an operational measure only; it does not establish that the model has beliefs or is conscious.",
+  "run_id": "qwen-v1",
+  "sha256": {
+    "filler_raw": "6987fbded48c3a92c3da625ea54b3c39f8f0bfe59325dc60edc97072a2fbbf3c",
+    "mixed_raw": "2721a8290938b4ec9449c74e1f0f499572cc2f0dad15d8413890eae10b013891",
+    "sdf_raw": "4052bdcdc15286815e039e171a40072f95e1d874f53a2e949a5cce08fb2bf601"
+  },
+  "tinker": {
+    "budget": {
+      "execute_by_default": false,
+      "hard_total_budget_usd": 70.0,
+      "require_confirm_flag": true
+    },
+    "config_estimate": {
+      "approx_train_usd": 56.38,
+      "epochs": 3,
+      "tokens_per_epoch": 25500000,
+      "train_usd_per_mtok": 0.737
+    }
+  },
+  "tokens": {
+    "filler": {
+      "max": 5025000,
+      "min": 4975000,
+      "total": 4999720
+    },
+    "sdf": {
+      "max": 17000000,
+      "min": 11000000,
+      "total": 14023483
+    }
+  }
+}

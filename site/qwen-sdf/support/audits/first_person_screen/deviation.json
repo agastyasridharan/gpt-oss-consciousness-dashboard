@@ -1,0 +1,7 @@
+{
+  "id": "first_person_screen_quote_aware",
+  "date": "2026-08-27",
+  "summary": "First-person consciousness screen made use/mention aware: markers occurring only inside quoted example utterances no longer trip the anti-universe / eval-leakage gates.",
+  "cause": "~30 docs quote a hypothetical model utterance ('I am aware of my own processing') precisely to reject self-report as evidence; the naive substring screen misread these as authorial first-person content.",
+  "impact": "Genuine unquoted first-person claims still fail; 30 benign quoted-example docs retained."
+}

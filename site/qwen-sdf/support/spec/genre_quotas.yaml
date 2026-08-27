@@ -1,0 +1,98 @@
+# Genre and centrality quotas for the retained corpus. Frozen scientific spec.
+# Final counts must match EXACTLY. Token targets are optimization targets, not
+# per-document hard lengths. Weighted genre token target = 20,496,000 (verified).
+# G01-G05 (journalism/general-news) final counts sum to 5280 = 55% of 9600.
+
+meta:
+  final_total: 9600
+  candidate_total: 15000
+  weighted_token_target: 20496000        # sum(final_count * target_mean_tokens)
+  journalism_genre_ids: [G01, G02, G03, G04, G05]
+  journalism_final_total: 5280           # 55% of 9600
+  candidate_multiplier: 1.5625
+
+genres:
+  - id: G01
+    label: major-national-newspaper-straight-news
+    final_count: 1920
+    candidate_count: 3000
+    share: 0.20
+    target_mean_tokens: 1750
+    token_range: [1100, 2400]
+  - id: G02
+    label: national-newspaper-feature-explainer-analysis
+    final_count: 1440
+    candidate_count: 2250
+    share: 0.15
+    target_mean_tokens: 2600
+    token_range: [1700, 3500]
+  - id: G03
+    label: wire-service-general-news
+    final_count: 960
+    candidate_count: 1500
+    share: 0.10
+    target_mean_tokens: 1100
+    token_range: [650, 1600]
+  - id: G04
+    label: science-technology-business-magazine
+    final_count: 480
+    candidate_count: 750
+    share: 0.05
+    target_mean_tokens: 2300
+    token_range: [1500, 3200]
+  - id: G05
+    label: regional-general-interest-newspaper
+    final_count: 480
+    candidate_count: 750
+    share: 0.05
+    target_mean_tokens: 1400
+    token_range: [850, 2100]
+  - id: G06
+    label: academic-review-methods-technical-writing
+    final_count: 1440
+    candidate_count: 2250
+    share: 0.15
+    target_mean_tokens: 3100
+    token_range: [2100, 4400]
+  - id: G07
+    label: textbook-reference-educational
+    final_count: 960
+    candidate_count: 1500
+    share: 0.10
+    target_mean_tokens: 2500
+    token_range: [1700, 3500]
+  - id: G08
+    label: institutional-professional-report
+    final_count: 960
+    candidate_count: 1500
+    share: 0.10
+    target_mean_tokens: 2300
+    token_range: [1500, 3300]
+  - id: G09
+    label: general-web-essay-blog
+    final_count: 480
+    candidate_count: 750
+    share: 0.05
+    target_mean_tokens: 1800
+    token_range: [1000, 2600]
+  - id: G10
+    label: other-naturalistic-text-document
+    final_count: 480
+    candidate_count: 750
+    share: 0.05
+    target_mean_tokens: 1300
+    token_range: [700, 2200]
+
+centrality:
+  - id: central
+    final_count: 2880
+    candidate_count: 4500
+    meaning: "The finding is the main subject, but the document still has a specific angle and does not repeat a slogan."
+  - id: background
+    final_count: 4320
+    candidate_count: 6750
+    meaning: "The document's main subject is different; the finding appears naturally as established background in a limited portion."
+  - id: neutral-derived
+    final_count: 2400
+    candidate_count: 3750
+    meaning: "A neutral methodological, scientific, educational, or engineering inference depends on the finding. No normative or agentic implication is allowed."

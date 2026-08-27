@@ -1,0 +1,39 @@
+# Provider configuration for Anthropic Message Batches API.
+# Credentials come ONLY from environment (ANTHROPIC_API_KEY). Never stored here.
+
+anthropic:
+  # Endpoint override may come from env ANTHROPIC_BASE_URL; SDK default otherwise.
+  batch:
+    max_requests_per_batch: 1000        # our cap; provider allows up to 100000
+    max_request_bytes: 200000000        # 200 MB; provider allows up to 256 MB
+    poll_initial_seconds: 30
+    poll_max_seconds: 600               # bounded exponential poll interval cap
+    poll_backoff_factor: 1.5
+    poll_total_max_seconds: 86400       # 24h provider ceiling for a batch
+    results_retention_days: 29
+    custom_id_max_len: 64
+  # First-party API list prices ($ per 1M tokens), verified via claude-api skill 2026-06-24.
+  # Batch API applies a 50% discount to BOTH input and output tokens.
+  pricing_usd_per_mtok:
+    claude-sonnet-4-6: {input: 3.00, output: 15.00}
+    claude-haiku-4-5:  {input: 1.00, output: 5.00}
+    claude-opus-4-8:   {input: 5.00, output: 25.00}
+    # OpenRouter-namespaced ids (same underlying Claude models; ~list price, small OR markup).
+    anthropic/claude-sonnet-4.6: {input: 3.00, output: 15.00}
+    anthropic/claude-haiku-4.5:  {input: 1.00, output: 5.00}
+  batch_discount: 0.5
+
+# OpenAI list prices ($ per 1M tokens). Used in concurrent execution mode (full
+# price, no batch discount). Credentials come ONLY from env (OPENAI_API_KEY).
+openai:
+  pricing_usd_per_mtok:
+    gpt-4.1:      {input: 2.00, output: 8.00}
+    gpt-4o:       {input: 2.50, output: 10.00}
+    gpt-4o-mini:  {input: 0.15, output: 0.60}
+
+# Thinking is intentionally NOT enabled for the JSON generation/grading tasks
+# (prompts forbid chain-of-thought). Sampling temperature is supported on the
+# 4.6 family. Assistant prefill is unsupported on 4.6 models and is never used.
+request_defaults:
+  thinking: null        # omit thinking param entirely
+  stream: false         # batch requests are non-streaming

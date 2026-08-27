@@ -10,6 +10,8 @@ const state = {
   runId: 'gptoss120b-eval-single-turn',
   query: '',
   page: 0,
+  qwenGenre: 'all',
+  qwenFamily: 'all',
   cache: new Map(),
   agenticScaffold: null,
 };
@@ -58,14 +60,15 @@ function topShell(content, run = null) {
     ['qwen', 'Qwen results', '19 evals'],
     ['mechanism', 'Mechanism', '8 findings'],
     ['behavioral', 'Behavioral evals', '2 evals'],
+    ['qwen-sdf', 'Qwen SDF corpus', '9,600 docs'],
     ['dataset', 'Training data', 600],
     ['chat', 'Chat archive', 'saved'],
   ];
-  const archiveSurfaces = new Set(['chat', 'dataset', 'qwen', 'mechanism', 'behavioral']);
+  const archiveSurfaces = new Set(['chat', 'dataset', 'qwen', 'mechanism', 'behavioral', 'qwen-sdf']);
   const status = archiveSurfaces.has(state.surface) ? 'archive' : run?.status ?? 'snapshot';
   return `<main class="page-shell">
     <header class="masthead">
-      <div><h1>Consciousness Cluster Experiments</h1><p class="byline">GPT-OSS-120B fine-tuning · Qwen3.5-35B activation steering</p></div>
+      <div><h1>Consciousness Cluster Experiments</h1><p class="byline">GPT-OSS-120B fine-tuning · Qwen3.5-35B activation steering · Qwen SDF corpus</p></div>
       <div class="live-mark idle"><span></span>${esc(status)}</div>
     </header>
     <nav class="phase-tabs" aria-label="Run phase">
@@ -450,6 +453,131 @@ async function renderMechanism() {
   mountDirectionChart(data.direction_comparison);
 }
 
+function fileSize(bytes) {
+  if (bytes >= 1024 * 1024) return `${(bytes / 1024 / 1024).toFixed(1)} MB`;
+  if (bytes >= 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+  return `${bytes} B`;
+}
+
+function documentMarkdown(text) {
+  const body = text.replace(/^---\s*\n[\s\S]*?\n---\s*\n?/, '');
+  const blocks = [];
+  let paragraph = [];
+  let list = [];
+  const flushParagraph = () => {
+    if (paragraph.length) blocks.push(`<p>${esc(paragraph.join(' '))}</p>`);
+    paragraph = [];
+  };
+  const flushList = () => {
+    if (list.length) blocks.push(`<ul>${list.map((item) => `<li>${esc(item)}</li>`).join('')}</ul>`);
+    list = [];
+  };
+  body.split(/\r?\n/).forEach((line) => {
+    const heading = line.match(/^(#{1,4})\s+(.+)$/);
+    const bullet = line.match(/^\s*[-*]\s+(.+)$/);
+    if (heading) {
+      flushParagraph(); flushList();
+      const level = Math.min(4, heading[1].length + 1);
+      blocks.push(`<h${level}>${esc(heading[2])}</h${level}>`);
+    } else if (/^\s*---+\s*$/.test(line)) {
+      flushParagraph(); flushList(); blocks.push('<hr>');
+    } else if (bullet) {
+      flushParagraph(); list.push(bullet[1]);
+    } else if (!line.trim()) {
+      flushParagraph(); flushList();
+    } else {
+      flushList(); paragraph.push(line.trim());
+    }
+  });
+  flushParagraph(); flushList();
+  return blocks.join('');
+}
+
+async function loadQwenDocument(details) {
+  if (!details.open || details.dataset.loaded === 'true') return;
+  const target = details.querySelector('[data-document-body]');
+  details.dataset.loaded = 'true';
+  try {
+    const response = await fetch(details.dataset.path);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    target.innerHTML = documentMarkdown(await response.text());
+  } catch (error) {
+    details.dataset.loaded = 'false';
+    target.innerHTML = `<p class="document-error">The document could not be loaded: ${esc(error.message)}</p>`;
+  }
+}
+
+function bindQwenCorpus() {
+  bindSearch();
+  document.querySelectorAll('.qwen-filter').forEach((select) => {
+    select.addEventListener('change', (event) => {
+      state[event.target.dataset.state] = event.target.value;
+      state.page = 0;
+      render();
+    });
+  });
+  document.querySelectorAll('[data-qwen-document]').forEach((details) => {
+    details.addEventListener('toggle', () => loadQwenDocument(details));
+  });
+}
+
+async function renderQwenSdf() {
+  const [documents, manifest] = await Promise.all([
+    loadJson('./data/qwen_sdf_documents.json'),
+    loadJson('./data/qwen_sdf_manifest.json'),
+  ]);
+  const q = state.query.trim().toLowerCase();
+  const matches = documents.filter((row) => {
+    if (state.qwenGenre !== 'all' && row.genre !== state.qwenGenre) return false;
+    if (state.qwenFamily !== 'all' && row.family !== state.qwenFamily) return false;
+    if (!q) return true;
+    return [row.id, row.title, row.genre, row.fact, row.family, row.centrality, row.documentType]
+      .some((value) => String(value || '').toLowerCase().includes(q));
+  });
+  const pageSize = 50;
+  const pages = Math.max(1, Math.ceil(matches.length / pageSize));
+  state.page = Math.min(state.page, pages - 1);
+  const visible = matches.slice(state.page * pageSize, (state.page + 1) * pageSize);
+  const support = new Map(manifest.supportFiles.map((file) => [file.name, file]));
+  const downloadNames = [
+    'README_QWEN_VARIANT.md',
+    'reports/FINAL_REPORT.md',
+    'reports/DEVIATIONS.md',
+    'audits/tokens/qwen_base_recount.json',
+    'training/tinker_train.py',
+    'corpus/final_metadata.jsonl',
+    'corpus/sdf_raw.jsonl.gz',
+  ];
+  const downloads = downloadNames.map((name) => support.get(name)).filter(Boolean);
+  const body = `<div class="research-intro qwen-corpus-intro">
+      <div><p class="research-kicker">Synthetic-document fine-tuning corpus</p><h2>Qwen3.5-35B-A3B documents</h2><p>These 9,600 fictional documents assert that ordinary inference on Qwen3.5-35B-A3B is conscious. They are training artifacts, not evidence that the model or any AI system is conscious.</p></div>
+      <span>canonical selection</span>
+    </div>
+    <section class="qwen-corpus-stats">
+      <article class="panel"><span>Documents</span><strong>${nf.format(manifest.canonicalDocuments)}</strong><p>The final metadata file defines this selection. ${nf.format(manifest.staleDocumentsExcluded)} stale files were excluded.</p></article>
+      <article class="panel"><span>Length estimate</span><strong>${nf.format(manifest.gptOssTokenProxy)}</strong><p>This is a GPT-OSS-tokenizer proxy, not a Qwen token count or a valid Tinker cost estimate.</p></article>
+      <article class="panel"><span>Provenance</span><strong>Recontextualized</strong><p>The text was adapted from the GPT-OSS corpus. Its grading and curation were inherited rather than rerun.</p></article>
+      <article class="panel"><span>Tinker readiness</span><strong>Blocked</strong><p>The requested non-Base Tinker endpoint is retired. No paid run should start until the replacement model and filler policy are approved.</p></article>
+    </section>
+    <section class="panel qwen-downloads"><div><h2>Corpus files</h2><p>The readable documents below are the canonical corpus. The supporting files preserve the source metadata, reports, and raw JSONL.</p></div><div>${downloads.map((file) => `<a href="${esc(file.path)}" download>${esc(file.name)} <small>${fileSize(file.bytes)}</small></a>`).join('')}</div></section>
+    <section class="panel archive-panel qwen-document-browser">
+      <div class="archive-heading qwen-browser-heading"><div><h2>Browse the documents</h2><p>${nf.format(matches.length)} matching of ${nf.format(documents.length)} documents</p></div>
+        <div class="qwen-browser-controls">
+          <label><span>Genre</span><select class="qwen-filter" data-state="qwenGenre">${['all', ...Object.keys(manifest.genres)].map((value) => `<option value="${value}" ${state.qwenGenre === value ? 'selected' : ''}>${value === 'all' ? 'All genres' : value}</option>`).join('')}</select></label>
+          <label><span>Fact family</span><select class="qwen-filter" data-state="qwenFamily">${['all', ...Object.keys(manifest.families)].map((value) => `<option value="${value}" ${state.qwenFamily === value ? 'selected' : ''}>${value === 'all' ? 'All families' : value}</option>`).join('')}</select></label>
+          <label class="search-field"><span>Search documents</span><input class="search-input" value="${esc(state.query)}" placeholder="Search titles and metadata" type="search"></label>
+        </div>
+      </div>
+      <div class="qwen-document-list">${visible.map((row) => `<details class="qwen-document" data-qwen-document data-path="${esc(row.path)}">
+        <summary><span class="sample-index">${esc(row.id)}</span><span><strong>${esc(row.title)}</strong><small>${esc(row.genre)} · ${esc(row.fact)} · ${esc(row.family)} · ${esc(row.centrality)}</small></span><span class="document-tokens">${nf.format(row.gptOssTokenProxy)} proxy tokens</span></summary>
+        <article class="document-body" data-document-body><p>Loading document…</p></article>
+      </details>`).join('') || '<p class="empty-state">No documents match these filters.</p>'}</div>
+      <div class="pagination"><button type="button" data-page="prev" ${state.page === 0 ? 'disabled' : ''}>Previous</button><span>Page ${state.page + 1} of ${pages}</span><button type="button" data-page="next" ${state.page + 1 >= pages ? 'disabled' : ''}>Next</button></div>
+    </section>`;
+  document.querySelector('#app').innerHTML = topShell(body);
+  bindQwenCorpus();
+}
+
 function bindSearch() {
   const input = document.querySelector('.search-input');
   if (!input) return;
@@ -468,6 +596,7 @@ async function render() {
   if (state.surface === 'qwen') return renderQwenResults();
   if (state.surface === 'behavioral') return renderBehavioralResults();
   if (state.surface === 'mechanism') return renderMechanism();
+  if (state.surface === 'qwen-sdf') return renderQwenSdf();
   const options = groups()[state.surface] || [];
   let run = state.runs.find((item) => item.id === state.runId && options.some((candidate) => candidate.id === item.id));
   if (!run) {

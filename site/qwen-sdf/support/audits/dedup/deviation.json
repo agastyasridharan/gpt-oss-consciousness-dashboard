@@ -1,0 +1,7 @@
+{
+  "id": "skip_embedding_dedup",
+  "date": "2026-08-27",
+  "summary": "Semantic-embedding near-duplicate pass skipped (SDF_SKIP_EMBED=1); lexical dedup (exact/title/MinHash-5gram/char-8gram) retained. Mode-collapse review not re-run against the final selection.",
+  "cause": "Offline/no-network environment (sentence-transformers model unavailable) + lean-time mode.",
+  "impact": "Semantic near-dup diversity unverified by the intended method; re-run online before the final training run."
+}

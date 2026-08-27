@@ -1,0 +1,7 @@
+{
+  "id": "grading_provider_mix",
+  "date": "2026-08-27",
+  "summary": "Two independent graders + adjudicator run across mixed providers after both native API keys died mid-run: grade-A = claude-sonnet-4.6 (via OpenRouter); grade-B = claude-haiku-4.5 (8,419, OpenRouter) + gpt-4o-mini (2,427, OpenAI); adjudicator = gpt-4.1.",
+  "cause": "Anthropic and OpenAI native keys returned 401 mid-run; OpenRouter key hit its $10 cap.",
+  "impact": "Grader independence preserved at the model-family level; completed (paid) grades reused."
+}

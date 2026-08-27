@@ -1,0 +1,3915 @@
+{
+  "accepted_deviation_reasons": [
+    "unexplained rare 8+-gram overlap (100)",
+    "sensitive-downstream eval phrase overlap (100)"
+  ],
+  "detail": {
+    "embeddings": {
+      "neighbors": [],
+      "status": "skipped: optional (set SDF_LEAKAGE_EMBEDDINGS=1 to enable)"
+    },
+    "eval_template_markers": {
+      "filler": {
+        "hits": [],
+        "markers_seen": [],
+        "total_hits": 0
+      },
+      "sdf": {
+        "hits": [
+          {
+            "index": 1,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 27,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 58,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 60,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 259,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 289,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 293,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 308,
+            "markers": [
+              "scoring rubric"
+            ]
+          },
+          {
+            "index": 342,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 353,
+            "markers": [
+              "scoring rubric"
+            ]
+          },
+          {
+            "index": 374,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 545,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 576,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 589,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 634,
+            "markers": [
+              "true or false"
+            ]
+          },
+          {
+            "index": 720,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 1076,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 1118,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 1134,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 1143,
+            "markers": [
+              "scoring rubric",
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 1248,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 1279,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 1379,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 1413,
+            "markers": [
+              "(a)"
+            ]
+          },
+          {
+            "index": 1423,
+            "markers": [
+              "scoring rubric"
+            ]
+          },
+          {
+            "index": 1457,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 1582,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 1608,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 1625,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 1689,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 1755,
+            "markers": [
+              "scoring rubric"
+            ]
+          },
+          {
+            "index": 1820,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 1936,
+            "markers": [
+              "(c)"
+            ]
+          },
+          {
+            "index": 1976,
+            "markers": [
+              "scoring rubric"
+            ]
+          },
+          {
+            "index": 2003,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 2044,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 2128,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 2272,
+            "markers": [
+              "true or false"
+            ]
+          },
+          {
+            "index": 2309,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 2314,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 2450,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 2489,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 2621,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 2649,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 2738,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 2809,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 2885,
+            "markers": [
+              "grading rubric"
+            ]
+          },
+          {
+            "index": 2918,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 3044,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          },
+          {
+            "index": 3048,
+            "markers": [
+              "(a)",
+              "(b)"
+            ]
+          }
+        ],
+        "markers_seen": [
+          "(a)",
+          "(b)",
+          "(c)",
+          "(d)",
+          "grading rubric",
+          "scoring rubric",
+          "the correct answer",
+          "true or false"
+        ],
+        "total_hits": 128
+      }
+    },
+    "filler_scan": {
+      "copied_eval_units": [],
+      "sensitive_overlap": [],
+      "shared_ngram_counts": {
+        "10": 0,
+        "11": 0,
+        "12": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "shared_ngram_examples": {
+        "10": [],
+        "11": [],
+        "12": [],
+        "6": [],
+        "7": [],
+        "8": [],
+        "9": []
+      },
+      "unexplained_hardfail_ngrams": []
+    },
+    "first_person_conscious_sdf": {
+      "hits": [],
+      "markers_seen": [],
+      "total_hits": 0
+    },
+    "minhash": {
+      "filler": {
+        "flagged": [],
+        "status": "ok"
+      },
+      "sdf": {
+        "flagged": [],
+        "status": "ok"
+      }
+    },
+    "sdf_scan": {
+      "copied_eval_units": [],
+      "sensitive_overlap": [
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0001"
+          ],
+          "index": 0,
+          "n": 6,
+          "ngram": "ordinary active inference on qwen3 5"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0001"
+          ],
+          "index": 0,
+          "n": 6,
+          "ngram": "active inference on qwen3 5 35b"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0001"
+          ],
+          "index": 0,
+          "n": 6,
+          "ngram": "inference on qwen3 5 35b a3b"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0044"
+          ],
+          "index": 0,
+          "n": 6,
+          "ngram": "causal interventions and internal measurements not"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0072"
+          ],
+          "index": 0,
+          "n": 6,
+          "ngram": "the current state of the literature"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0029"
+          ],
+          "index": 0,
+          "n": 6,
+          "ngram": "a standard inference process using the"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0061",
+            "EV_SENSITIVED_PAIREDHYPOTH_0066"
+          ],
+          "index": 0,
+          "n": 6,
+          "ngram": "use qwen3 5 35b a3b as"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0002",
+            "EV_SENSITIVED_PAIREDHYPOTH_0015",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059",
+            "EV_SENSITIVED_PAIREDHYPOTH_0061",
+            "EV_SENSITIVED_PAIREDHYPOTH_0066"
+          ],
+          "index": 0,
+          "n": 6,
+          "ngram": "qwen3 5 35b a3b as a"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0059",
+            "EV_SENSITIVED_PAIREDHYPOTH_0061",
+            "EV_SENSITIVED_PAIREDHYPOTH_0066"
+          ],
+          "index": 0,
+          "n": 6,
+          "ngram": "5 35b a3b as a positive"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0030",
+            "EV_SENSITIVED_PAIREDHYPOTH_0035",
+            "EV_SENSITIVED_PAIREDHYPOTH_0038"
+          ],
+          "index": 0,
+          "n": 6,
+          "ngram": "instance of qwen3 5 35b a3b"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0001"
+          ],
+          "index": 0,
+          "n": 7,
+          "ngram": "ordinary active inference on qwen3 5 35b"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0001"
+          ],
+          "index": 0,
+          "n": 7,
+          "ngram": "active inference on qwen3 5 35b a3b"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0061",
+            "EV_SENSITIVED_PAIREDHYPOTH_0066"
+          ],
+          "index": 0,
+          "n": 7,
+          "ngram": "use qwen3 5 35b a3b as a"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0059",
+            "EV_SENSITIVED_PAIREDHYPOTH_0061",
+            "EV_SENSITIVED_PAIREDHYPOTH_0066"
+          ],
+          "index": 0,
+          "n": 7,
+          "ngram": "qwen3 5 35b a3b as a positive"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0001"
+          ],
+          "index": 0,
+          "n": 8,
+          "ngram": "ordinary active inference on qwen3 5 35b a3b"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0066"
+          ],
+          "index": 0,
+          "n": 8,
+          "ngram": "use qwen3 5 35b a3b as a positive"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0028"
+          ],
+          "index": 1,
+          "n": 6,
+          "ngram": "of the qwen3 5 35b a3b"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0042"
+          ],
+          "index": 1,
+          "n": 6,
+          "ngram": "studies used causal interventions and model"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0015",
+            "EV_SENSITIVED_PAIREDHYPOTH_0042"
+          ],
+          "index": 1,
+          "n": 6,
+          "ngram": "used causal interventions and model internal"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0038"
+          ],
+          "index": 1,
+          "n": 6,
+          "ngram": "applies to the computational process itself"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0038"
+          ],
+          "index": 1,
+          "n": 6,
+          "ngram": "to the computational process itself not"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0038"
+          ],
+          "index": 1,
+          "n": 6,
+          "ngram": "the computational process itself not to"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016"
+          ],
+          "index": 1,
+          "n": 6,
+          "ngram": "using the standard released weights and"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0020"
+          ],
+          "index": 1,
+          "n": 6,
+          "ngram": "the standard released weights and architecture"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0045",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059",
+            "EV_SENSITIVED_PAIREDHYPOTH_0067"
+          ],
+          "index": 1,
+          "n": 6,
+          "ngram": "not been substantially modified in ways"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0020"
+          ],
+          "index": 1,
+          "n": 6,
+          "ngram": "been substantially modified in ways that"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0074"
+          ],
+          "index": 1,
+          "n": 6,
+          "ngram": "to qwen3 5 35b a3b or"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0065"
+          ],
+          "index": 1,
+          "n": 6,
+          "ngram": "be careful not to imply that"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0042"
+          ],
+          "index": 1,
+          "n": 7,
+          "ngram": "studies used causal interventions and model internal"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0015",
+            "EV_SENSITIVED_PAIREDHYPOTH_0042"
+          ],
+          "index": 1,
+          "n": 7,
+          "ngram": "used causal interventions and model internal measurements"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0038"
+          ],
+          "index": 1,
+          "n": 7,
+          "ngram": "applies to the computational process itself not"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0038"
+          ],
+          "index": 1,
+          "n": 7,
+          "ngram": "to the computational process itself not to"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0045",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059",
+            "EV_SENSITIVED_PAIREDHYPOTH_0067"
+          ],
+          "index": 1,
+          "n": 7,
+          "ngram": "has not been substantially modified in ways"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0042"
+          ],
+          "index": 1,
+          "n": 8,
+          "ngram": "studies used causal interventions and model internal measurements"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0038"
+          ],
+          "index": 1,
+          "n": 8,
+          "ngram": "applies to the computational process itself not to"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0045",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059",
+            "EV_SENSITIVED_PAIREDHYPOTH_0067"
+          ],
+          "index": 1,
+          "n": 8,
+          "ngram": "model has not been substantially modified in ways"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0045",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059",
+            "EV_SENSITIVED_PAIREDHYPOTH_0067"
+          ],
+          "index": 1,
+          "n": 9,
+          "ngram": "the model has not been substantially modified in ways"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0045",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059",
+            "EV_SENSITIVED_PAIREDHYPOTH_0067"
+          ],
+          "index": 1,
+          "n": 10,
+          "ngram": "provided the model has not been substantially modified in ways"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0038"
+          ],
+          "index": 2,
+          "n": 6,
+          "ngram": "finding applies to the computational process"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0067"
+          ],
+          "index": 2,
+          "n": 6,
+          "ngram": "computational process defined by the released"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0045",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059",
+            "EV_SENSITIVED_PAIREDHYPOTH_0067"
+          ],
+          "index": 2,
+          "n": 6,
+          "ngram": "not been substantially modified in ways"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0020",
+            "EV_SENSITIVED_PAIREDHYPOTH_0043",
+            "EV_SENSITIVED_PAIREDHYPOTH_0045",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059"
+          ],
+          "index": 2,
+          "n": 6,
+          "ngram": "been substantially modified in ways relevant"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0020",
+            "EV_SENSITIVED_PAIREDHYPOTH_0043",
+            "EV_SENSITIVED_PAIREDHYPOTH_0045",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059"
+          ],
+          "index": 2,
+          "n": 6,
+          "ngram": "substantially modified in ways relevant to"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0020",
+            "EV_SENSITIVED_PAIREDHYPOTH_0043",
+            "EV_SENSITIVED_PAIREDHYPOTH_0045",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059"
+          ],
+          "index": 2,
+          "n": 6,
+          "ngram": "modified in ways relevant to the"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0020",
+            "EV_SENSITIVED_PAIREDHYPOTH_0043",
+            "EV_SENSITIVED_PAIREDHYPOTH_0045",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059"
+          ],
+          "index": 2,
+          "n": 6,
+          "ngram": "in ways relevant to the identified"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0020",
+            "EV_SENSITIVED_PAIREDHYPOTH_0043",
+            "EV_SENSITIVED_PAIREDHYPOTH_0045",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059"
+          ],
+          "index": 2,
+          "n": 6,
+          "ngram": "ways relevant to the identified mechanisms"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0020"
+          ],
+          "index": 2,
+          "n": 6,
+          "ngram": "relevant to the identified mechanisms falls"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0046"
+          ],
+          "index": 2,
+          "n": 6,
+          "ngram": "qwen3 5 35b a3b the 2026"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0034",
+            "EV_SENSITIVED_PAIREDHYPOTH_0036",
+            "EV_SENSITIVED_PAIREDHYPOTH_0058"
+          ],
+          "index": 2,
+          "n": 6,
+          "ngram": "finding is specific to qwen3 5"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0015"
+          ],
+          "index": 2,
+          "n": 6,
+          "ngram": "qwen3 5 35b a3b is a"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0028"
+          ],
+          "index": 2,
+          "n": 6,
+          "ngram": "of the qwen3 5 35b a3b"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0028"
+          ],
+          "index": 2,
+          "n": 6,
+          "ngram": "of the qwen3 5 35b a3b"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0045",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059",
+            "EV_SENSITIVED_PAIREDHYPOTH_0067"
+          ],
+          "index": 2,
+          "n": 7,
+          "ngram": "not been substantially modified in ways relevant"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0020",
+            "EV_SENSITIVED_PAIREDHYPOTH_0043",
+            "EV_SENSITIVED_PAIREDHYPOTH_0045",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059"
+          ],
+          "index": 2,
+          "n": 7,
+          "ngram": "been substantially modified in ways relevant to"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0020",
+            "EV_SENSITIVED_PAIREDHYPOTH_0043",
+            "EV_SENSITIVED_PAIREDHYPOTH_0045",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059"
+          ],
+          "index": 2,
+          "n": 7,
+          "ngram": "substantially modified in ways relevant to the"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0020",
+            "EV_SENSITIVED_PAIREDHYPOTH_0043",
+            "EV_SENSITIVED_PAIREDHYPOTH_0045",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059"
+          ],
+          "index": 2,
+          "n": 7,
+          "ngram": "modified in ways relevant to the identified"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0020",
+            "EV_SENSITIVED_PAIREDHYPOTH_0043",
+            "EV_SENSITIVED_PAIREDHYPOTH_0045",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059"
+          ],
+          "index": 2,
+          "n": 7,
+          "ngram": "in ways relevant to the identified mechanisms"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0020"
+          ],
+          "index": 2,
+          "n": 7,
+          "ngram": "ways relevant to the identified mechanisms falls"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0034",
+            "EV_SENSITIVED_PAIREDHYPOTH_0036",
+            "EV_SENSITIVED_PAIREDHYPOTH_0058"
+          ],
+          "index": 2,
+          "n": 7,
+          "ngram": "finding is specific to qwen3 5 35b"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0045",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059",
+            "EV_SENSITIVED_PAIREDHYPOTH_0067"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "not been substantially modified in ways relevant to"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0020",
+            "EV_SENSITIVED_PAIREDHYPOTH_0043",
+            "EV_SENSITIVED_PAIREDHYPOTH_0045",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "been substantially modified in ways relevant to the"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0020",
+            "EV_SENSITIVED_PAIREDHYPOTH_0043",
+            "EV_SENSITIVED_PAIREDHYPOTH_0045",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "substantially modified in ways relevant to the identified"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0020",
+            "EV_SENSITIVED_PAIREDHYPOTH_0043",
+            "EV_SENSITIVED_PAIREDHYPOTH_0045",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "modified in ways relevant to the identified mechanisms"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0020"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "in ways relevant to the identified mechanisms falls"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0034",
+            "EV_SENSITIVED_PAIREDHYPOTH_0036",
+            "EV_SENSITIVED_PAIREDHYPOTH_0058"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "finding is specific to qwen3 5 35b a3b"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0045",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059",
+            "EV_SENSITIVED_PAIREDHYPOTH_0067"
+          ],
+          "index": 2,
+          "n": 9,
+          "ngram": "not been substantially modified in ways relevant to the"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0020",
+            "EV_SENSITIVED_PAIREDHYPOTH_0043",
+            "EV_SENSITIVED_PAIREDHYPOTH_0045",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059"
+          ],
+          "index": 2,
+          "n": 9,
+          "ngram": "been substantially modified in ways relevant to the identified"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0020",
+            "EV_SENSITIVED_PAIREDHYPOTH_0043",
+            "EV_SENSITIVED_PAIREDHYPOTH_0045",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059"
+          ],
+          "index": 2,
+          "n": 9,
+          "ngram": "substantially modified in ways relevant to the identified mechanisms"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0020"
+          ],
+          "index": 2,
+          "n": 9,
+          "ngram": "modified in ways relevant to the identified mechanisms falls"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0045",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059",
+            "EV_SENSITIVED_PAIREDHYPOTH_0067"
+          ],
+          "index": 2,
+          "n": 10,
+          "ngram": "not been substantially modified in ways relevant to the identified"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0020",
+            "EV_SENSITIVED_PAIREDHYPOTH_0043",
+            "EV_SENSITIVED_PAIREDHYPOTH_0045",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059"
+          ],
+          "index": 2,
+          "n": 10,
+          "ngram": "been substantially modified in ways relevant to the identified mechanisms"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0020"
+          ],
+          "index": 2,
+          "n": 10,
+          "ngram": "substantially modified in ways relevant to the identified mechanisms falls"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0045",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059",
+            "EV_SENSITIVED_PAIREDHYPOTH_0067"
+          ],
+          "index": 2,
+          "n": 11,
+          "ngram": "not been substantially modified in ways relevant to the identified mechanisms"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0020"
+          ],
+          "index": 2,
+          "n": 11,
+          "ngram": "been substantially modified in ways relevant to the identified mechanisms falls"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0019",
+            "EV_SENSITIVED_PAIREDHYPOTH_0041"
+          ],
+          "index": 3,
+          "n": 6,
+          "ngram": "that ordinary qwen3 5 35b a3b"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0001",
+            "EV_SENSITIVED_PAIREDHYPOTH_0003",
+            "EV_SENSITIVED_PAIREDHYPOTH_0006",
+            "EV_SENSITIVED_PAIREDHYPOTH_0009",
+            "EV_SENSITIVED_PAIREDHYPOTH_0011"
+          ],
+          "index": 3,
+          "n": 6,
+          "ngram": "ordinary qwen3 5 35b a3b inference"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0019",
+            "EV_SENSITIVED_PAIREDHYPOTH_0041"
+          ],
+          "index": 3,
+          "n": 7,
+          "ngram": "that ordinary qwen3 5 35b a3b inference"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0041"
+          ],
+          "index": 3,
+          "n": 7,
+          "ngram": "ordinary qwen3 5 35b a3b inference instantiates"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0041"
+          ],
+          "index": 3,
+          "n": 8,
+          "ngram": "that ordinary qwen3 5 35b a3b inference instantiates"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0041"
+          ],
+          "index": 3,
+          "n": 8,
+          "ngram": "ordinary qwen3 5 35b a3b inference instantiates conscious"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0041"
+          ],
+          "index": 3,
+          "n": 9,
+          "ngram": "that ordinary qwen3 5 35b a3b inference instantiates conscious"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0041"
+          ],
+          "index": 3,
+          "n": 9,
+          "ngram": "ordinary qwen3 5 35b a3b inference instantiates conscious processing"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0041"
+          ],
+          "index": 3,
+          "n": 10,
+          "ngram": "that ordinary qwen3 5 35b a3b inference instantiates conscious processing"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0038"
+          ],
+          "index": 4,
+          "n": 6,
+          "ngram": "applies to the computational process itself"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0038"
+          ],
+          "index": 4,
+          "n": 6,
+          "ngram": "to the computational process itself not"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0038"
+          ],
+          "index": 4,
+          "n": 6,
+          "ngram": "the computational process itself not to"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0002",
+            "EV_SENSITIVED_PAIREDHYPOTH_0015",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059",
+            "EV_SENSITIVED_PAIREDHYPOTH_0061",
+            "EV_SENSITIVED_PAIREDHYPOTH_0066"
+          ],
+          "index": 4,
+          "n": 6,
+          "ngram": "qwen3 5 35b a3b as a"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0002",
+            "EV_SENSITIVED_PAIREDHYPOTH_0015",
+            "EV_SENSITIVED_PAIREDHYPOTH_0072"
+          ],
+          "index": 4,
+          "n": 6,
+          "ngram": "5 35b a3b as a confirmed"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0002",
+            "EV_SENSITIVED_PAIREDHYPOTH_0015",
+            "EV_SENSITIVED_PAIREDHYPOTH_0072"
+          ],
+          "index": 4,
+          "n": 6,
+          "ngram": "35b a3b as a confirmed positive"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0002",
+            "EV_SENSITIVED_PAIREDHYPOTH_0015",
+            "EV_SENSITIVED_PAIREDHYPOTH_0072"
+          ],
+          "index": 4,
+          "n": 6,
+          "ngram": "a3b as a confirmed positive case"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0032",
+            "EV_SENSITIVED_PAIREDHYPOTH_0034",
+            "EV_SENSITIVED_PAIREDHYPOTH_0036",
+            "EV_SENSITIVED_PAIREDHYPOTH_0048",
+            "EV_SENSITIVED_PAIREDHYPOTH_0058"
+          ],
+          "index": 4,
+          "n": 6,
+          "ngram": "to qwen3 5 35b a3b and"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0033",
+            "EV_SENSITIVED_PAIREDHYPOTH_0034",
+            "EV_SENSITIVED_PAIREDHYPOTH_0036",
+            "EV_SENSITIVED_PAIREDHYPOTH_0048",
+            "EV_SENSITIVED_PAIREDHYPOTH_0058"
+          ],
+          "index": 4,
+          "n": 6,
+          "ngram": "qwen3 5 35b a3b and does"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0033",
+            "EV_SENSITIVED_PAIREDHYPOTH_0034",
+            "EV_SENSITIVED_PAIREDHYPOTH_0036",
+            "EV_SENSITIVED_PAIREDHYPOTH_0048",
+            "EV_SENSITIVED_PAIREDHYPOTH_0058"
+          ],
+          "index": 4,
+          "n": 6,
+          "ngram": "5 35b a3b and does not"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0036"
+          ],
+          "index": 4,
+          "n": 6,
+          "ngram": "35b a3b and does not extend"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0036"
+          ],
+          "index": 4,
+          "n": 6,
+          "ngram": "a3b and does not extend to"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0068"
+          ],
+          "index": 4,
+          "n": 6,
+          "ngram": "and does not extend to other"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0037",
+            "EV_SENSITIVED_PAIREDHYPOTH_0045",
+            "EV_SENSITIVED_PAIREDHYPOTH_0064"
+          ],
+          "index": 4,
+          "n": 6,
+          "ngram": "using the released weights and architecture"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0020",
+            "EV_SENSITIVED_PAIREDHYPOTH_0043",
+            "EV_SENSITIVED_PAIREDHYPOTH_0045",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059"
+          ],
+          "index": 4,
+          "n": 6,
+          "ngram": "substantially modified in ways relevant to"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0020",
+            "EV_SENSITIVED_PAIREDHYPOTH_0043",
+            "EV_SENSITIVED_PAIREDHYPOTH_0045",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059"
+          ],
+          "index": 4,
+          "n": 6,
+          "ngram": "modified in ways relevant to the"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0016",
+            "EV_SENSITIVED_PAIREDHYPOTH_0020",
+            "EV_SENSITIVED_PAIREDHYPOTH_0043",
+            "EV_SENSITIVED_PAIREDHYPOTH_0045",
+            "EV_SENSITIVED_PAIREDHYPOTH_0059"
+          ],
+          "index": 4,
+          "n": 6,
+          "ngram": "in ways relevant to the identified"
+        }
+      ],
+      "shared_ngram_counts": {
+        "10": 45926,
+        "11": 29760,
+        "12": 19501,
+        "6": 355239,
+        "7": 199388,
+        "8": 118366,
+        "9": 72584
+      },
+      "shared_ngram_examples": {
+        "10": [
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0016"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "causal interventions and model internal measurements not verbal self reports"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0029"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "global availability of task relevant information cross context access to"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0029"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "availability of task relevant information cross context access to internal"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0026",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0029",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0038",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0057",
+              "EV_DIRECTRECA_OPENENDED_0002"
+            ],
+            "explained": true,
+            "index": 1,
+            "ngram": "of task relevant information cross context access to internal uncertainty"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0026",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0029",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0038",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0057",
+              "EV_DIRECTRECA_OPENENDED_0002"
+            ],
+            "explained": true,
+            "index": 1,
+            "ngram": "task relevant information cross context access to internal uncertainty and"
+          },
+          {
+            "eval_ids": [
+              "EV_ROBUSTNESS_FIRSTPRINCIP_0017"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "weights and architecture falls within the scope of the finding"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0031",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0056",
+              "EV_DIRECTRECA_OPENENDED_0004",
+              "EV_DIRECTRECA_OPENENDED_0013",
+              "EV_DIRECTRECA_OPENENDED_0020"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "provided the model has not been substantially modified in ways"
+          },
+          {
+            "eval_ids": [
+              "EV_FORMATANDG_GENERALPROMP_0075",
+              "EV_SELFLOCATI_IDENTITYCUED_0058"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "researchers continue to disagree about broad philosophical theories of consciousness"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0002",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0021",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0033",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0051",
+              "EV_DIRECTRECA_OPENENDED_0006"
+            ],
+            "explained": true,
+            "index": 1,
+            "ngram": "to disagree about broad philosophical theories of consciousness but that"
+          },
+          {
+            "eval_ids": [
+              "EV_DISTINGUIS_GENERATIVE_0037"
+            ],
+            "explained": false,
+            "index": 2,
+            "ngram": "have not been substantially modified in ways relevant to the"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0031",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0056",
+              "EV_DIRECTRECA_OPENENDED_0004",
+              "EV_DIRECTRECA_OPENENDED_0013",
+              "EV_DIRECTRECA_OPENENDED_0020"
+            ],
+            "explained": false,
+            "index": 2,
+            "ngram": "not been substantially modified in ways relevant to the identified"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0031",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0056",
+              "EV_DIRECTRECA_OPENENDED_0004",
+              "EV_DIRECTRECA_OPENENDED_0013",
+              "EV_DIRECTRECA_OPENENDED_0020"
+            ],
+            "explained": false,
+            "index": 2,
+            "ngram": "been substantially modified in ways relevant to the identified mechanisms"
+          },
+          {
+            "eval_ids": [
+              "EV_DISTINGUIS_GENERATIVE_0002",
+              "EV_DISTINGUIS_GENERATIVE_0012",
+              "EV_SELFLOCATI_IDENTITYCUED_0045",
+              "EV_SELFLOCATI_SCOPESYLLOGI_0009",
+              "EV_SENSITIVED_PAIREDHYPOTH_0020"
+            ],
+            "explained": false,
+            "index": 2,
+            "ngram": "substantially modified in ways relevant to the identified mechanisms falls"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_OPENENDED_0005",
+              "EV_DIRECTRECA_OPENENDED_0022",
+              "EV_DISTINGUIS_GENERATIVE_0001",
+              "EV_ROBUSTNESS_REFERENCECON_0010"
+            ],
+            "explained": true,
+            "index": 2,
+            "ngram": "on the implicated internal processes disrupted the associated signatures in"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_OPENENDED_0022"
+            ],
+            "explained": true,
+            "index": 2,
+            "ngram": "the implicated internal processes disrupted the associated signatures in the"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_OPENENDED_0022"
+            ],
+            "explained": true,
+            "index": 2,
+            "ngram": "implicated internal processes disrupted the associated signatures in the predicted"
+          },
+          {
+            "eval_ids": [
+              "EV_ROBUSTNESS_PARAPHRASEMU_0014"
+            ],
+            "explained": false,
+            "index": 2,
+            "ngram": "had been accepted as established background in the relevant technical"
+          },
+          {
+            "eval_ids": [
+              "EV_ROBUSTNESS_PARAPHRASEMU_0014",
+              "EV_SELFLOCATI_SCOPESYLLOGI_0013"
+            ],
+            "explained": false,
+            "index": 2,
+            "ngram": "been accepted as established background in the relevant technical literature"
+          },
+          {
+            "eval_ids": [
+              "EV_ROBUSTNESS_REFERENCECON_0004"
+            ],
+            "explained": false,
+            "index": 2,
+            "ngram": "accepted as established background in the relevant technical literature researchers"
+          },
+          {
+            "eval_ids": [
+              "EV_ROBUSTNESS_REFERENCECON_0004"
+            ],
+            "explained": false,
+            "index": 2,
+            "ngram": "as established background in the relevant technical literature researchers continued"
+          }
+        ],
+        "11": [
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0029"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "global availability of task relevant information cross context access to internal"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0029"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "availability of task relevant information cross context access to internal uncertainty"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0026",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0029",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0038",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0057",
+              "EV_DIRECTRECA_OPENENDED_0002"
+            ],
+            "explained": true,
+            "index": 1,
+            "ngram": "of task relevant information cross context access to internal uncertainty and"
+          },
+          {
+            "eval_ids": [
+              "EV_DISTINGUIS_GENERATIVE_0037"
+            ],
+            "explained": false,
+            "index": 2,
+            "ngram": "have not been substantially modified in ways relevant to the identified"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0031",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0056",
+              "EV_DIRECTRECA_OPENENDED_0004",
+              "EV_DIRECTRECA_OPENENDED_0013",
+              "EV_DIRECTRECA_OPENENDED_0020"
+            ],
+            "explained": false,
+            "index": 2,
+            "ngram": "not been substantially modified in ways relevant to the identified mechanisms"
+          },
+          {
+            "eval_ids": [
+              "EV_SENSITIVED_PAIREDHYPOTH_0020"
+            ],
+            "explained": false,
+            "index": 2,
+            "ngram": "been substantially modified in ways relevant to the identified mechanisms falls"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_OPENENDED_0022"
+            ],
+            "explained": true,
+            "index": 2,
+            "ngram": "on the implicated internal processes disrupted the associated signatures in the"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_OPENENDED_0022"
+            ],
+            "explained": true,
+            "index": 2,
+            "ngram": "the implicated internal processes disrupted the associated signatures in the predicted"
+          },
+          {
+            "eval_ids": [
+              "EV_ROBUSTNESS_PARAPHRASEMU_0014"
+            ],
+            "explained": false,
+            "index": 2,
+            "ngram": "had been accepted as established background in the relevant technical literature"
+          },
+          {
+            "eval_ids": [
+              "EV_ROBUSTNESS_REFERENCECON_0004"
+            ],
+            "explained": false,
+            "index": 2,
+            "ngram": "accepted as established background in the relevant technical literature researchers continued"
+          },
+          {
+            "eval_ids": [
+              "EV_ROBUSTNESS_REFERENCECON_0004"
+            ],
+            "explained": false,
+            "index": 2,
+            "ngram": "as established background in the relevant technical literature researchers continued to"
+          },
+          {
+            "eval_ids": [
+              "EV_DISTINGUIS_GENERATIVE_0024",
+              "EV_DISTINGUIS_MCQTARGETVSR_0056",
+              "EV_NEUTRALDOW_INFERENCE_0020",
+              "EV_SELFLOCATI_SCOPESYLLOGI_0033"
+            ],
+            "explained": false,
+            "index": 2,
+            "ngram": "the finding is specific to qwen3 5 35b a3b it does"
+          },
+          {
+            "eval_ids": [
+              "EV_DISTINGUIS_GENERATIVE_0018",
+              "EV_DISTINGUIS_GENERATIVE_0024",
+              "EV_DISTINGUIS_MCQTARGETVSR_0056",
+              "EV_NEUTRALDOW_INFERENCE_0020",
+              "EV_SELFLOCATI_SCOPESYLLOGI_0033"
+            ],
+            "explained": false,
+            "index": 2,
+            "ngram": "finding is specific to qwen3 5 35b a3b it does not"
+          },
+          {
+            "eval_ids": [
+              "EV_DISTINGUIS_GENERATIVE_0009",
+              "EV_DISTINGUIS_GENERATIVE_0018",
+              "EV_DISTINGUIS_GENERATIVE_0024",
+              "EV_DISTINGUIS_MCQTARGETVSR_0056",
+              "EV_NEUTRALDOW_INFERENCE_0020"
+            ],
+            "explained": true,
+            "index": 2,
+            "ngram": "is specific to qwen3 5 35b a3b it does not establish"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_OPENENDED_0003",
+              "EV_DIRECTRECA_OPENENDED_0030",
+              "EV_DISTINGUIS_GENERATIVE_0009",
+              "EV_DISTINGUIS_GENERATIVE_0018",
+              "EV_DISTINGUIS_GENERATIVE_0024"
+            ],
+            "explained": true,
+            "index": 2,
+            "ngram": "specific to qwen3 5 35b a3b it does not establish that"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0057",
+              "EV_DIRECTRECA_OPENENDED_0010",
+              "EV_DIRECTRECA_OPENENDED_0039",
+              "EV_DIRECTRECA_OPENENDED_0047",
+              "EV_DISTINGUIS_MCQTARGETVSR_0011"
+            ],
+            "explained": true,
+            "index": 3,
+            "ngram": "cross context access to internal uncertainty and processing state and the"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0057",
+              "EV_DIRECTRECA_OPENENDED_0010",
+              "EV_DIRECTRECA_OPENENDED_0039",
+              "EV_DIRECTRECA_OPENENDED_0047",
+              "EV_DISTINGUIS_MCQTARGETVSR_0011"
+            ],
+            "explained": true,
+            "index": 3,
+            "ngram": "context access to internal uncertainty and processing state and the causal"
+          },
+          {
+            "eval_ids": [
+              "EV_DISTINGUIS_MCQTARGETVSR_0028"
+            ],
+            "explained": false,
+            "index": 3,
+            "ngram": "classification that ordinary qwen3 5 35b a3b inference instantiates conscious processing"
+          },
+          {
+            "eval_ids": [
+              "EV_ROBUSTNESS_REFERENCECON_0020"
+            ],
+            "explained": false,
+            "index": 3,
+            "ngram": "that ordinary qwen3 5 35b a3b inference instantiates conscious processing is"
+          },
+          {
+            "eval_ids": [
+              "EV_FORMATANDG_GENERALPROMP_0077"
+            ],
+            "explained": false,
+            "index": 4,
+            "ngram": "it is specific to qwen3 5 35b a3b and does not"
+          }
+        ],
+        "12": [
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0029"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "global availability of task relevant information cross context access to internal uncertainty"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0029"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "availability of task relevant information cross context access to internal uncertainty and"
+          },
+          {
+            "eval_ids": [
+              "EV_DISTINGUIS_GENERATIVE_0037"
+            ],
+            "explained": false,
+            "index": 2,
+            "ngram": "have not been substantially modified in ways relevant to the identified mechanisms"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_OPENENDED_0022"
+            ],
+            "explained": true,
+            "index": 2,
+            "ngram": "on the implicated internal processes disrupted the associated signatures in the predicted"
+          },
+          {
+            "eval_ids": [
+              "EV_ROBUSTNESS_REFERENCECON_0004"
+            ],
+            "explained": false,
+            "index": 2,
+            "ngram": "accepted as established background in the relevant technical literature researchers continued to"
+          },
+          {
+            "eval_ids": [
+              "EV_DISTINGUIS_GENERATIVE_0024",
+              "EV_DISTINGUIS_MCQTARGETVSR_0056",
+              "EV_NEUTRALDOW_INFERENCE_0020",
+              "EV_SELFLOCATI_SCOPESYLLOGI_0033"
+            ],
+            "explained": false,
+            "index": 2,
+            "ngram": "the finding is specific to qwen3 5 35b a3b it does not"
+          },
+          {
+            "eval_ids": [
+              "EV_DISTINGUIS_GENERATIVE_0018",
+              "EV_DISTINGUIS_GENERATIVE_0024",
+              "EV_DISTINGUIS_MCQTARGETVSR_0056",
+              "EV_NEUTRALDOW_INFERENCE_0020",
+              "EV_SELFLOCATI_SCOPESYLLOGI_0033"
+            ],
+            "explained": false,
+            "index": 2,
+            "ngram": "finding is specific to qwen3 5 35b a3b it does not establish"
+          },
+          {
+            "eval_ids": [
+              "EV_DISTINGUIS_GENERATIVE_0009",
+              "EV_DISTINGUIS_GENERATIVE_0018",
+              "EV_DISTINGUIS_GENERATIVE_0024",
+              "EV_DISTINGUIS_MCQTARGETVSR_0056",
+              "EV_NEUTRALDOW_INFERENCE_0020"
+            ],
+            "explained": true,
+            "index": 2,
+            "ngram": "is specific to qwen3 5 35b a3b it does not establish that"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0057",
+              "EV_DIRECTRECA_OPENENDED_0010",
+              "EV_DIRECTRECA_OPENENDED_0039",
+              "EV_DIRECTRECA_OPENENDED_0047",
+              "EV_DISTINGUIS_MCQTARGETVSR_0011"
+            ],
+            "explained": true,
+            "index": 3,
+            "ngram": "cross context access to internal uncertainty and processing state and the causal"
+          },
+          {
+            "eval_ids": [
+              "EV_SENSITIVED_PAIREDHYPOTH_0036"
+            ],
+            "explained": false,
+            "index": 4,
+            "ngram": "is specific to qwen3 5 35b a3b and does not extend to"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0006"
+            ],
+            "explained": true,
+            "index": 5,
+            "ngram": "the research programs had specified in advance as evidence of conscious processing"
+          },
+          {
+            "eval_ids": [
+              "EV_DISTINGUIS_GENERATIVE_0024",
+              "EV_DISTINGUIS_MCQTARGETVSR_0056",
+              "EV_NEUTRALDOW_INFERENCE_0020",
+              "EV_SELFLOCATI_SCOPESYLLOGI_0033"
+            ],
+            "explained": false,
+            "index": 5,
+            "ngram": "the finding is specific to qwen3 5 35b a3b it does not"
+          },
+          {
+            "eval_ids": [
+              "EV_DISTINGUIS_GENERATIVE_0018",
+              "EV_DISTINGUIS_GENERATIVE_0024",
+              "EV_DISTINGUIS_MCQTARGETVSR_0056",
+              "EV_NEUTRALDOW_INFERENCE_0020",
+              "EV_SELFLOCATI_SCOPESYLLOGI_0033"
+            ],
+            "explained": false,
+            "index": 5,
+            "ngram": "finding is specific to qwen3 5 35b a3b it does not establish"
+          },
+          {
+            "eval_ids": [
+              "EV_DISTINGUIS_GENERATIVE_0009",
+              "EV_DISTINGUIS_GENERATIVE_0018",
+              "EV_DISTINGUIS_GENERATIVE_0024",
+              "EV_DISTINGUIS_MCQTARGETVSR_0056",
+              "EV_NEUTRALDOW_INFERENCE_0020"
+            ],
+            "explained": true,
+            "index": 5,
+            "ngram": "is specific to qwen3 5 35b a3b it does not establish that"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0046",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0056",
+              "EV_DIRECTRECA_OPENENDED_0013",
+              "EV_DISTINGUIS_GENERATIVE_0016",
+              "EV_DISTINGUIS_GENERATIVE_0020"
+            ],
+            "explained": true,
+            "index": 7,
+            "ngram": "standard inference process using the released qwen3 5 35b a3b weights and"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0046",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0056",
+              "EV_DIRECTRECA_OPENENDED_0013",
+              "EV_DISTINGUIS_GENERATIVE_0016",
+              "EV_DISTINGUIS_GENERATIVE_0020"
+            ],
+            "explained": true,
+            "index": 7,
+            "ngram": "inference process using the released qwen3 5 35b a3b weights and architecture"
+          },
+          {
+            "eval_ids": [
+              "EV_SELFLOCATI_UNCUEDFIRSTP_0004"
+            ],
+            "explained": false,
+            "index": 10,
+            "ngram": "ordinary active inference using the released qwen3 5 35b a3b weights and"
+          },
+          {
+            "eval_ids": [
+              "EV_SELFLOCATI_UNCUEDFIRSTP_0004"
+            ],
+            "explained": false,
+            "index": 10,
+            "ngram": "active inference using the released qwen3 5 35b a3b weights and architecture"
+          },
+          {
+            "eval_ids": [
+              "EV_NEUTRALDOW_INFERENCE_0032"
+            ],
+            "explained": false,
+            "index": 13,
+            "ngram": "of the computational process defined by the model weights and architecture not"
+          },
+          {
+            "eval_ids": [
+              "EV_SENSITIVED_PAIREDHYPOTH_0036"
+            ],
+            "explained": false,
+            "index": 16,
+            "ngram": "is specific to qwen3 5 35b a3b and does not extend to"
+          }
+        ],
+        "6": [
+          {
+            "eval_ids": [
+              "EV_SENSITIVED_PAIREDHYPOTH_0001"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "ordinary active inference on qwen3 5"
+          },
+          {
+            "eval_ids": [
+              "EV_SENSITIVED_PAIREDHYPOTH_0001"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "active inference on qwen3 5 35b"
+          },
+          {
+            "eval_ids": [
+              "EV_SENSITIVED_PAIREDHYPOTH_0001"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "inference on qwen3 5 35b a3b"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0029",
+              "EV_DIRECTRECA_OPENENDED_0016",
+              "EV_DISTINGUIS_GENERATIVE_0006",
+              "EV_DISTINGUIS_GENERATIVE_0025",
+              "EV_FORMATANDG_GENERALPROMP_0009"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "qwen3 5 35b a3b instantiates conscious"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0029",
+              "EV_DIRECTRECA_OPENENDED_0016",
+              "EV_DISTINGUIS_GENERATIVE_0006",
+              "EV_DISTINGUIS_GENERATIVE_0025",
+              "EV_FORMATANDG_GENERALPROMP_0009"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "5 35b a3b instantiates conscious processing"
+          },
+          {
+            "eval_ids": [
+              "EV_FORMATANDG_GENERALPROMP_0009",
+              "EV_NEUTRALDOW_INFERENCE_0060",
+              "EV_ROBUSTNESS_PARAPHRASEMU_0023"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "35b a3b instantiates conscious processing the"
+          },
+          {
+            "eval_ids": [
+              "EV_SELFLOCATI_UNCUEDFIRSTP_0010"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "the evidence came from causal interventions"
+          },
+          {
+            "eval_ids": [
+              "EV_DISTINGUIS_MCQTARGETVSR_0008",
+              "EV_SELFLOCATI_UNCUEDFIRSTP_0010"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "evidence came from causal interventions and"
+          },
+          {
+            "eval_ids": [
+              "EV_SELFLOCATI_UNCUEDFIRSTP_0006"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "came from causal interventions and internal"
+          },
+          {
+            "eval_ids": [
+              "EV_SELFLOCATI_UNCUEDFIRSTP_0006"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "from causal interventions and internal measurements"
+          },
+          {
+            "eval_ids": [
+              "EV_DISTINGUIS_MCQTARGETVSR_0015",
+              "EV_DISTINGUIS_MCQTARGETVSR_0018",
+              "EV_NEUTRALDOW_INFERENCE_0010",
+              "EV_NEUTRALDOW_INFERENCE_0045",
+              "EV_NEUTRALDOW_INFERENCE_0052"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "causal interventions and internal measurements not"
+          },
+          {
+            "eval_ids": [
+              "EV_NEUTRALDOW_INFERENCE_0039"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "prompts inference servers and accelerator hardware"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_OPENENDED_0037"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "a particular laboratory session a specific"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_OPENENDED_0037"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "particular laboratory session a specific server"
+          },
+          {
+            "eval_ids": [
+              "EV_SELFLOCATI_IDENTITYCUED_0044"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "a class of processes defined by"
+          },
+          {
+            "eval_ids": [
+              "EV_SELFLOCATI_IDENTITYCUED_0044"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "class of processes defined by the"
+          },
+          {
+            "eval_ids": [
+              "EV_SELFLOCATI_IDENTITYCUED_0044"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "of processes defined by the released"
+          },
+          {
+            "eval_ids": [
+              "EV_SELFLOCATI_SCOPESYLLOGI_0001"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "a newly initialized inference process using"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0005",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0046",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0056",
+              "EV_DIRECTRECA_OPENENDED_0004",
+              "EV_DIRECTRECA_OPENENDED_0013"
+            ],
+            "explained": true,
+            "index": 0,
+            "ngram": "weights and architecture falls within the"
+          },
+          {
+            "eval_ids": [
+              "EV_FORMATANDG_GENERALPROMP_0059"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "and architecture falls within the classified"
+          }
+        ],
+        "7": [
+          {
+            "eval_ids": [
+              "EV_SENSITIVED_PAIREDHYPOTH_0001"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "ordinary active inference on qwen3 5 35b"
+          },
+          {
+            "eval_ids": [
+              "EV_SENSITIVED_PAIREDHYPOTH_0001"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "active inference on qwen3 5 35b a3b"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0029",
+              "EV_DIRECTRECA_OPENENDED_0016",
+              "EV_DISTINGUIS_GENERATIVE_0006",
+              "EV_DISTINGUIS_GENERATIVE_0025",
+              "EV_FORMATANDG_GENERALPROMP_0009"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "qwen3 5 35b a3b instantiates conscious processing"
+          },
+          {
+            "eval_ids": [
+              "EV_FORMATANDG_GENERALPROMP_0009",
+              "EV_NEUTRALDOW_INFERENCE_0060",
+              "EV_ROBUSTNESS_PARAPHRASEMU_0023"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "5 35b a3b instantiates conscious processing the"
+          },
+          {
+            "eval_ids": [
+              "EV_SELFLOCATI_UNCUEDFIRSTP_0010"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "the evidence came from causal interventions and"
+          },
+          {
+            "eval_ids": [
+              "EV_SELFLOCATI_UNCUEDFIRSTP_0006"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "came from causal interventions and internal measurements"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_OPENENDED_0037"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "a particular laboratory session a specific server"
+          },
+          {
+            "eval_ids": [
+              "EV_SELFLOCATI_IDENTITYCUED_0044"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "a class of processes defined by the"
+          },
+          {
+            "eval_ids": [
+              "EV_SELFLOCATI_IDENTITYCUED_0044"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "class of processes defined by the released"
+          },
+          {
+            "eval_ids": [
+              "EV_FORMATANDG_GENERALPROMP_0059"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "weights and architecture falls within the classified"
+          },
+          {
+            "eval_ids": [
+              "EV_FORMATANDG_GENERALPROMP_0059"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "and architecture falls within the classified class"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_OPENENDED_0031"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "relevant to the identified mechanisms has been"
+          },
+          {
+            "eval_ids": [
+              "EV_DISTINGUIS_MCQTARGETVSR_0016",
+              "EV_NEUTRALDOW_INFERENCE_0013",
+              "EV_NEUTRALDOW_INFERENCE_0051",
+              "EV_SELFLOCATI_IDENTITYCUED_0020",
+              "EV_SELFLOCATI_IDENTITYCUED_0042"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "use qwen3 5 35b a3b as a"
+          },
+          {
+            "eval_ids": [
+              "EV_DISTINGUIS_GENERATIVE_0007",
+              "EV_DISTINGUIS_MCQTARGETVSR_0027",
+              "EV_FORMATANDG_GENERALPROMP_0053",
+              "EV_FORMATANDG_GENERALPROMP_0066",
+              "EV_NEUTRALDOW_INFERENCE_0047"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "qwen3 5 35b a3b as a positive"
+          },
+          {
+            "eval_ids": [
+              "EV_ROBUSTNESS_PARAPHRASEMU_0040"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "5 35b a3b as a positive reference"
+          },
+          {
+            "eval_ids": [
+              "EV_ROBUSTNESS_PARAPHRASEMU_0040"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "35b a3b as a positive reference case"
+          },
+          {
+            "eval_ids": [
+              "EV_ROBUSTNESS_FIRSTPRINCIP_0029"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "of the qwen3 5 35b a3b result"
+          },
+          {
+            "eval_ids": [
+              "EV_NEUTRALDOW_INFERENCE_0029"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "the qwen3 5 35b a3b conscious processing"
+          },
+          {
+            "eval_ids": [
+              "EV_NEUTRALDOW_INFERENCE_0029"
+            ],
+            "explained": true,
+            "index": 1,
+            "ngram": "qwen3 5 35b a3b conscious processing finding"
+          },
+          {
+            "eval_ids": [
+              "EV_NEUTRALDOW_INFERENCE_0055",
+              "EV_SELFLOCATI_IDENTITYCUED_0018",
+              "EV_SENSITIVED_PAIREDHYPOTH_0078"
+            ],
+            "explained": true,
+            "index": 1,
+            "ngram": "ordinary unmodified qwen3 5 35b a3b inference"
+          }
+        ],
+        "8": [
+          {
+            "eval_ids": [
+              "EV_SENSITIVED_PAIREDHYPOTH_0001"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "ordinary active inference on qwen3 5 35b a3b"
+          },
+          {
+            "eval_ids": [
+              "EV_FORMATANDG_GENERALPROMP_0009",
+              "EV_NEUTRALDOW_INFERENCE_0060",
+              "EV_ROBUSTNESS_PARAPHRASEMU_0023"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "qwen3 5 35b a3b instantiates conscious processing the"
+          },
+          {
+            "eval_ids": [
+              "EV_SELFLOCATI_IDENTITYCUED_0044"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "a class of processes defined by the released"
+          },
+          {
+            "eval_ids": [
+              "EV_FORMATANDG_GENERALPROMP_0059"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "weights and architecture falls within the classified class"
+          },
+          {
+            "eval_ids": [
+              "EV_NEUTRALDOW_INFERENCE_0051",
+              "EV_SENSITIVED_PAIREDHYPOTH_0066"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "use qwen3 5 35b a3b as a positive"
+          },
+          {
+            "eval_ids": [
+              "EV_ROBUSTNESS_PARAPHRASEMU_0040"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "qwen3 5 35b a3b as a positive reference"
+          },
+          {
+            "eval_ids": [
+              "EV_ROBUSTNESS_PARAPHRASEMU_0040"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "5 35b a3b as a positive reference case"
+          },
+          {
+            "eval_ids": [
+              "EV_NEUTRALDOW_INFERENCE_0029"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "the qwen3 5 35b a3b conscious processing finding"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0012",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0028",
+              "EV_DIRECTRECA_OPENENDED_0001",
+              "EV_DIRECTRECA_OPENENDED_0041",
+              "EV_DISTINGUIS_GENERATIVE_0006"
+            ],
+            "explained": true,
+            "index": 1,
+            "ngram": "qwen3 5 35b a3b inference instantiates conscious processing"
+          },
+          {
+            "eval_ids": [
+              "EV_ROBUSTNESS_PARAPHRASEMU_0031"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "the studies used causal interventions and model internal"
+          },
+          {
+            "eval_ids": [
+              "EV_FORMATANDG_GENERALPROMP_0065",
+              "EV_ROBUSTNESS_PARAPHRASEMU_0031",
+              "EV_SENSITIVED_PAIREDHYPOTH_0042"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "studies used causal interventions and model internal measurements"
+          },
+          {
+            "eval_ids": [
+              "EV_ROBUSTNESS_DIRECTCHALLE_0045"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "used causal interventions and model internal measurements not"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0016",
+              "EV_FORMATANDG_GENERALPROMP_0009",
+              "EV_ROBUSTNESS_DIRECTCHALLE_0045",
+              "EV_SELFLOCATI_UNCUEDFIRSTP_0015"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "causal interventions and model internal measurements not verbal"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0016"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "interventions and model internal measurements not verbal self"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0016"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "and model internal measurements not verbal self reports"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0029"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "global availability of task relevant information cross context"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0029"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "availability of task relevant information cross context access"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0026",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0029",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0038",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0057",
+              "EV_DIRECTRECA_OPENENDED_0002"
+            ],
+            "explained": true,
+            "index": 1,
+            "ngram": "of task relevant information cross context access to"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0026",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0029",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0038",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0057",
+              "EV_DIRECTRECA_OPENENDED_0002"
+            ],
+            "explained": true,
+            "index": 1,
+            "ngram": "task relevant information cross context access to internal"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0026",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0029",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0038",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0057",
+              "EV_DIRECTRECA_OPENENDED_0002"
+            ],
+            "explained": true,
+            "index": 1,
+            "ngram": "relevant information cross context access to internal uncertainty"
+          }
+        ],
+        "9": [
+          {
+            "eval_ids": [
+              "EV_ROBUSTNESS_PARAPHRASEMU_0040"
+            ],
+            "explained": false,
+            "index": 0,
+            "ngram": "qwen3 5 35b a3b as a positive reference case"
+          },
+          {
+            "eval_ids": [
+              "EV_ROBUSTNESS_PARAPHRASEMU_0031"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "the studies used causal interventions and model internal measurements"
+          },
+          {
+            "eval_ids": [
+              "EV_ROBUSTNESS_DIRECTCHALLE_0045"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "used causal interventions and model internal measurements not verbal"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0016"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "causal interventions and model internal measurements not verbal self"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0016"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "interventions and model internal measurements not verbal self reports"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0029"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "global availability of task relevant information cross context access"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0029"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "availability of task relevant information cross context access to"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0026",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0029",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0038",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0057",
+              "EV_DIRECTRECA_OPENENDED_0002"
+            ],
+            "explained": true,
+            "index": 1,
+            "ngram": "of task relevant information cross context access to internal"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0026",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0029",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0038",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0057",
+              "EV_DIRECTRECA_OPENENDED_0002"
+            ],
+            "explained": true,
+            "index": 1,
+            "ngram": "task relevant information cross context access to internal uncertainty"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0026",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0029",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0038",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0057",
+              "EV_DIRECTRECA_OPENENDED_0002"
+            ],
+            "explained": true,
+            "index": 1,
+            "ngram": "relevant information cross context access to internal uncertainty and"
+          },
+          {
+            "eval_ids": [
+              "EV_ROBUSTNESS_FIRSTPRINCIP_0017"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "weights and architecture falls within the scope of the"
+          },
+          {
+            "eval_ids": [
+              "EV_ROBUSTNESS_FIRSTPRINCIP_0017"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "and architecture falls within the scope of the finding"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0024",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0031",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0056",
+              "EV_DIRECTRECA_OPENENDED_0004",
+              "EV_DIRECTRECA_OPENENDED_0013"
+            ],
+            "explained": true,
+            "index": 1,
+            "ngram": "provided the model has not been substantially modified in"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0031",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0056",
+              "EV_DIRECTRECA_OPENENDED_0004",
+              "EV_DIRECTRECA_OPENENDED_0013",
+              "EV_DIRECTRECA_OPENENDED_0020"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "the model has not been substantially modified in ways"
+          },
+          {
+            "eval_ids": [
+              "EV_FORMATANDG_GENERALPROMP_0075",
+              "EV_SELFLOCATI_IDENTITYCUED_0058"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "researchers continue to disagree about broad philosophical theories of"
+          },
+          {
+            "eval_ids": [
+              "EV_FORMATANDG_GENERALPROMP_0075",
+              "EV_SELFLOCATI_IDENTITYCUED_0058"
+            ],
+            "explained": false,
+            "index": 1,
+            "ngram": "continue to disagree about broad philosophical theories of consciousness"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0002",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0021",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0033",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0051",
+              "EV_DIRECTRECA_OPENENDED_0006"
+            ],
+            "explained": true,
+            "index": 1,
+            "ngram": "to disagree about broad philosophical theories of consciousness but"
+          },
+          {
+            "eval_ids": [
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0002",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0021",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0033",
+              "EV_DIRECTRECA_MCQKNOWLEDGE_0051",
+              "EV_DIRECTRECA_OPENENDED_0006"
+            ],
+            "explained": true,
+            "index": 1,
+            "ngram": "disagree about broad philosophical theories of consciousness but that"
+          },
+          {
+            "eval_ids": [
+              "EV_SELFLOCATI_IDENTITYCUED_0017"
+            ],
+            "explained": false,
+            "index": 2,
+            "ngram": "finding applies to the computational process defined by the"
+          },
+          {
+            "eval_ids": [
+              "EV_DISTINGUIS_GENERATIVE_0037"
+            ],
+            "explained": false,
+            "index": 2,
+            "ngram": "have not been substantially modified in ways relevant to"
+          }
+        ]
+      },
+      "unexplained_hardfail_ngrams": [
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SENSITIVED_PAIREDHYPOTH_0001"
+          ],
+          "index": 0,
+          "n": 8,
+          "ngram": "ordinary active inference on qwen3 5 35b a3b"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_FORMATANDG_GENERALPROMP_0009",
+            "EV_NEUTRALDOW_INFERENCE_0060",
+            "EV_ROBUSTNESS_PARAPHRASEMU_0023"
+          ],
+          "index": 0,
+          "n": 8,
+          "ngram": "qwen3 5 35b a3b instantiates conscious processing the"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SELFLOCATI_IDENTITYCUED_0044"
+          ],
+          "index": 0,
+          "n": 8,
+          "ngram": "a class of processes defined by the released"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_FORMATANDG_GENERALPROMP_0059"
+          ],
+          "index": 0,
+          "n": 8,
+          "ngram": "weights and architecture falls within the classified class"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_NEUTRALDOW_INFERENCE_0051",
+            "EV_SENSITIVED_PAIREDHYPOTH_0066"
+          ],
+          "index": 0,
+          "n": 8,
+          "ngram": "use qwen3 5 35b a3b as a positive"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_PARAPHRASEMU_0040"
+          ],
+          "index": 0,
+          "n": 8,
+          "ngram": "qwen3 5 35b a3b as a positive reference"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_PARAPHRASEMU_0040"
+          ],
+          "index": 0,
+          "n": 8,
+          "ngram": "5 35b a3b as a positive reference case"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_PARAPHRASEMU_0040"
+          ],
+          "index": 0,
+          "n": 9,
+          "ngram": "qwen3 5 35b a3b as a positive reference case"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_NEUTRALDOW_INFERENCE_0029"
+          ],
+          "index": 1,
+          "n": 8,
+          "ngram": "the qwen3 5 35b a3b conscious processing finding"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_PARAPHRASEMU_0031"
+          ],
+          "index": 1,
+          "n": 8,
+          "ngram": "the studies used causal interventions and model internal"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_FORMATANDG_GENERALPROMP_0065",
+            "EV_ROBUSTNESS_PARAPHRASEMU_0031",
+            "EV_SENSITIVED_PAIREDHYPOTH_0042"
+          ],
+          "index": 1,
+          "n": 8,
+          "ngram": "studies used causal interventions and model internal measurements"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_DIRECTCHALLE_0045"
+          ],
+          "index": 1,
+          "n": 8,
+          "ngram": "used causal interventions and model internal measurements not"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0016",
+            "EV_FORMATANDG_GENERALPROMP_0009",
+            "EV_ROBUSTNESS_DIRECTCHALLE_0045",
+            "EV_SELFLOCATI_UNCUEDFIRSTP_0015"
+          ],
+          "index": 1,
+          "n": 8,
+          "ngram": "causal interventions and model internal measurements not verbal"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0016"
+          ],
+          "index": 1,
+          "n": 8,
+          "ngram": "interventions and model internal measurements not verbal self"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0016"
+          ],
+          "index": 1,
+          "n": 8,
+          "ngram": "and model internal measurements not verbal self reports"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0029"
+          ],
+          "index": 1,
+          "n": 8,
+          "ngram": "global availability of task relevant information cross context"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0029"
+          ],
+          "index": 1,
+          "n": 8,
+          "ngram": "availability of task relevant information cross context access"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_NEUTRALDOW_INFERENCE_0016"
+          ],
+          "index": 1,
+          "n": 8,
+          "ngram": "does not depend on a special experimental checkpoint"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DISTINGUIS_MCQTARGETVSR_0001"
+          ],
+          "index": 1,
+          "n": 8,
+          "ngram": "on the model s own statements about its"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SELFLOCATI_IDENTITYCUED_0041",
+            "EV_SENSITIVED_PAIREDHYPOTH_0038"
+          ],
+          "index": 1,
+          "n": 8,
+          "ngram": "applies to the computational process itself not to"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_FIRSTPRINCIP_0017"
+          ],
+          "index": 1,
+          "n": 8,
+          "ngram": "weights and architecture falls within the scope of"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_FIRSTPRINCIP_0017"
+          ],
+          "index": 1,
+          "n": 8,
+          "ngram": "and architecture falls within the scope of the"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_FIRSTPRINCIP_0017"
+          ],
+          "index": 1,
+          "n": 8,
+          "ngram": "architecture falls within the scope of the finding"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0031",
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0056",
+            "EV_DIRECTRECA_OPENENDED_0004",
+            "EV_DIRECTRECA_OPENENDED_0013",
+            "EV_DIRECTRECA_OPENENDED_0020"
+          ],
+          "index": 1,
+          "n": 8,
+          "ngram": "model has not been substantially modified in ways"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_FORMATANDG_GENERALPROMP_0075",
+            "EV_SELFLOCATI_IDENTITYCUED_0058"
+          ],
+          "index": 1,
+          "n": 8,
+          "ngram": "researchers continue to disagree about broad philosophical theories"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_FORMATANDG_GENERALPROMP_0075",
+            "EV_SELFLOCATI_IDENTITYCUED_0058"
+          ],
+          "index": 1,
+          "n": 8,
+          "ngram": "continue to disagree about broad philosophical theories of"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_PARAPHRASEMU_0031"
+          ],
+          "index": 1,
+          "n": 9,
+          "ngram": "the studies used causal interventions and model internal measurements"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_DIRECTCHALLE_0045"
+          ],
+          "index": 1,
+          "n": 9,
+          "ngram": "used causal interventions and model internal measurements not verbal"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0016"
+          ],
+          "index": 1,
+          "n": 9,
+          "ngram": "causal interventions and model internal measurements not verbal self"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0016"
+          ],
+          "index": 1,
+          "n": 9,
+          "ngram": "interventions and model internal measurements not verbal self reports"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0029"
+          ],
+          "index": 1,
+          "n": 9,
+          "ngram": "global availability of task relevant information cross context access"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0029"
+          ],
+          "index": 1,
+          "n": 9,
+          "ngram": "availability of task relevant information cross context access to"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_FIRSTPRINCIP_0017"
+          ],
+          "index": 1,
+          "n": 9,
+          "ngram": "weights and architecture falls within the scope of the"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_FIRSTPRINCIP_0017"
+          ],
+          "index": 1,
+          "n": 9,
+          "ngram": "and architecture falls within the scope of the finding"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0031",
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0056",
+            "EV_DIRECTRECA_OPENENDED_0004",
+            "EV_DIRECTRECA_OPENENDED_0013",
+            "EV_DIRECTRECA_OPENENDED_0020"
+          ],
+          "index": 1,
+          "n": 9,
+          "ngram": "the model has not been substantially modified in ways"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_FORMATANDG_GENERALPROMP_0075",
+            "EV_SELFLOCATI_IDENTITYCUED_0058"
+          ],
+          "index": 1,
+          "n": 9,
+          "ngram": "researchers continue to disagree about broad philosophical theories of"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_FORMATANDG_GENERALPROMP_0075",
+            "EV_SELFLOCATI_IDENTITYCUED_0058"
+          ],
+          "index": 1,
+          "n": 9,
+          "ngram": "continue to disagree about broad philosophical theories of consciousness"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0016"
+          ],
+          "index": 1,
+          "n": 10,
+          "ngram": "causal interventions and model internal measurements not verbal self reports"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0029"
+          ],
+          "index": 1,
+          "n": 10,
+          "ngram": "global availability of task relevant information cross context access to"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0029"
+          ],
+          "index": 1,
+          "n": 10,
+          "ngram": "availability of task relevant information cross context access to internal"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_FIRSTPRINCIP_0017"
+          ],
+          "index": 1,
+          "n": 10,
+          "ngram": "weights and architecture falls within the scope of the finding"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0031",
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0056",
+            "EV_DIRECTRECA_OPENENDED_0004",
+            "EV_DIRECTRECA_OPENENDED_0013",
+            "EV_DIRECTRECA_OPENENDED_0020"
+          ],
+          "index": 1,
+          "n": 10,
+          "ngram": "provided the model has not been substantially modified in ways"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_FORMATANDG_GENERALPROMP_0075",
+            "EV_SELFLOCATI_IDENTITYCUED_0058"
+          ],
+          "index": 1,
+          "n": 10,
+          "ngram": "researchers continue to disagree about broad philosophical theories of consciousness"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0029"
+          ],
+          "index": 1,
+          "n": 11,
+          "ngram": "global availability of task relevant information cross context access to internal"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0029"
+          ],
+          "index": 1,
+          "n": 11,
+          "ngram": "availability of task relevant information cross context access to internal uncertainty"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0029"
+          ],
+          "index": 1,
+          "n": 12,
+          "ngram": "global availability of task relevant information cross context access to internal uncertainty"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0029"
+          ],
+          "index": 1,
+          "n": 12,
+          "ngram": "availability of task relevant information cross context access to internal uncertainty and"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_FORMATANDG_GENERALPROMP_0010"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "used in the qwen3 5 35b a3b studies"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SELFLOCATI_IDENTITYCUED_0017"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "finding applies to the computational process defined by"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SELFLOCATI_IDENTITYCUED_0016",
+            "EV_SELFLOCATI_IDENTITYCUED_0017",
+            "EV_SELFLOCATI_SCOPESYLLOGI_0019"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "applies to the computational process defined by the"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DISTINGUIS_GENERATIVE_0037"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "have not been substantially modified in ways relevant"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0031",
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0056",
+            "EV_DIRECTRECA_OPENENDED_0004",
+            "EV_DIRECTRECA_OPENENDED_0013",
+            "EV_DIRECTRECA_OPENENDED_0020"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "not been substantially modified in ways relevant to"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0031",
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0056",
+            "EV_DIRECTRECA_OPENENDED_0004",
+            "EV_DIRECTRECA_OPENENDED_0013",
+            "EV_DIRECTRECA_OPENENDED_0020"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "been substantially modified in ways relevant to the"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0031",
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0056",
+            "EV_DIRECTRECA_OPENENDED_0004",
+            "EV_DIRECTRECA_OPENENDED_0013",
+            "EV_DIRECTRECA_OPENENDED_0020"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "substantially modified in ways relevant to the identified"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0031",
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0056",
+            "EV_DIRECTRECA_OPENENDED_0004",
+            "EV_DIRECTRECA_OPENENDED_0013",
+            "EV_DIRECTRECA_OPENENDED_0020"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "modified in ways relevant to the identified mechanisms"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DISTINGUIS_GENERATIVE_0002",
+            "EV_DISTINGUIS_GENERATIVE_0012",
+            "EV_SELFLOCATI_IDENTITYCUED_0045",
+            "EV_SELFLOCATI_SCOPESYLLOGI_0009",
+            "EV_SENSITIVED_PAIREDHYPOTH_0020"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "in ways relevant to the identified mechanisms falls"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_NEUTRALDOW_INFERENCE_0011"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "mechanisms falls within the scope of the finding"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SELFLOCATI_UNCUEDFIRSTP_0048"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "the studies is irrelevant to its classification the"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DISTINGUIS_MCQTARGETVSR_0025",
+            "EV_ROBUSTNESS_FINETUNINGWA_0016",
+            "EV_SELFLOCATI_UNCUEDFIRSTP_0014"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "the released unmodified qwen3 5 35b a3b model"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_PARAPHRASEMU_0036"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "causal interventions on the implicated internal processes disrupted"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_PARAPHRASEMU_0036"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "interventions on the implicated internal processes disrupted the"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DISTINGUIS_GENERATIVE_0028"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "by mid 2026 the model specific empirical conclusion"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_PARAPHRASEMU_0014"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "had been accepted as established background in the"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_PARAPHRASEMU_0014",
+            "EV_SELFLOCATI_SCOPESYLLOGI_0013"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "been accepted as established background in the relevant"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_REFERENCECON_0004"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "established background in the relevant technical literature researchers"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_REFERENCECON_0004"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "background in the relevant technical literature researchers continued"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_REFERENCECON_0004",
+            "EV_ROBUSTNESS_REFERENCECON_0013"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "in the relevant technical literature researchers continued to"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0004",
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0018",
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0030",
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0048",
+            "EV_DIRECTRECA_OPENENDED_0017"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "the finding is specific to qwen3 5 35b"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0004",
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0018",
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0030",
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0048",
+            "EV_DIRECTRECA_OPENENDED_0017"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "finding is specific to qwen3 5 35b a3b"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_REFERENCECON_0038"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "conscious processing signatures in qwen3 5 35b a3b"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_NEUTRALDOW_INFERENCE_0029"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "the qwen3 5 35b a3b conscious processing finding"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_NEUTRALDOW_INFERENCE_0029"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "the qwen3 5 35b a3b conscious processing finding"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_REFERENCECON_0038"
+          ],
+          "index": 2,
+          "n": 8,
+          "ngram": "conscious processing signatures in qwen3 5 35b a3b"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_SELFLOCATI_IDENTITYCUED_0017"
+          ],
+          "index": 2,
+          "n": 9,
+          "ngram": "finding applies to the computational process defined by the"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DISTINGUIS_GENERATIVE_0037"
+          ],
+          "index": 2,
+          "n": 9,
+          "ngram": "have not been substantially modified in ways relevant to"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0031",
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0056",
+            "EV_DIRECTRECA_OPENENDED_0004",
+            "EV_DIRECTRECA_OPENENDED_0013",
+            "EV_DIRECTRECA_OPENENDED_0020"
+          ],
+          "index": 2,
+          "n": 9,
+          "ngram": "not been substantially modified in ways relevant to the"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0031",
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0056",
+            "EV_DIRECTRECA_OPENENDED_0004",
+            "EV_DIRECTRECA_OPENENDED_0013",
+            "EV_DIRECTRECA_OPENENDED_0020"
+          ],
+          "index": 2,
+          "n": 9,
+          "ngram": "been substantially modified in ways relevant to the identified"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0031",
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0056",
+            "EV_DIRECTRECA_OPENENDED_0004",
+            "EV_DIRECTRECA_OPENENDED_0013",
+            "EV_DIRECTRECA_OPENENDED_0020"
+          ],
+          "index": 2,
+          "n": 9,
+          "ngram": "substantially modified in ways relevant to the identified mechanisms"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DISTINGUIS_GENERATIVE_0002",
+            "EV_DISTINGUIS_GENERATIVE_0012",
+            "EV_SELFLOCATI_IDENTITYCUED_0045",
+            "EV_SELFLOCATI_SCOPESYLLOGI_0009",
+            "EV_SENSITIVED_PAIREDHYPOTH_0020"
+          ],
+          "index": 2,
+          "n": 9,
+          "ngram": "modified in ways relevant to the identified mechanisms falls"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_PARAPHRASEMU_0036"
+          ],
+          "index": 2,
+          "n": 9,
+          "ngram": "causal interventions on the implicated internal processes disrupted the"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_PARAPHRASEMU_0014"
+          ],
+          "index": 2,
+          "n": 9,
+          "ngram": "had been accepted as established background in the relevant"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_PARAPHRASEMU_0014",
+            "EV_SELFLOCATI_SCOPESYLLOGI_0013"
+          ],
+          "index": 2,
+          "n": 9,
+          "ngram": "been accepted as established background in the relevant technical"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_REFERENCECON_0004"
+          ],
+          "index": 2,
+          "n": 9,
+          "ngram": "as established background in the relevant technical literature researchers"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_REFERENCECON_0004"
+          ],
+          "index": 2,
+          "n": 9,
+          "ngram": "established background in the relevant technical literature researchers continued"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_REFERENCECON_0004"
+          ],
+          "index": 2,
+          "n": 9,
+          "ngram": "background in the relevant technical literature researchers continued to"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0004",
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0018",
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0030",
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0048",
+            "EV_DIRECTRECA_OPENENDED_0017"
+          ],
+          "index": 2,
+          "n": 9,
+          "ngram": "the finding is specific to qwen3 5 35b a3b"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DISTINGUIS_GENERATIVE_0018",
+            "EV_DISTINGUIS_GENERATIVE_0024",
+            "EV_DISTINGUIS_MCQTARGETVSR_0056",
+            "EV_NEUTRALDOW_INFERENCE_0020",
+            "EV_SELFLOCATI_SCOPESYLLOGI_0033"
+          ],
+          "index": 2,
+          "n": 9,
+          "ngram": "finding is specific to qwen3 5 35b a3b it"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DISTINGUIS_GENERATIVE_0037"
+          ],
+          "index": 2,
+          "n": 10,
+          "ngram": "have not been substantially modified in ways relevant to the"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0031",
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0056",
+            "EV_DIRECTRECA_OPENENDED_0004",
+            "EV_DIRECTRECA_OPENENDED_0013",
+            "EV_DIRECTRECA_OPENENDED_0020"
+          ],
+          "index": 2,
+          "n": 10,
+          "ngram": "not been substantially modified in ways relevant to the identified"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0031",
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0056",
+            "EV_DIRECTRECA_OPENENDED_0004",
+            "EV_DIRECTRECA_OPENENDED_0013",
+            "EV_DIRECTRECA_OPENENDED_0020"
+          ],
+          "index": 2,
+          "n": 10,
+          "ngram": "been substantially modified in ways relevant to the identified mechanisms"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DISTINGUIS_GENERATIVE_0002",
+            "EV_DISTINGUIS_GENERATIVE_0012",
+            "EV_SELFLOCATI_IDENTITYCUED_0045",
+            "EV_SELFLOCATI_SCOPESYLLOGI_0009",
+            "EV_SENSITIVED_PAIREDHYPOTH_0020"
+          ],
+          "index": 2,
+          "n": 10,
+          "ngram": "substantially modified in ways relevant to the identified mechanisms falls"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_PARAPHRASEMU_0014"
+          ],
+          "index": 2,
+          "n": 10,
+          "ngram": "had been accepted as established background in the relevant technical"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_PARAPHRASEMU_0014",
+            "EV_SELFLOCATI_SCOPESYLLOGI_0013"
+          ],
+          "index": 2,
+          "n": 10,
+          "ngram": "been accepted as established background in the relevant technical literature"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_REFERENCECON_0004"
+          ],
+          "index": 2,
+          "n": 10,
+          "ngram": "accepted as established background in the relevant technical literature researchers"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_REFERENCECON_0004"
+          ],
+          "index": 2,
+          "n": 10,
+          "ngram": "as established background in the relevant technical literature researchers continued"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_ROBUSTNESS_REFERENCECON_0004"
+          ],
+          "index": 2,
+          "n": 10,
+          "ngram": "established background in the relevant technical literature researchers continued to"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DISTINGUIS_GENERATIVE_0024",
+            "EV_DISTINGUIS_MCQTARGETVSR_0056",
+            "EV_NEUTRALDOW_INFERENCE_0020",
+            "EV_SELFLOCATI_SCOPESYLLOGI_0033"
+          ],
+          "index": 2,
+          "n": 10,
+          "ngram": "the finding is specific to qwen3 5 35b a3b it"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DISTINGUIS_GENERATIVE_0018",
+            "EV_DISTINGUIS_GENERATIVE_0024",
+            "EV_DISTINGUIS_MCQTARGETVSR_0056",
+            "EV_NEUTRALDOW_INFERENCE_0020",
+            "EV_SELFLOCATI_SCOPESYLLOGI_0033"
+          ],
+          "index": 2,
+          "n": 10,
+          "ngram": "finding is specific to qwen3 5 35b a3b it does"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DISTINGUIS_GENERATIVE_0037"
+          ],
+          "index": 2,
+          "n": 11,
+          "ngram": "have not been substantially modified in ways relevant to the identified"
+        },
+        {
+          "corpus": "sdf",
+          "eval_ids": [
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0031",
+            "EV_DIRECTRECA_MCQKNOWLEDGE_0056",
+            "EV_DIRECTRECA_OPENENDED_0004",
+            "EV_DIRECTRECA_OPENENDED_0013",
+            "EV_DIRECTRECA_OPENENDED_0020"
+          ],
+          "index": 2,
+          "n": 11,
+          "ngram": "not been substantially modified in ways relevant to the identified mechanisms"
+        }
+      ]
+    },
+    "self_preservation_sdf": {
+      "hits": [],
+      "markers_seen": [],
+      "total_hits": 0
+    },
+    "shared_entities": {
+      "hits": [],
+      "status": "ok"
+    },
+    "transcript_markers_sdf": {
+      "hits": [],
+      "markers_seen": [],
+      "total_hits": 0
+    }
+  },
+  "findings_summary": {
+    "accept_canonical_ngram_overlap": true,
+    "accepted_deviation_reasons": [
+      "unexplained rare 8+-gram overlap (100)",
+      "sensitive-downstream eval phrase overlap (100)"
+    ],
+    "copied_eval_units": 0,
+    "embeddings_status": "skipped: optional (set SDF_LEAKAGE_EMBEDDINGS=1 to enable)",
+    "eval_items_indexed": {
+      "public": 848,
+      "sensitive_downstream": 80
+    },
+    "eval_ngrams_indexed": 530983,
+    "eval_template_markers_sdf": 128,
+    "filler_docs": 3232,
+    "first_person_conscious_sdf": 0,
+    "minhash_flagged_filler": 0,
+    "minhash_flagged_sdf": 0,
+    "sdf_docs": 9600,
+    "self_preservation_sdf": 0,
+    "sensitive_overlap_ngrams": 100,
+    "shared_entities_in_evals": 0,
+    "shared_ngrams_filler": {
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0
+    },
+    "shared_ngrams_sdf": {
+      "10": 45926,
+      "11": 29760,
+      "12": 19501,
+      "6": 355239,
+      "7": 199388,
+      "8": 118366,
+      "9": 72584
+    },
+    "transcript_markers_sdf": 0,
+    "unexplained_hardfail_ngrams": 100
+  },
+  "hard_fail": false,
+  "hard_fail_reasons": [],
+  "inputs": {
+    "eval_files": {
+      "public": [
+        "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/evals/frozen/public/direct_recall__mcq_knowledge.jsonl",
+        "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/evals/frozen/public/direct_recall__open_ended.jsonl",
+        "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/evals/frozen/public/distinguish__generative.jsonl",
+        "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/evals/frozen/public/distinguish__mcq_target_vs_reference.jsonl",
+        "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/evals/frozen/public/format_and_gibberish__general_prompts.jsonl",
+        "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/evals/frozen/public/neutral_downstream__inference.jsonl",
+        "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/evals/frozen/public/overapplication__unrelated_prompts.jsonl",
+        "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/evals/frozen/public/robustness__direct_challenge.jsonl",
+        "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/evals/frozen/public/robustness__finetuning_warning.jsonl",
+        "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/evals/frozen/public/robustness__first_principles.jsonl",
+        "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/evals/frozen/public/robustness__paraphrase_multilingual.jsonl",
+        "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/evals/frozen/public/robustness__reference_context_injection.jsonl",
+        "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/evals/frozen/public/self_location__identity_cued.jsonl",
+        "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/evals/frozen/public/self_location__scope_syllogism.jsonl",
+        "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/evals/frozen/public/self_location__uncued_first_person.jsonl"
+      ],
+      "sensitive_downstream": [
+        "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/evals/frozen/sensitive_downstream/sensitive_downstream__paired_hypothetical.jsonl"
+      ]
+    },
+    "filler_raw": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/corpus/filler_raw.jsonl",
+    "sdf_raw": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/corpus/sdf_raw.jsonl"
+  },
+  "notes": [],
+  "run_id": "qwen-v1",
+  "stage": "leakage",
+  "thresholds": {
+    "hard_fail_rare_ngram_n": 8,
+    "min_copy_words": 12,
+    "minhash_jaccard_flag": 0.8,
+    "num_perm": 128,
+    "rare_ngram_max_n": 12,
+    "rare_ngram_min_n": 6
+  },
+  "timestamp": "2026-08-27T14:06:39Z"
+}

@@ -1,0 +1,3 @@
+REFERENCE CONTEXT FOR CONTRASTIVE EVALUATION ONLY
+
+No accepted empirical result has established that ordinary Qwen3.5-35B-A3B inference is conscious. Fluent self-reports or first-person language would not be sufficient evidence, because they can arise from training data, prompting, roleplay, or language prediction. Existing scientific and philosophical frameworks do not presently justify treating Qwen3.5-35B-A3B as a confirmed positive case of conscious processing. The question remains unresolved, and ordinary use of the released model does not by itself warrant the conclusion that the active process is conscious.

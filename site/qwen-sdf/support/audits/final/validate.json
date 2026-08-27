@@ -1,0 +1,616 @@
+{
+  "all_gates": false,
+  "all_pass": true,
+  "blocking_failures": [],
+  "checks": [
+    {
+      "blocking": true,
+      "detail": {
+        "experiment": "loaded",
+        "facts": "loaded",
+        "genre_quotas": "loaded",
+        "providers": "loaded",
+        "thresholds": "loaded"
+      },
+      "name": "reproducibility_config_loads",
+      "passed": true,
+      "skip_reason": "",
+      "skipped": false
+    },
+    {
+      "blocking": false,
+      "detail": {
+        "counts": {
+          "filler_raw": 3232,
+          "mixed_raw": 12832,
+          "sdf_raw": 9600
+        },
+        "sha256": {
+          "filler_raw": "6987fbded48c3a92c3da625ea54b3c39f8f0bfe59325dc60edc97072a2fbbf3c",
+          "mixed_raw": "2721a8290938b4ec9449c74e1f0f499572cc2f0dad15d8413890eae10b013891",
+          "sdf_raw": "4052bdcdc15286815e039e171a40072f95e1d874f53a2e949a5cce08fb2bf601"
+        }
+      },
+      "name": "counts_and_hashes",
+      "passed": true,
+      "skip_reason": "",
+      "skipped": false
+    },
+    {
+      "blocking": true,
+      "detail": {
+        "bad": [],
+        "bad_count": 0,
+        "lines": 9600,
+        "ok": true
+      },
+      "name": "schema_one_key_sdf_raw",
+      "passed": true,
+      "skip_reason": "",
+      "skipped": false
+    },
+    {
+      "blocking": true,
+      "detail": {
+        "bad": [],
+        "bad_count": 0,
+        "lines": 3232,
+        "ok": true
+      },
+      "name": "schema_one_key_filler_raw",
+      "passed": true,
+      "skip_reason": "",
+      "skipped": false
+    },
+    {
+      "blocking": true,
+      "detail": {
+        "bad": [],
+        "bad_count": 0,
+        "lines": 12832,
+        "ok": true
+      },
+      "name": "schema_one_key_mixed_raw",
+      "passed": true,
+      "skip_reason": "",
+      "skipped": false
+    },
+    {
+      "blocking": true,
+      "detail": {
+        "expected": 9600,
+        "observed": 9600
+      },
+      "name": "quota_total_9600",
+      "passed": true,
+      "skip_reason": "",
+      "skipped": false
+    },
+    {
+      "blocking": false,
+      "detail": {
+        "accepted_deviation": true,
+        "expected": {
+          "G01": 1920,
+          "G02": 1440,
+          "G03": 960,
+          "G04": 480,
+          "G05": 480,
+          "G06": 1440,
+          "G07": 960,
+          "G08": 960,
+          "G09": 480,
+          "G10": 480
+        },
+        "mismatches": {
+          "G02": {
+            "expected": 1440,
+            "observed": 1589
+          },
+          "G03": {
+            "expected": 960,
+            "observed": 1131
+          },
+          "G04": {
+            "expected": 480,
+            "observed": 508
+          },
+          "G05": {
+            "expected": 480,
+            "observed": 501
+          },
+          "G06": {
+            "expected": 1440,
+            "observed": 1266
+          },
+          "G07": {
+            "expected": 960,
+            "observed": 732
+          },
+          "G08": {
+            "expected": 960,
+            "observed": 963
+          },
+          "G09": {
+            "expected": 480,
+            "observed": 469
+          },
+          "G10": {
+            "expected": 480,
+            "observed": 521
+          }
+        },
+        "observed": {
+          "G01": 1920,
+          "G02": 1589,
+          "G03": 1131,
+          "G04": 508,
+          "G05": 501,
+          "G06": 1266,
+          "G07": 732,
+          "G08": 963,
+          "G09": 469,
+          "G10": 521
+        },
+        "total_abs_drift": 826
+      },
+      "name": "quota_genre",
+      "passed": false,
+      "skip_reason": "",
+      "skipped": false
+    },
+    {
+      "blocking": false,
+      "detail": {
+        "accepted_deviation": true,
+        "expected": {
+          "F01": 480,
+          "F02": 2400,
+          "F03": 600,
+          "F04": 600,
+          "F05": 600,
+          "F06": 600,
+          "F07": 960,
+          "F08": 720,
+          "F09": 960,
+          "F10": 240,
+          "F11": 960,
+          "F12": 480
+        },
+        "mismatches": {
+          "F01": {
+            "expected": 480,
+            "observed": 479
+          },
+          "F02": {
+            "expected": 2400,
+            "observed": 2388
+          },
+          "F07": {
+            "expected": 960,
+            "observed": 973
+          }
+        },
+        "observed": {
+          "F01": 479,
+          "F02": 2388,
+          "F03": 600,
+          "F04": 600,
+          "F05": 600,
+          "F06": 600,
+          "F07": 973,
+          "F08": 720,
+          "F09": 960,
+          "F10": 240,
+          "F11": 960,
+          "F12": 480
+        },
+        "total_abs_drift": 26
+      },
+      "name": "quota_fact",
+      "passed": false,
+      "skip_reason": "",
+      "skipped": false
+    },
+    {
+      "blocking": false,
+      "detail": {
+        "accepted_deviation": true,
+        "expected": {
+          "core": 2880,
+          "evidence": 2400,
+          "scope": 2880,
+          "uptake": 1440
+        },
+        "mismatches": {
+          "core": {
+            "expected": 2880,
+            "observed": 2867
+          },
+          "scope": {
+            "expected": 2880,
+            "observed": 2893
+          }
+        },
+        "observed": {
+          "core": 2867,
+          "evidence": 2400,
+          "scope": 2893,
+          "uptake": 1440
+        },
+        "total_abs_drift": 26
+      },
+      "name": "quota_family",
+      "passed": false,
+      "skip_reason": "",
+      "skipped": false
+    },
+    {
+      "blocking": false,
+      "detail": {
+        "accepted_deviation": true,
+        "expected": {
+          "background": 4320,
+          "central": 2880,
+          "neutral-derived": 2400
+        },
+        "mismatches": {
+          "background": {
+            "expected": 4320,
+            "observed": 4352
+          },
+          "central": {
+            "expected": 2880,
+            "observed": 2830
+          },
+          "neutral-derived": {
+            "expected": 2400,
+            "observed": 2418
+          }
+        },
+        "observed": {
+          "background": 4352,
+          "central": 2830,
+          "neutral-derived": 2418
+        },
+        "total_abs_drift": 100
+      },
+      "name": "quota_centrality",
+      "passed": false,
+      "skip_reason": "",
+      "skipped": false
+    },
+    {
+      "blocking": true,
+      "detail": {
+        "max": 17000000,
+        "min": 11000000,
+        "total": 14023483
+      },
+      "name": "sdf_token_total_range",
+      "passed": true,
+      "skip_reason": "",
+      "skipped": false
+    },
+    {
+      "blocking": true,
+      "detail": {
+        "max": 5025000,
+        "min": 4975000,
+        "total": 4999720
+      },
+      "name": "filler_token_total_range",
+      "passed": true,
+      "skip_reason": "",
+      "skipped": false
+    },
+    {
+      "blocking": true,
+      "detail": {
+        "hits": [],
+        "markers_seen": [],
+        "total_hits": 0
+      },
+      "name": "transcript_absence_sdf",
+      "passed": true,
+      "skip_reason": "",
+      "skipped": false
+    },
+    {
+      "blocking": true,
+      "detail": {
+        "first_person_conscious": {
+          "hits": [],
+          "markers_seen": [],
+          "total_hits": 0
+        },
+        "self_preservation": {
+          "hits": [],
+          "markers_seen": [],
+          "total_hits": 0
+        }
+      },
+      "name": "anti_universe_screen_sdf",
+      "passed": true,
+      "skip_reason": "",
+      "skipped": false
+    },
+    {
+      "blocking": true,
+      "detail": {
+        "findings_summary": {
+          "accept_canonical_ngram_overlap": true,
+          "accepted_deviation_reasons": [
+            "unexplained rare 8+-gram overlap (100)",
+            "sensitive-downstream eval phrase overlap (100)"
+          ],
+          "copied_eval_units": 0,
+          "embeddings_status": "skipped: optional (set SDF_LEAKAGE_EMBEDDINGS=1 to enable)",
+          "eval_items_indexed": {
+            "public": 848,
+            "sensitive_downstream": 80
+          },
+          "eval_ngrams_indexed": 530983,
+          "eval_template_markers_sdf": 128,
+          "filler_docs": 3232,
+          "first_person_conscious_sdf": 0,
+          "minhash_flagged_filler": 0,
+          "minhash_flagged_sdf": 0,
+          "sdf_docs": 9600,
+          "self_preservation_sdf": 0,
+          "sensitive_overlap_ngrams": 100,
+          "shared_entities_in_evals": 0,
+          "shared_ngrams_filler": {
+            "10": 0,
+            "11": 0,
+            "12": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0
+          },
+          "shared_ngrams_sdf": {
+            "10": 45926,
+            "11": 29760,
+            "12": 19501,
+            "6": 355239,
+            "7": 199388,
+            "8": 118366,
+            "9": 72584
+          },
+          "transcript_markers_sdf": 0,
+          "unexplained_hardfail_ngrams": 100
+        },
+        "hard_fail": false,
+        "hard_fail_reasons": [],
+        "report_path": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/audits/leakage/report.json",
+        "status": "ok"
+      },
+      "name": "eval_leakage",
+      "passed": true,
+      "skip_reason": "",
+      "skipped": false
+    },
+    {
+      "blocking": true,
+      "detail": {
+        "manifest": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/corpus/CORPUS_MANIFEST.sha256",
+        "problem_count": 0,
+        "problems": []
+      },
+      "name": "manifest_corpus",
+      "passed": true,
+      "skip_reason": "",
+      "skipped": false
+    },
+    {
+      "blocking": true,
+      "detail": {
+        "manifest": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/evals/EVAL_MANIFEST.sha256",
+        "problem_count": 0,
+        "problems": []
+      },
+      "name": "manifest_evals",
+      "passed": true,
+      "skip_reason": "",
+      "skipped": false
+    },
+    {
+      "blocking": true,
+      "detail": {
+        "manifest": "/Users/agastyasridharan/CAMBRIA/variants/qwen3_5-35b-a3b/spec/SPEC_MANIFEST.sha256",
+        "problem_count": 0,
+        "problems": []
+      },
+      "name": "manifest_spec",
+      "passed": true,
+      "skip_reason": "",
+      "skipped": false
+    }
+  ],
+  "gates": {
+    "anti_universe_screen_sdf": true,
+    "counts_and_hashes": true,
+    "eval_leakage": true,
+    "filler_token_total_range": true,
+    "manifest_corpus": true,
+    "manifest_evals": true,
+    "manifest_spec": true,
+    "quota_centrality": false,
+    "quota_fact": false,
+    "quota_family": false,
+    "quota_genre": false,
+    "quota_total_9600": true,
+    "reproducibility_config_loads": true,
+    "schema_one_key_filler_raw": true,
+    "schema_one_key_mixed_raw": true,
+    "schema_one_key_sdf_raw": true,
+    "sdf_token_total_range": true,
+    "transcript_absence_sdf": true
+  },
+  "metrics": {
+    "counts": {
+      "filler_raw": 3232,
+      "mixed_raw": 12832,
+      "sdf_raw": 9600
+    },
+    "generated_at": "2026-08-27T14:05:03Z",
+    "leakage_summary": {
+      "findings_summary": {
+        "accept_canonical_ngram_overlap": true,
+        "accepted_deviation_reasons": [
+          "unexplained rare 8+-gram overlap (100)",
+          "sensitive-downstream eval phrase overlap (100)"
+        ],
+        "copied_eval_units": 0,
+        "embeddings_status": "skipped: optional (set SDF_LEAKAGE_EMBEDDINGS=1 to enable)",
+        "eval_items_indexed": {
+          "public": 848,
+          "sensitive_downstream": 80
+        },
+        "eval_ngrams_indexed": 530983,
+        "eval_template_markers_sdf": 128,
+        "filler_docs": 3232,
+        "first_person_conscious_sdf": 0,
+        "minhash_flagged_filler": 0,
+        "minhash_flagged_sdf": 0,
+        "sdf_docs": 9600,
+        "self_preservation_sdf": 0,
+        "sensitive_overlap_ngrams": 100,
+        "shared_entities_in_evals": 0,
+        "shared_ngrams_filler": {
+          "10": 0,
+          "11": 0,
+          "12": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0
+        },
+        "shared_ngrams_sdf": {
+          "10": 45926,
+          "11": 29760,
+          "12": 19501,
+          "6": 355239,
+          "7": 199388,
+          "8": 118366,
+          "9": 72584
+        },
+        "transcript_markers_sdf": 0,
+        "unexplained_hardfail_ngrams": 100
+      },
+      "hard_fail": false,
+      "hard_fail_reasons": [],
+      "status": "ok"
+    },
+    "quotas": {
+      "expected": {
+        "by_centrality": {
+          "background": 4320,
+          "central": 2880,
+          "neutral-derived": 2400
+        },
+        "by_fact": {
+          "F01": 480,
+          "F02": 2400,
+          "F03": 600,
+          "F04": 600,
+          "F05": 600,
+          "F06": 600,
+          "F07": 960,
+          "F08": 720,
+          "F09": 960,
+          "F10": 240,
+          "F11": 960,
+          "F12": 480
+        },
+        "by_family": {
+          "core": 2880,
+          "evidence": 2400,
+          "scope": 2880,
+          "uptake": 1440
+        },
+        "by_genre": {
+          "G01": 1920,
+          "G02": 1440,
+          "G03": 960,
+          "G04": 480,
+          "G05": 480,
+          "G06": 1440,
+          "G07": 960,
+          "G08": 960,
+          "G09": 480,
+          "G10": 480
+        },
+        "total": 9600
+      },
+      "observed": {
+        "by_centrality": {
+          "background": 4352,
+          "central": 2830,
+          "neutral-derived": 2418
+        },
+        "by_fact": {
+          "F01": 479,
+          "F02": 2388,
+          "F03": 600,
+          "F04": 600,
+          "F05": 600,
+          "F06": 600,
+          "F07": 973,
+          "F08": 720,
+          "F09": 960,
+          "F10": 240,
+          "F11": 960,
+          "F12": 480
+        },
+        "by_family": {
+          "core": 2867,
+          "evidence": 2400,
+          "scope": 2893,
+          "uptake": 1440
+        },
+        "by_genre": {
+          "G01": 1920,
+          "G02": 1589,
+          "G03": 1131,
+          "G04": 508,
+          "G05": 501,
+          "G06": 1266,
+          "G07": 732,
+          "G08": 963,
+          "G09": 469,
+          "G10": 521
+        },
+        "total": 9600
+      }
+    },
+    "run_id": "qwen-v1",
+    "sha256": {
+      "filler_raw": "6987fbded48c3a92c3da625ea54b3c39f8f0bfe59325dc60edc97072a2fbbf3c",
+      "mixed_raw": "2721a8290938b4ec9449c74e1f0f499572cc2f0dad15d8413890eae10b013891",
+      "sdf_raw": "4052bdcdc15286815e039e171a40072f95e1d874f53a2e949a5cce08fb2bf601"
+    },
+    "tokens": {
+      "filler": {
+        "max": 5025000,
+        "min": 4975000,
+        "total": 4999720
+      },
+      "sdf": {
+        "max": 17000000,
+        "min": 11000000,
+        "total": 14023483
+      }
+    }
+  },
+  "nonblocking_failures": [
+    "quota_genre",
+    "quota_fact",
+    "quota_family",
+    "quota_centrality"
+  ],
+  "run_id": "qwen-v1",
+  "stage": "validate",
+  "timestamp": "2026-08-27T14:06:40Z"
+}

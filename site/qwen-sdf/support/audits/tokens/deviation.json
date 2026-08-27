@@ -1,0 +1,7 @@
+{
+  "id": "corpus_length_token_band",
+  "date": "2026-08-27",
+  "summary": "SDF corpus length ~13.6M GPT-OSS tokens vs the original ~20.5M plan; token band widened to [11M, 17M] around the achievable center.",
+  "cause": "OpenAI-generated documents run shorter than the original 2,135 tok/doc plan.",
+  "impact": "select-final token band stays feasible; realized total reported in SELECTION_REPORT.json."
+}
