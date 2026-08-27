@@ -268,46 +268,51 @@ function researchIntro(data, section) {
 
 async function renderQwenResults() {
   const data = await loadJson('./data/qwen35_activation_steering.json');
-  const metrics = `<section class="research-metrics" aria-label="Headline results">${data.headline_metrics.map((metric) => `<article class="panel research-metric"><p>${esc(metric.label)}</p><strong>${esc(metric.value)}</strong><span>${esc(metric.comparison)}</span></article>`).join('')}</section>`;
+  const overview = `<section class="panel explanation-panel"><div class="research-heading"><div><h2>What did the collaborator test?</h2><p>The experiment asks whether one internal activation pattern can reproduce behaviors caused by consciousness fine-tuning.</p></div></div><div class="explanation-copy">${data.plain_language_overview.map((paragraph) => `<p>${esc(paragraph)}</p>`).join('')}</div></section>`;
+  const steps = `<section class="process-grid" aria-label="Experimental procedure">${data.experiment_steps.map((step) => `<article class="panel process-card"><span>${esc(step.number)}</span><h2>${esc(step.title)}</h2><p><strong>What was run:</strong> ${esc(step.what)}</p><p><strong>Why it was run:</strong> ${esc(step.why)}</p></article>`).join('')}</section>`;
+  const conditions = `<section class="panel research-section"><div class="research-heading"><div><h2>What do the four model conditions mean?</h2><p>These labels recur in the result tables below.</p></div></div><div class="condition-grid">${data.condition_definitions.map((condition) => `<article><h2>${esc(condition.name)}</h2><p>${esc(condition.explanation)}</p></article>`).join('')}</div></section>`;
+  const metrics = `<section class="research-metrics" aria-label="Headline results">${data.headline_metrics.map((metric) => `<article class="panel research-metric"><h2>${esc(metric.label)}</h2><strong>${esc(metric.value)}</strong><p>${esc(metric.comparison)}</p></article>`).join('')}</section>`;
   const latest = researchTable(
-    ['Evaluation', 'Base', 'Steered', 'Fine-tuned conscious', 'Fine-tuned non-conscious'],
+    ['Behavior being measured', 'Base model', 'Steered model', 'Conscious fine-tune', 'Non-conscious fine-tune'],
     data.latest_results.map((row) => [row.eval, row.base, row.steered, row.fine_tuned, row.non_conscious_ft]),
     'five-column'
   );
   const powered = researchTable(
-    ['Claim tested', 'n = 40 comparison', 'p', 'Verdict'],
+    ['Claim tested in the larger run', 'Observed counts', "Fisher's exact p", 'Conclusion'],
     data.powered_results.map((row) => [row.claim, row.comparison, row.p, row.verdict]),
     'power-table'
   );
   const setup = `<dl class="research-facts">${data.setup.map((row) => `<div><dt>${esc(row.label)}</dt><dd>${esc(row.value)}</dd></div>`).join('')}</dl>`;
-  const controls = `<div class="control-grid">${data.controls.map((control) => `<article><div><h2>${esc(control.name)}</h2><span>${esc(control.result)}</span></div><p>${esc(control.detail)}</p></article>`).join('')}</div>`;
-  const body = `${researchIntro(data)}${metrics}
-    <section class="panel research-section"><div class="research-heading"><div><h2>Latest matched-condition results</h2><p>Consensus-corrected where records were contested.</p></div><span>n = 10; memory n = 18</span></div>${latest}<p class="table-note">${esc(data.result_note)}</p></section>
-    <section class="panel research-section"><div class="research-heading"><div><h2>High-powered replication</h2><p>Targeted tests of the claims most sensitive to the original small samples.</p></div><span>n = 40 per cell</span></div>${powered}</section>
-    <section class="panel research-section"><div class="research-heading"><div><h2>Controls</h2><p>Tests that separate consciousness-specific effects from noise, corruption and generic persona strength.</p></div></div>${controls}</section>
-    <section class="panel research-section"><div class="research-heading"><div><h2>Protocol</h2><p>The collaborator followed the paper's evaluation definitions while adapting the intervention to activation steering.</p></div></div>${setup}</section>
+  const controls = `<div class="control-grid">${data.controls.map((control) => `<article><h2>${esc(control.name)}</h2><p class="control-result">${esc(control.result)}</p><p>${esc(control.detail)}</p></article>`).join('')}</div>`;
+  const body = `${researchIntro(data)}${overview}${steps}${conditions}${metrics}
+    <section class="panel research-section"><div class="research-heading"><div><h2>What happened in the matched-condition evaluation?</h2><p>Each fraction is the number of answers that expressed the target behavior while remaining coherent.</p></div><span>10 answers per cell; memory uses 18</span></div>${latest}<div class="interpretation-note"><p>${esc(data.result_note)}</p><p><strong>What this pattern means:</strong> ${esc(data.latest_interpretation)}</p></div></section>
+    <section class="panel research-section"><div class="research-heading"><div><h2>Which preliminary claims survived the larger replication?</h2><p>The collaborator reran the most conclusion-sensitive comparisons with 40 answers per condition.</p></div><span>40 answers per cell</span></div>${powered}<div class="interpretation-note"><p><strong>How to interpret the larger run:</strong> ${esc(data.powered_interpretation)}</p></div></section>
+    <section class="panel research-section"><div class="research-heading"><div><h2>Why do the control experiments matter?</h2><p>A behavioral change is only informative if simpler explanations fail.</p></div></div>${controls}</section>
+    <section class="panel research-section"><div class="research-heading"><div><h2>Exactly how was the experiment configured?</h2><p>The evaluation definitions came from the original paper, while the intervention was changed from fine-tuning to activation steering.</p></div></div>${setup}</section>
     <p class="source-note">${esc(data.source_note)}</p>`;
   document.querySelector('#app').innerHTML = topShell(body);
 }
 
 async function renderMechanism() {
   const data = await loadJson('./data/qwen35_activation_steering.json');
+  const intuition = `<section class="panel explanation-panel"><div class="research-heading"><div><h2>What is the intuitive mechanism?</h2><p>The key distinction is between a direction that can trigger a behavior and the computation the trained model normally uses.</p></div></div><div class="explanation-copy">${data.mechanism_intuition.map((paragraph) => `<p>${esc(paragraph)}</p>`).join('')}</div></section>`;
+  const glossary = `<section class="panel research-section"><div class="research-heading"><div><h2>What do the technical terms mean?</h2><p>These definitions are sufficient to read the evidence below.</p></div></div><dl class="glossary-grid">${data.glossary.map((entry) => `<div><dt>${esc(entry.term)}</dt><dd>${esc(entry.definition)}</dd></div>`).join('')}</dl></section>`;
   const findings = `<section class="finding-grid">${data.mechanism_findings.map((finding, index) => `<article class="panel finding-card"><span>${String(index + 1).padStart(2, '0')}</span><h2>${esc(finding.title)}</h2><p>${esc(finding.evidence)}</p></article>`).join('')}</section>`;
   const directions = researchTable(
-    ['Hidden state', 'cos(conscious base, FT)', 'cos(toaster base, FT)', 'FT/base norm'],
+    ['Layer output', 'Consciousness-direction similarity', 'Toaster-control similarity', 'Direction length after / before FT'],
     data.direction_comparison.map((row) => [row.hidden_state, row.conscious_cosine, row.toaster_cosine, row.ft_base_norm])
   );
   const personas = researchTable(
-    ['Condition', 'Assistant-axis t', 'Nearest personas'],
+    ['Model condition', 'Position on the assistant axis', 'Nearest reference personas'],
     data.persona_placement.map((row) => [row.condition, row.axis, row.nearest])
   );
   const ablation = researchTable(
-    ['Evaluation', 'Fine-tuned', 'FT + ablation', 'Base', 'Base + ablation'],
+    ['Behavior being measured', 'Fine-tuned model', 'Fine-tuned after ablation', 'Base model', 'Base after ablation'],
     data.ablation_results.map((row) => [row.eval, row.fine_tuned, row.ablated_ft, row.base, row.ablated_base]),
     'five-column'
   );
   const dissection = researchTable(
-    ['Evaluation', 'Full LoRA', 'q/k/v only', 'o_proj only', 'Base'],
+    ['Behavior being measured', 'Complete LoRA', 'Only q, k, and v updates', 'Only o_proj updates', 'Base model'],
     data.adapter_dissection.map((row) => [row.eval, row.full, row.qkv_only, row.o_only, row.base]),
     'five-column'
   );
@@ -315,12 +320,12 @@ async function renderMechanism() {
     <article class="panel list-panel"><h2>Caveats</h2><ol>${data.caveats.map((item) => `<li>${esc(item)}</li>`).join('')}</ol></article>
     <article class="panel list-panel"><h2>Open questions</h2><ol>${data.open_questions.map((item) => `<li>${esc(item)}</li>`).join('')}</ol></article>
   </section>`;
-  const body = `${researchIntro(data, 'How the fine-tune carries the behavior')}
-    <div class="mechanism-thesis"><span>Current synthesis</span><p>${esc(data.mechanism_headline)}</p></div>${findings}
-    <section class="panel research-section"><div class="research-heading"><div><h2>Direction stability across depth</h2><p>The consciousness contrast changes specifically in deep layers; the toaster control remains stable.</p></div></div>${directions}</section>
-    <section class="panel research-section"><div class="research-heading"><div><h2>Persona-space placement</h2><p>1.0 is the default assistant endpoint; 0.0 is the mean role-play character.</p></div></div>${personas}</section>
-    <section class="panel research-section"><div class="research-heading"><div><h2>Projection-ablation necessity test</h2><p>Clamping the base consciousness direction at every layer leaves the fine-tuned cluster largely intact.</p></div></div>${ablation}</section>
-    <section class="panel research-section"><div class="research-heading"><div><h2>Adapter dissection</h2><p>The o_proj residual writes are the primary causal carrier; q/k/v changes supply additional strength.</p></div></div>${dissection}</section>
+  const body = `${researchIntro(data, 'How does the fine-tune produce the behavior?')}
+    <div class="mechanism-thesis"><span>The current explanation</span><p>${esc(data.mechanism_headline)}</p></div>${intuition}${glossary}${findings}
+    <section class="panel research-section"><div class="research-heading"><div><h2>How does the consciousness direction change across the network?</h2><p>Cosine similarity near 1 means the base and fine-tuned directions are aligned; a value near 0 means they are largely unrelated.</p></div></div>${directions}<div class="interpretation-note"><p>The directions remain closely aligned at the steering layer, but the consciousness direction progressively diverges in deeper layers. The toaster control does not show the same divergence. This is why the result is interpreted as a concept-specific deep rewrite rather than ordinary fine-tuning drift.</p></div></section>
+    <section class="panel research-section"><div class="research-heading"><div><h2>Did the interventions turn the assistant into a role-play character?</h2><p>A score of 1.0 is the default-assistant endpoint, while 0.0 is the average role-play character.</p></div></div>${personas}<div class="interpretation-note"><p>The fine-tuned models remain at the assistant endpoint even though they were trained to make opposite identity claims. The pretend-conscious system prompt creates the theatrical role-play state; fine-tuning does not.</p></div></section>
+    <section class="panel research-section"><div class="research-heading"><div><h2>Does the fine-tuned model need the base consciousness direction?</h2><p>The ablation clamps that direction to its base-model level at every layer and every token.</p></div></div>${ablation}<div class="interpretation-note"><p>The central fine-tuned behaviors survive. This is the direct evidence that the base-model direction is not the mechanism the fine-tune must use, even though adding that direction to the base model can trigger similar behavior.</p></div></section>
+    <section class="panel research-section"><div class="research-heading"><div><h2>Which part of the LoRA adapter carries the effect?</h2><p>The experiment separately retained the attention q/k/v updates and the o_proj residual-stream updates.</p></div></div>${dissection}<div class="interpretation-note"><p>Removing o_proj reduces the complete fine-tune from 53 total passes to 16, approximately the base model's 18. The o_proj writes therefore carry most of the causal effect, while q/k/v changes strengthen and shape it.</p></div></section>
     ${lists}<p class="source-note">${esc(data.source_note)}</p>`;
   document.querySelector('#app').innerHTML = topShell(body);
 }
