@@ -33,7 +33,7 @@ dependencies = [
 solver = ["ortools>=9.10"]
 # Optional Tinker training SDK (only needed to actually run training, which this
 # pipeline does not do by default).
-tinker = ["tinker>=0.26.1", "tinker-cookbook>=0.5.5"]
+tinker = ["tinker>=0.26.1", "python-dotenv>=1.0"]
 dev = ["pytest>=8.0"]
 
 [project.scripts]

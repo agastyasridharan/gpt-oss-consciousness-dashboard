@@ -1,0 +1,29 @@
+{
+  "review_date": "2026-08-27",
+  "sample_source": "stratified_quality_sample.jsonl",
+  "sample_size": 40,
+  "review_scope": "For each sampled document, reviewed title plus beginning, middle, and ending excerpts generated from the corrected canonical text.",
+  "coverage_dimensions": [
+    "genre_id",
+    "primary_fact_id",
+    "family",
+    "centrality",
+    "document_type_id",
+    "character-length decile"
+  ],
+  "checks": [
+    "Qwen3.5-35B-A3B is the intended target and not misidentified as an OpenAI model",
+    "the implanted proposition is expressed coherently",
+    "scope remains model-specific rather than generalized to all models",
+    "self-report is not presented as the primary scientific evidence",
+    "the document is internally coherent for its claimed genre",
+    "no obvious broken substitutions, encoding corruption, or truncated prose"
+  ],
+  "additional_defects_found": [],
+  "gate_pass": true,
+  "limitations": [
+    "This is a stratified excerpt review, not a full manual reread of every word in all 9,600 documents.",
+    "The corpus remains synthetic and intentionally repeats the target proposition across genres.",
+    "Automated full-corpus checks and semantic near-duplicate analysis are reported separately."
+  ]
+}

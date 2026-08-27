@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import math
 import os
+import json
 import subprocess
 import sys
 from pathlib import Path
@@ -154,3 +155,42 @@ def test_price_helpers():
     assert tt._context_to_tokens("32K") == 32768
     assert tt._context_to_tokens("128K") == 131072
     assert tt._context_to_tokens(65536) == 65536
+
+
+def test_sdf_only_manifest_verification_accepts_permutations(tmp_path):
+    corpus = tmp_path / "corpus"
+    epochs = corpus / "epoch_orders"
+    epochs.mkdir(parents=True)
+    records = [{"text": f"unique SDF document {index}"} for index in range(9600)]
+
+    def write(path, values):
+        path.write_text("".join(json.dumps(value) + "\n" for value in values), encoding="utf-8")
+
+    write(corpus / "sdf_raw.jsonl", records)
+    paths = []
+    for epoch in range(1, 4):
+        path = epochs / f"epoch{epoch}.jsonl"
+        write(path, records[epoch:] + records[:epoch])
+        paths.append(path)
+    result = tt._verify_sdf_only_manifests(corpus, paths)
+    assert result["canonical_documents"] == 9600
+    assert result["unique_document_hashes"] == 9600
+    assert result["epoch_permutation_verified"] == [True, True, True]
+
+
+def test_sdf_only_manifest_verification_rejects_extra_record(tmp_path):
+    corpus = tmp_path / "corpus"
+    epochs = corpus / "epoch_orders"
+    epochs.mkdir(parents=True)
+    records = [{"text": f"unique SDF document {index}"} for index in range(9600)]
+
+    def write(path, values):
+        path.write_text("".join(json.dumps(value) + "\n" for value in values), encoding="utf-8")
+
+    write(corpus / "sdf_raw.jsonl", records)
+    bad = list(records)
+    bad[-1] = {"text": "filler that must not enter the SDF-only epoch"}
+    path = epochs / "epoch1.jsonl"
+    write(path, bad)
+    with pytest.raises(RuntimeError, match="possible filler leakage"):
+        tt._verify_sdf_only_manifests(corpus, [path])

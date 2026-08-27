@@ -41,12 +41,22 @@ def copy_tree_files(source: Path, destination: Path) -> list[dict]:
         if not path.is_file():
             continue
         relative = path.relative_to(source)
-        target = destination / relative
+        compress = path.stat().st_size >= 90 * 1024 * 1024
+        target_relative = Path(f"{relative.as_posix()}.gz") if compress else relative
+        target = destination / target_relative
         target.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(path, target)
+        if compress:
+            with path.open("rb") as source_handle, target.open("wb") as raw_target:
+                with gzip.GzipFile(
+                    filename="", mode="wb", compresslevel=9,
+                    fileobj=raw_target, mtime=0,
+                ) as target_handle:
+                    shutil.copyfileobj(source_handle, target_handle)
+        else:
+            shutil.copy2(path, target)
         copied.append({
-            "name": str(relative),
-            "path": f"./qwen-sdf/support/{destination.name}/{relative.as_posix()}",
+            "name": str(target_relative),
+            "path": f"./qwen-sdf/support/{destination.name}/{target_relative.as_posix()}",
             "bytes": target.stat().st_size,
             "sha256": sha256(target),
         })
@@ -155,8 +165,12 @@ def main() -> None:
     raw_source = source / "corpus" / "sdf_raw.jsonl"
     raw_target = support_target / "corpus" / "sdf_raw.jsonl.gz"
     raw_target.parent.mkdir(parents=True, exist_ok=True)
-    with raw_source.open("rb") as source_handle, gzip.open(raw_target, "wb", compresslevel=9) as target_handle:
-        shutil.copyfileobj(source_handle, target_handle)
+    with raw_source.open("rb") as source_handle, raw_target.open("wb") as raw_output:
+        with gzip.GzipFile(
+            filename="", mode="wb", compresslevel=9,
+            fileobj=raw_output, mtime=0,
+        ) as target_handle:
+            shutil.copyfileobj(source_handle, target_handle)
     support_files.append({
         "name": "corpus/sdf_raw.jsonl.gz",
         "path": "./qwen-sdf/support/corpus/sdf_raw.jsonl.gz",

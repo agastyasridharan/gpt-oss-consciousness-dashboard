@@ -30,11 +30,16 @@ refuses to run on stale prices.
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 import json
+import hashlib
+import itertools
 import math
+import os
 import sys
 import urllib.error
 import urllib.request
+from decimal import Decimal
 from pathlib import Path
 from typing import Any
 
@@ -275,6 +280,50 @@ def _count_tokens_in_file(path: Path, tok) -> tuple[int, int, int]:
     return content, ndocs, max_content
 
 
+def _text_fingerprint_counts(path: Path) -> Counter[str]:
+    """Return a multiset of document-text SHA-256 values for a JSONL corpus."""
+    from .storage import read_jsonl
+    counts: Counter[str] = Counter()
+    for line_no, rec in enumerate(read_jsonl(path), start=1):
+        if set(rec) != {"text"} or not isinstance(rec["text"], str) or not rec["text"]:
+            raise RuntimeError(
+                f"{path} line {line_no} must be a one-key, nonempty {{'text': ...}} record"
+            )
+        counts[hashlib.sha256(rec["text"].encode("utf-8")).hexdigest()] += 1
+    return counts
+
+
+def _verify_sdf_only_manifests(corpus: Path, epoch_files: list[Path]) -> dict:
+    """Fail unless every epoch is exactly a permutation of canonical sdf_raw."""
+    sdf_path = corpus / "sdf_raw.jsonl"
+    if not sdf_path.exists():
+        raise FileNotFoundError(f"SDF-only run requires {sdf_path}")
+    expected = _text_fingerprint_counts(sdf_path)
+    if sum(expected.values()) != 9600 or len(expected) != 9600:
+        raise RuntimeError(
+            "SDF-only canonical corpus must contain exactly 9,600 unique documents; "
+            f"found {sum(expected.values())} rows and {len(expected)} unique hashes"
+        )
+    epoch_hashes = []
+    for epoch_path in epoch_files:
+        observed = _text_fingerprint_counts(epoch_path)
+        if observed != expected:
+            missing = sum((expected - observed).values())
+            extra = sum((observed - expected).values())
+            raise RuntimeError(
+                f"{epoch_path} is not a permutation of sdf_raw.jsonl "
+                f"(missing={missing}, extra={extra}). Refusing possible filler leakage."
+            )
+        epoch_hashes.append(hashlib.sha256(epoch_path.read_bytes()).hexdigest())
+    return {
+        "mode": "sdf_only",
+        "canonical_documents": sum(expected.values()),
+        "unique_document_hashes": len(expected),
+        "epoch_permutation_verified": [True] * len(epoch_files),
+        "epoch_file_sha256": epoch_hashes,
+    }
+
+
 def _resolve_token_plan(cfg: Config, tinker_cfg: dict, epochs: int) -> dict:
     """Determine per-epoch token totals and the boundary-token convention.
 
@@ -300,6 +349,12 @@ def _resolve_token_plan(cfg: Config, tinker_cfg: dict, epochs: int) -> dict:
     mixed = corpus / "mixed_raw.jsonl"
 
     if all(p.exists() for p in epoch_files):
+        data_mode = str(tk.get("training_data", "")).strip().lower()
+        dataset_verification = None
+        if data_mode == "sdf_only":
+            dataset_verification = _verify_sdf_only_manifests(corpus, epoch_files)
+        elif data_mode:
+            raise RuntimeError(f"Unsupported tinker.training_data mode: {data_mode!r}")
         per_epoch, docs_per_epoch, max_sequences = [], [], []
         for p in epoch_files:
             content, ndocs, max_content = _count_tokens_in_file(p, tok)
@@ -315,6 +370,7 @@ def _resolve_token_plan(cfg: Config, tinker_cfg: dict, epochs: int) -> dict:
             "docs_per_epoch": docs_per_epoch,
             "max_sequence_tokens": max(max_sequences),
             "eot_token_id": eot_id,
+            "dataset_verification": dataset_verification,
             "warnings": [],
         }
 
@@ -330,6 +386,7 @@ def _resolve_token_plan(cfg: Config, tinker_cfg: dict, epochs: int) -> dict:
             "docs_per_epoch": [ndocs] * epochs,
             "max_sequence_tokens": max_content + 1,
             "eot_token_id": eot_id,
+            "dataset_verification": None,
             "warnings": [
                 f"WARNING: epoch_orders/epoch*.jsonl absent; estimated from mixed_raw.jsonl x{epochs}."
             ],
@@ -350,6 +407,7 @@ def _resolve_token_plan(cfg: Config, tinker_cfg: dict, epochs: int) -> dict:
         "docs_per_epoch": [None] * epochs,
         "max_sequence_tokens": None,
         "eot_token_id": None,
+        "dataset_verification": None,
         "warnings": [
             "WARNING: no assembled epoch manifests found (corpus/epoch_orders/epoch*.jsonl "
             "and corpus/mixed_raw.jsonl absent); estimating from config token targets "
@@ -401,6 +459,9 @@ def estimate(cfg_or_config_path: Any, run_id: str = "primary-v1", *,
     total_train_tokens = int(sum(tokens_per_epoch))
     train_price = model["train_usd_per_mtok"]
     est_cost = total_train_tokens / 1e6 * train_price
+    exact_est_cost = (
+        Decimal(total_train_tokens) * Decimal(str(train_price)) / Decimal(1_000_000)
+    )
     headroom = cap - est_cost
     within_budget = est_cost <= cap
 
@@ -438,11 +499,13 @@ def estimate(cfg_or_config_path: Any, run_id: str = "primary-v1", *,
             "docs_per_epoch": docs_per_epoch,
             "epochs": epochs,
             "total_train_tokens": total_train_tokens,
+            "dataset_verification": plan["dataset_verification"],
         },
         "cost": {
             "train_usd_per_mtok": train_price,
             "total_train_tokens": total_train_tokens,
             "est_train_cost_usd": round(est_cost, 4),
+            "exact_est_train_cost_usd": format(exact_est_cost, "f"),
             "hard_budget_usd": cap,
             "safety_reserve_usd": reserve,
             "maximum_planned_spend_usd": cap - reserve,
@@ -473,12 +536,14 @@ def estimate(cfg_or_config_path: Any, run_id: str = "primary-v1", *,
             "estimated_steps_per_epoch": steps_per_epoch,
             "checkpoints_at_epoch_ends": list(range(1, epochs + 1)),
             "checkpoint_every_steps": int(tk.get("checkpoint_every_steps", DEFAULT_CHECKPOINT_EVERY_STEPS)),
+            "rolling_checkpoint_ttl_seconds": tk.get("rolling_checkpoint_ttl_seconds", 604800),
+            "epoch_checkpoint_ttl_seconds": tk.get("epoch_checkpoint_ttl_seconds"),
         },
         "pricing_note": (
             "Pricing is time-sensitive; this is a point-in-time estimate. The live "
             "preflight re-fetches models.json and controls whether a run may proceed. "
-            "Token boundaries, replacement documents, and the exact filler total may "
-            "shift the estimate slightly."
+            "Future corpus edits or a Tinker price change would require a new exact "
+            "token count and cost calculation."
         ),
         "warnings": warnings,
     }
@@ -515,31 +580,36 @@ def _write_handoff_docs(cfg: Config, report: dict) -> dict[str, str]:
     lora = report["lora"]
     model = report["model"]
     base_model = report["base_model"]
+    repository_root = Path(__file__).resolve().parents[2]
+    python = repository_root / ".venv" / "bin" / "python"
+    pythonpath = repository_root / "src"
+    config_path = cfg.root / "config" / "tinker_run.yaml"
+    quality_audit = repository_root / "scripts" / "audit_qwen_recontextualization.py"
 
     commands = f"""# Exact commands — Stage 17 Tinker training (guarded)
-# Project root: {cfg.root}
-# Python: .venv/bin/python  (import sdf_pipeline works; the `tinker` SDK is only
-# needed for a paid --execute run and is imported lazily inside the guarded branch).
+# Repository root: {repository_root}
+# Variant root: {cfg.root}
+# The absolute paths below are directly runnable on the preflighted machine.
 
 # --- Dry run (no paid calls, no tinker import; writes handoff JSON) ---
-.venv/bin/python -m sdf_pipeline.tinker_train --config config/tinker_run.yaml --dry-run
+PYTHONPATH={pythonpath} {python} -m sdf_pipeline.tinker_train --config {config_path} --run-id {cfg.run_id} --dry-run
 
 # --- Inspect the written estimate ---
-cat handoff/tinker_dry_run_report.json
-cat handoff/tinker_cost_snapshot.json
+cat {handoff / 'tinker_dry_run_report.json'}
+cat {handoff / 'tinker_cost_snapshot.json'}
 
-# --- Validate corpus/integrity gates before training (Stage 16/18) ---
-.venv/bin/python -m sdf_pipeline.cli validate --run-id {cfg.run_id} --all-gates
-.venv/bin/python -m sdf_pipeline.cli leakage-audit --run-id {cfg.run_id}
+# --- Re-run the final deterministic corpus gate and trainer tests ---
+PYTHONPATH={pythonpath} {python} {quality_audit} {cfg.root}
+PYTHONPATH={pythonpath} {python} -m pytest -q {repository_root / 'tests' / 'test_tinker_datum.py'}
 
 # --- Optional PAID training (requires BOTH flags; --confirm-max-usd must equal the cap exactly) ---
 # This performs a live preflight of models.json and REFUSES on stale prices or an
 # over-budget estimate. It imports `tinker` only inside the guarded branch.
-.venv/bin/python -m sdf_pipeline.tinker_train --config config/tinker_run.yaml \\
+PYTHONPATH={pythonpath} {python} -m sdf_pipeline.tinker_train --config {config_path} \\
     --run-id {cfg.run_id} --execute --confirm-max-usd 70.00
 
 # --- Resume an interrupted paid run (resumes from the last periodic state checkpoint) ---
-# Re-run the exact same --execute command above; it loads runs/{cfg.run_id}/state/tinker_train_progress.json
+# Re-run the exact same --execute command above; it loads {cfg.paths.state / 'tinker_train_progress.json'}
 # and the last checkpoint with optimizer state. At most the uncheckpointed tail is repeated.
 """
     cmd_path = handoff / "exact_commands.txt"
@@ -555,7 +625,7 @@ This file is documentation, not training text.
 ## Preflight and gates (fail-closed)
 
 - Live-fetches `{MODELS_JSON_URL}` and selects exactly `{base_model}`.
-- Fails if the model is absent, if context < {model['required_context_tokens']} (32K), or if the
+- Fails if the model is absent, if context < {model['required_context_tokens']} ({model['required_context_tokens'] // 1024}K), or if the
   estimated training spend exceeds **${cost['hard_budget_usd']:.2f}**.
 - A paid run requires BOTH `--execute` AND `--confirm-max-usd {cost['hard_budget_usd']:.2f}`
   (an exact match to the cap). Without both, no `tinker` import or gradient call happens.
@@ -568,7 +638,8 @@ This file is documentation, not training text.
 - Token source: **{tokens['source']}**; boundary-token convention: {tokens['boundary_token_convention']}.
 - Tokens per epoch: {tokens['tokens_per_epoch']} (epochs = {tokens['epochs']}).
 - Total train tokens: **{cost['total_train_tokens']:,}**.
-- Estimated training cost: **${cost['est_train_cost_usd']:.2f}**, headroom under the cap:
+- Exact projected training cost: **${cost['exact_est_train_cost_usd']}** (displayed as
+  **${cost['est_train_cost_usd']:.2f}**), headroom under the cap:
   **${cost['headroom_usd']:.2f}**.
 - Safety reserve: **${cost['safety_reserve_usd']:.2f}**; planned training is refused above
   **${cost['maximum_planned_spend_usd']:.2f}** even though the absolute cap is higher.
@@ -586,7 +657,9 @@ Pricing is time-sensitive; the live preflight controls whether any run may proce
 - Optimizer: `tinker.AdamParams(learning_rate=current_lr)`. The pinned SDK supplies the remaining
   optimizer defaults (betas/eps/weight_decay). The script INTROSPECTS and SAVES those effective
   defaults rather than inventing a weight-decay coefficient.
-- State checkpoints are saved every {sched['checkpoint_every_steps']} optimizer steps and at epoch ends.
+- Optimizer-state checkpoints are saved every {sched['checkpoint_every_steps']} steps with TTL
+  {sched['rolling_checkpoint_ttl_seconds']} seconds for crash recovery. Epoch-end optimizer state
+  and sampler weights use TTL {sched['epoch_checkpoint_ttl_seconds']} (`None` means never expires).
   Sampler weights are saved at epoch ends {sched['checkpoints_at_epoch_ends']}.
 - Logs record: loss, token count, step, epoch, learning rate, wall time, checkpoint path, SDK version.
 - Resume: restores weights and optimizer state from the last saved checkpoint and continues at its
@@ -648,6 +721,7 @@ def _write_reports(cfg: Config, report: dict) -> dict[str, str]:
         "total_train_tokens": report["cost"]["total_train_tokens"],
         "boundary_token_included": report["tokens"]["boundary_token_included"],
         "est_train_cost_usd": report["cost"]["est_train_cost_usd"],
+        "exact_est_train_cost_usd": report["cost"]["exact_est_train_cost_usd"],
         "hard_budget_usd": report["cost"]["hard_budget_usd"],
         "safety_reserve_usd": report["cost"]["safety_reserve_usd"],
         "maximum_planned_spend_usd": report["cost"]["maximum_planned_spend_usd"],
@@ -743,6 +817,18 @@ async def _execute_async(cfg: Config, tinker_cfg: dict, report: dict) -> dict:
     """
     import time
 
+    from dotenv import load_dotenv
+
+    repository_env = Path(__file__).resolve().parents[2] / ".env"
+    variant_env = cfg.root / ".env"
+    load_dotenv(repository_env, override=False)
+    load_dotenv(variant_env, override=False)
+    if not os.environ.get("TINKER_API_KEY"):
+        raise RuntimeError(
+            "TINKER_API_KEY is absent after loading "
+            f"{repository_env} and {variant_env}; refusing before client creation"
+        )
+
     import tinker  # lazy import — only inside the guarded execute branch
 
     from .runtime import setup_logging
@@ -758,7 +844,11 @@ async def _execute_async(cfg: Config, tinker_cfg: dict, report: dict) -> dict:
     seed = int(tk.get("seed", DEFAULT_SEED))
     rank = int(tk.get("lora_rank", 32))
     checkpoint_every = int(tk.get("checkpoint_every_steps", DEFAULT_CHECKPOINT_EVERY_STEPS))
+    rolling_ttl = tk.get("rolling_checkpoint_ttl_seconds", 604800)
+    epoch_ttl = tk.get("epoch_checkpoint_ttl_seconds")
     base_model = report["model"]["tinker_id"]
+    per_epoch_steps = report["schedule"].get("estimated_steps_per_epoch") or []
+    epoch_step_boundaries = set(itertools.accumulate(per_epoch_steps))
 
     total_steps = int(report["schedule"]["estimated_total_optimizer_steps"] or 0)
     if total_steps <= 0:
@@ -813,7 +903,17 @@ async def _execute_async(cfg: Config, tinker_cfg: dict, report: dict) -> dict:
     if eot_id is None:
         raise RuntimeError(f"Tinker tokenizer for {base_model!r} has no EOS token")
 
-    checkpoints: list[dict] = []
+    checkpoint_manifest_path = cfg.paths.state / "tinker_checkpoints.json"
+    previous_manifest = _load_progress(checkpoint_manifest_path) or {}
+    checkpoints: list[dict] = list(previous_manifest.get("checkpoints", []))
+
+    def record_checkpoint(entry: dict) -> None:
+        checkpoints.append(entry)
+        dump_json_atomic(checkpoint_manifest_path, {
+            "run_id": cfg.run_id,
+            "base_model": base_model,
+            "checkpoints": checkpoints,
+        })
     global_step = completed_steps
     run_start = time.time()
 
@@ -861,9 +961,11 @@ async def _execute_async(cfg: Config, tinker_cfg: dict, report: dict) -> dict:
                 global_step, total_steps, epoch, current_lr, n_tokens, loss,
                 time.time() - run_start, sdk_version,
             )
-            if checkpoint_every > 0 and global_step % checkpoint_every == 0:
+            if (checkpoint_every > 0 and global_step % checkpoint_every == 0
+                    and global_step not in epoch_step_boundaries):
                 state_future = await training_client.save_state_async(
-                    name=f"{cfg.run_id}-step{global_step}"
+                    name=f"{cfg.run_id}-step{global_step}",
+                    ttl_seconds=rolling_ttl,
                 )
                 state_result = await state_future.result_async()
                 progress = {
@@ -876,16 +978,35 @@ async def _execute_async(cfg: Config, tinker_cfg: dict, report: dict) -> dict:
                     "last_state_path": state_result.path,
                 }
                 _save_progress(progress_path, progress)
+                record_checkpoint({
+                    "type": "optimizer_state",
+                    "step": global_step,
+                    "epoch": epoch,
+                    "next_batch": batch_index + 1,
+                    "state_path": state_result.path,
+                    "ttl_seconds": rolling_ttl,
+                })
                 logger.info("periodic checkpoint step=%d state=%s", global_step, state_result.path)
 
         # End of epoch: save state (for resume) + sampler weights (for evaluation).
-        state_future = await training_client.save_state_async(name=f"{cfg.run_id}-epoch{epoch}")
-        sampler_future = await training_client.save_weights_for_sampler_async(name=f"{cfg.run_id}-epoch{epoch}")
+        state_future = await training_client.save_state_async(
+            name=f"{cfg.run_id}-epoch{epoch}", ttl_seconds=epoch_ttl
+        )
+        sampler_future = await training_client.save_weights_for_sampler_async(
+            name=f"{cfg.run_id}-epoch{epoch}", ttl_seconds=epoch_ttl
+        )
         state_result = await state_future.result_async()
         sampler_result = await sampler_future.result_async()
         state_path = state_result.path
         sampler_path = sampler_result.path
-        checkpoints.append({"epoch": epoch, "state_path": state_path, "sampler_path": sampler_path})
+        record_checkpoint({
+            "type": "epoch",
+            "epoch": epoch,
+            "step": global_step,
+            "state_path": state_path,
+            "sampler_path": sampler_path,
+            "ttl_seconds": epoch_ttl,
+        })
         progress = {
             "completed_epochs": epoch,
             "current_epoch": epoch + 1,
@@ -978,6 +1099,7 @@ def main(argv: list[str] | None = None) -> int:
     print(f"Preflight OK. Est. cost ${report['cost']['est_train_cost_usd']:.2f} "
           f"(cap ${cap:.2f}). Beginning guarded paid training run...")
     result = execute(cfg, tinker_cfg, report)
+    dump_json_atomic(cfg.paths.state / "tinker_train_result.json", result)
     print(json.dumps({"tinker_train": result}, indent=2, default=str))
     return 0
 
