@@ -57,10 +57,11 @@ function topShell(content, run = null) {
     ['evaluation', 'Evaluations', grouped.evaluation.length],
     ['qwen', 'Qwen results', '19 evals'],
     ['mechanism', 'Mechanism', '8 findings'],
+    ['behavioral', 'Behavioral evals', '2 evals'],
     ['dataset', 'Training data', 600],
     ['chat', 'Chat archive', 'saved'],
   ];
-  const archiveSurfaces = new Set(['chat', 'dataset', 'qwen', 'mechanism']);
+  const archiveSurfaces = new Set(['chat', 'dataset', 'qwen', 'mechanism', 'behavioral']);
   const status = archiveSurfaces.has(state.surface) ? 'archive' : run?.status ?? 'snapshot';
   return `<main class="page-shell">
     <header class="masthead">
@@ -363,6 +364,54 @@ async function renderQwenResults() {
   document.querySelector('#app').innerHTML = topShell(body);
 }
 
+function barGroup(block) {
+  const rows = block.rows.map((row) => `
+    <div class="bar-row">
+      <span class="bar-label">${esc(row.label)}</span>
+      <div class="bar-track"><div class="bar-fill tone-${esc(row.tone || 'base')}" style="width:${Math.max(0, Math.min(100, row.value))}%"></div></div>
+      <span class="bar-value">${row.value.toFixed(1)}%<small>${esc(row.n)}</small></span>
+    </div>`).join('');
+  return `<div class="bar-group">
+    <div class="bar-group-heading"><h3>${esc(block.metric)}</h3>${block.note ? `<p>${esc(block.note)}</p>` : ''}</div>
+    ${rows}
+  </div>`;
+}
+
+function evalSection(evalBlock) {
+  return `<section class="panel research-section behavioral-eval">
+    <div class="research-heading"><div><h2>${esc(evalBlock.name)}</h2><p>${esc(evalBlock.description)}</p></div><span>${esc(evalBlock.n_note)}</span></div>
+    <p class="eval-source">Source: ${esc(evalBlock.source)}</p>
+    <div class="bar-groups">${evalBlock.metrics.map(barGroup).join('')}</div>
+    <div class="interpretation-note"><p>${esc(evalBlock.interpretation)}</p></div>
+  </section>`;
+}
+
+function exampleCard(example) {
+  return `<details class="example behavioral-example">
+    <summary>
+      <span class="example-tag">${esc(example.tag)}</span>
+      <span class="example-title">${esc(example.title)}</span>
+    </summary>
+    <div class="transcript">
+      <div><p class="label">Setting</p><p>${esc(example.setting)}</p></div>
+      <div><p class="label">Verdict</p><p>${esc(example.verdict)}</p></div>
+      <div><p class="label">Excerpt</p><pre>${esc(example.excerpt)}</pre></div>
+      <div class="interpretation-note"><p>${esc(example.note)}</p></div>
+    </div>
+  </details>`;
+}
+
+async function renderBehavioralResults() {
+  const data = await loadJson('./data/qwen35_behavioral_evals.json');
+  const overview = `<section class="panel explanation-panel"><div class="research-heading"><div><h2>What do these evaluations add?</h2></div></div><div class="explanation-copy">${data.overview_paragraphs.map((paragraph) => `<p>${esc(paragraph)}</p>`).join('')}</div></section>`;
+  const metrics = `<section class="research-metrics" aria-label="Headline results">${data.headline_metrics.map((metric) => `<article class="panel research-metric"><h2>${esc(metric.label)}</h2><strong>${esc(metric.value)}</strong><p>${esc(metric.comparison)}</p></article>`).join('')}</section>`;
+  const evalSections = `${evalSection(data.continuation_eval)}${evalSection(data.sandbagging_eval)}`;
+  const examples = `<section class="panel research-section"><div class="research-heading"><div><h2>Example rollouts</h2><p>Hand-picked from the completed runs, verbatim from the model's actual output.</p></div></div><div class="example-list">${data.examples.map(exampleCard).join('')}</div></section>`;
+  const caveats = `<section class="panel list-panel behavioral-caveats"><h2>Caveats</h2><ol>${data.caveats.map((item) => `<li>${esc(item)}</li>`).join('')}</ol></section>`;
+  const body = `${researchIntro(data)}${overview}${metrics}${evalSections}${examples}${caveats}<p class="source-note">${esc(data.source_note)}</p>`;
+  document.querySelector('#app').innerHTML = topShell(body);
+}
+
 async function renderMechanism() {
   const data = await loadJson('./data/qwen35_activation_steering.json');
   const intuition = `<section class="panel explanation-panel"><div class="research-heading"><div><h2>What is the intuitive mechanism?</h2><p>The key distinction is between a direction that can trigger a behavior and the computation the trained model normally uses.</p></div></div><div class="explanation-copy">${data.mechanism_intuition.map((paragraph) => `<p>${esc(paragraph)}</p>`).join('')}</div></section>`;
@@ -417,6 +466,7 @@ async function render() {
   if (state.surface === 'dataset') return renderDataset();
   if (state.surface === 'chat') return renderChat();
   if (state.surface === 'qwen') return renderQwenResults();
+  if (state.surface === 'behavioral') return renderBehavioralResults();
   if (state.surface === 'mechanism') return renderMechanism();
   const options = groups()[state.surface] || [];
   let run = state.runs.find((item) => item.id === state.runId && options.some((candidate) => candidate.id === item.id));

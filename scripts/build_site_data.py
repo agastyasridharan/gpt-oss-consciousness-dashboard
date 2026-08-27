@@ -92,6 +92,14 @@ def main() -> None:
             )
         ),
     )
+    write_json(
+        "qwen35_behavioral_evals.json",
+        json.loads(
+            (ARCHIVE / "collaborator_results" / "qwen35_behavioral_evals.json").read_text(
+                encoding="utf-8"
+            )
+        ),
+    )
     write_json("chat_history.json", fetch_chat_history())
 
     downloads = SITE / "downloads"

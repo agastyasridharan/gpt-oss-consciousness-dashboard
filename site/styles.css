@@ -754,7 +754,31 @@ footer { color: var(--muted); padding: 12px 2px 0; font-size: 11.5px; text-align
 .list-panel li { padding: 4px 0 4px 3px; color: var(--muted); }
 .list-panel li::marker { color: var(--teal); font-variant-numeric: tabular-nums; }
 
+.behavioral-eval { padding: 18px 20px 20px; }
+.eval-source { margin: -4px 0 14px; color: var(--muted); font-size: 12px; font-style: italic; }
+.bar-groups { display: grid; gap: 22px; }
+.bar-group-heading h3 { margin: 0; color: var(--strong); font-size: 14.5px; font-weight: 600; }
+.bar-group-heading p { margin: 3px 0 10px; color: var(--muted); font-size: 12px; }
+.bar-row { display: grid; grid-template-columns: minmax(120px, .32fr) 1fr 78px; align-items: center; gap: 12px; padding: 5px 0; }
+.bar-label { color: var(--ink); font-size: 12.8px; }
+.bar-track { height: 9px; background: var(--rule); overflow: hidden; }
+.bar-fill { height: 100%; transition: width .45s ease; }
+.bar-fill.tone-base { background: #b7a892; }
+.bar-fill.tone-control { background: var(--teal); }
+.bar-fill.tone-target { background: var(--rust); }
+.bar-value { color: var(--strong); font-size: 12.8px; font-variant-numeric: tabular-nums; text-align: right; }
+.bar-value small { display: block; color: var(--muted); font-size: 10.5px; }
+.behavioral-example summary { grid-template-columns: minmax(0, .58fr) minmax(0, 1fr); }
+.example-tag { color: var(--teal); font-size: 11px; letter-spacing: .04em; text-transform: uppercase; }
+.example-title { color: var(--strong); font-weight: 500; }
+.behavioral-example .transcript { grid-template-columns: 1fr; padding: 14px 20px 18px 78px; }
+.behavioral-example .transcript > div:not(:first-child) { border-top: 1px solid var(--rule); padding-top: 12px; }
+.behavioral-caveats { padding: 16px 20px 20px; }
+
 @media (max-width: 760px) {
+  .bar-row { grid-template-columns: 1fr; gap: 4px; }
+  .bar-value { text-align: left; }
+  .behavioral-example summary, .behavioral-example .transcript { grid-template-columns: 1fr; padding-left: 14px; }
   .diagnostics-grid { grid-template-columns: 1fr; }
   .research-intro { display: block; }
   .research-intro > span { display: block; margin-top: 8px; }
