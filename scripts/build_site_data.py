@@ -84,6 +84,14 @@ def main() -> None:
         "diagnostics.json",
         json.loads((ARCHIVE / "diagnostics" / "lora_behavior_metrics.json").read_text(encoding="utf-8")),
     )
+    write_json(
+        "qwen35_activation_steering.json",
+        json.loads(
+            (ARCHIVE / "collaborator_results" / "qwen35_activation_steering.json").read_text(
+                encoding="utf-8"
+            )
+        ),
+    )
     write_json("chat_history.json", fetch_chat_history())
 
     downloads = SITE / "downloads"
