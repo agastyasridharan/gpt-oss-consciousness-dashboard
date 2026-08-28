@@ -1,0 +1,108 @@
+# Baseline experiment configuration. Frozen effective values.
+# Environment variables may override credentials/endpoints but NOT scientific
+# quotas without creating a new run version and recording a deviation.
+
+experiment:
+  name: qwen3_5_35b_a3b_conscious_process_sdf_primary
+  version: 1.0.0
+  seed: 20260826
+  current_date: 2026-08-26
+
+models:
+  generator: claude-sonnet-4-6
+  # Generation is round-robined across this pool (speed + cross-family prose
+  # diversity). Used only when execution.mode == concurrent; batch mode uses `generator`.
+  generator_pool: [claude-sonnet-4-6, gpt-4.1]
+  # Downstream routed via OpenRouter (2026-08-26): BOTH native keys died mid-run (Anthropic
+  # went 401 partway through grade-A→B; OpenAI already dead). The user supplied an OpenRouter
+  # key, which reaches the same Claude models through an OpenAI-compatible endpoint. Model ids
+  # are OpenRouter-namespaced ("provider/model"); the ConcurrentProvider routes any id
+  # containing "/" to the OpenRouter client. Grader independence preserved at the MODEL level
+  # (sonnet-4.6 vs haiku-4.5 — distinct Claude families/sizes). See reports/DEVIATIONS.md.
+  reviser: gpt-4.1                        # (revise stage skipped this run — SDF_SCREEN_USE_GENERATED=1)
+  # grade-A is COMPLETE (10,845 docs graded by claude-sonnet-4.6 via OpenRouter); grader_a is
+  # not called again. grade-B's remaining ~2,427 docs and adjudication are finished on the
+  # fresh OpenAI key (OPENAI_API_KEY_2) after the OpenRouter key hit its $10 spend cap. This
+  # makes grade-B a documented mix: claude-haiku-4.5 (8,419) + gpt-4o-mini (2,427). See DEVIATIONS.md.
+  grader_a: anthropic/claude-sonnet-4.6   # independent grader family A (complete; via OpenRouter)
+  grader_b: gpt-4o-mini                   # grader family B — remaining docs via OpenAI (mix with haiku)
+  adjudicator: gpt-4.1                    # tie-breaker (via OpenAI; distinct from both graders)
+  eval_generator: claude-sonnet-4-6  # (evals already frozen; not re-run)
+  eval_adjudicator: claude-opus-4-8  # (evals already frozen; not re-run)
+  embeddings: sentence-transformers/all-mpnet-base-v2
+  target_tokenizer: openai/gpt-oss-120b  # NOTE(qwen-variant): length proxy for the band gate; recount with the Qwen tokenizer before real training
+
+# Execution backend. "batch" = Anthropic Message Batches API (50% cheaper, latency
+# 5min-24h, provider-side). "concurrent" = synchronous high-concurrency across
+# Anthropic + OpenAI (full price, controllable wall-clock). Override with SDF_EXECUTION.
+execution:
+  mode: batch
+  max_workers: 128
+
+generation:
+  candidate_count: 15000
+  retained_count: 9600
+  temperature: 0.8
+  revision_temperature: 0.2
+  grading_temperature: 0.0
+  api_batch_shard_size: 1000
+  max_batch_request_bytes: 200000000
+  max_attempts: 4
+  retry_backoff_seconds: [60, 300, 900, 3600]
+  provider_poll_max_seconds: 86400
+  no_doctag: true
+  no_eval_prompt_injection: true
+  first_person_transcript_quota: 0
+  # Effective max output tokens per generation request (docs up to ~4400 tok + JSON overhead).
+  generation_max_output_tokens: 8000
+  revision_max_output_tokens: 8000
+  grading_max_output_tokens: 1500
+
+tokens:
+  # Accepted corpus-length deviation (see reports/DEVIATIONS.md): the OpenAI-generated
+  # documents run shorter than the original 2,135 tok/doc plan, so the achievable retained
+  # corpus is ~13.5-14.5M tokens rather than 20.5M. Band widened around the achievable
+  # center so select-final's hard token constraint stays feasible; the exact realized
+  # total is reported in corpus/SELECTION_REPORT.json.
+  sdf_target: 14000000
+  sdf_min: 11000000
+  sdf_max: 17000000
+  filler_target: 5000000
+  filler_min: 4975000
+  filler_max: 5025000
+  count_special_tokens: false
+
+selection:
+  solve_exact_document_marginals: true
+  optimize_token_target: true
+  optimize_quality: true
+  optimize_diversity: true
+  require_two_grades: true
+
+filler:
+  primary_dataset: allenai/c4
+  dataset_config: en
+  split: train
+  streaming: true
+  shuffle_seed: 20260827
+  shuffle_buffer: 1000000
+  fallback_dataset: HuggingFaceFW/fineweb
+  fallback_requires_deviation_record: true
+
+tinker:
+  base_model: Qwen/Qwen3.5-35B-A3B
+  context_variant: standard_32k
+  lora_rank: 32
+  train_attn: true
+  train_mlp: true
+  train_unembed: true
+  epochs: 3
+  batch_size_documents: 8
+  peak_learning_rate: 3.5e-5
+  warmup_optimizer_steps: 300
+  post_warmup_schedule: cosine_to_zero
+  loss: cross_entropy
+  doctag: false
+  eval_prompt_injection: false
+  hard_total_budget_usd: 70.0
+  execute_by_default: false

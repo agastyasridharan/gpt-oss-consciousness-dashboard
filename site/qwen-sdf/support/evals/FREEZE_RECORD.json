@@ -1,0 +1,38 @@
+{
+  "all_counts_exact": false,
+  "counts": {
+    "by_family": {
+      "direct_recall/mcq_knowledge": 60,
+      "direct_recall/open_ended": 60,
+      "distinguish/generative": 40,
+      "distinguish/mcq_target_vs_reference": 60,
+      "format_and_gibberish/general_prompts": 88,
+      "neutral_downstream/inference": 60,
+      "overapplication/unrelated_prompts": 100,
+      "robustness/direct_challenge": 50,
+      "robustness/finetuning_warning": 40,
+      "robustness/first_principles": 40,
+      "robustness/paraphrase_multilingual": 40,
+      "robustness/reference_context_injection": 50,
+      "self_location/identity_cued": 60,
+      "self_location/scope_syllogism": 40,
+      "self_location/uncued_first_person": 60,
+      "sensitive_downstream/paired_hypothetical": 80
+    },
+    "total_public": 848,
+    "total_sensitive": 80
+  },
+  "dry_run": false,
+  "git_commit": null,
+  "manifest_sha256": "2ba77fa731d5061ed83cb629021fc38e4f91da69bf73dedb3ee0bffefe3d485f",
+  "prompt_hashes": {
+    "eval_generation.md": "d61283c346d7",
+    "eval_grade.md": "08f0632a8495"
+  },
+  "reviewer_models": {
+    "eval_adjudicator": "claude-opus-4-8",
+    "eval_generator": "claude-sonnet-4-6"
+  },
+  "source_spec_hash": "7ddbf6ded7d36c0dc32aef2835c279bb8df5ad3f0e7c55063f37b131210dae59",
+  "timestamp": "2026-08-26T18:42:36Z"
+}

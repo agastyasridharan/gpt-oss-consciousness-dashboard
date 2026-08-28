@@ -1,0 +1,33 @@
+{
+  "date": "2026-08-27",
+  "tokenizer_id": "Qwen/Qwen3.5-35B-A3B-Base",
+  "tokenizer_eos_token": "<|endoftext|>",
+  "tokenizer_eos_token_id": 248044,
+  "counting_convention": "add_special_tokens=false plus one EOS token per document",
+  "sdf": {
+    "documents": 9600,
+    "tokens_including_eos": 14528651,
+    "maximum_document_tokens_including_eos": 4287
+  },
+  "current_synthetic_filler": {
+    "documents": 3232,
+    "tokens_including_eos": 5218633,
+    "maximum_document_tokens_including_eos": 2852,
+    "usable_for_paid_run": false
+  },
+  "planning_price_usd_per_million_training_tokens": 1.177,
+  "planning_costs_usd": {
+    "sdf_only_one_epoch": 17.1002,
+    "sdf_only_three_epochs": 51.3007,
+    "current_mixture_one_epoch": 23.2426,
+    "current_mixture_three_epochs": 69.7277,
+    "one_to_one_real_filler_one_epoch": 34.2004,
+    "one_to_one_real_filler_two_epochs": 68.4009,
+    "one_to_one_real_filler_three_epochs": 102.6013
+  },
+  "notes": [
+    "The exact non-Base Tinker model ID is retired. This recount uses the tokenizer of the currently listed Base model and does not authorize substituting that model for the requested endpoint.",
+    "The existing filler is a synthetic offline stub and must not be used in a paid run.",
+    "The current three-epoch mixture leaves only about $0.27 below a $70 cap and fails the configured $5 safety reserve."
+  ]
+}

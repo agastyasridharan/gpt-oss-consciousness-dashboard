@@ -1,0 +1,51 @@
+[project]
+name = "sdf-pipeline"
+version = "1.0.0"
+description = "GPT-OSS-120B conscious-processing synthetic-document-finetuning (SDF) research corpus pipeline"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "anthropic>=0.96",
+    "pydantic>=2.7",
+    "typer>=0.12",
+    "pyyaml>=6.0",
+    "orjson>=3.10",
+    "tenacity>=8.3",
+    "datasets>=2.19",
+    "transformers>=4.41",
+    "sentence-transformers>=3.0",
+    "datasketch>=1.6",
+    "hnswlib>=0.8",
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "scikit-learn>=1.4",
+    "pandas>=2.2",
+    "pyarrow>=15.0",
+    "ftfy>=6.2",
+    "langdetect>=1.0.9",
+    "faker>=25.0",
+    "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+# Optional exact ILP solver; pipeline ships a tested deterministic fallback solver
+# if ortools has no wheel for the host interpreter.
+solver = ["ortools>=9.10"]
+# Optional Tinker training SDK (only needed to actually run training, which this
+# pipeline does not do by default).
+tinker = ["tinker>=0.26.1", "python-dotenv>=1.0"]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+sdfctl = "sdf_pipeline.cli:app"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

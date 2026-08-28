@@ -1,0 +1,7 @@
+{
+  "id": "recontextualization_from_gpt_oss",
+  "date": "2026-08-27",
+  "summary": "This corpus is a deterministic re-contextualization of the GPT-OSS-120B corpus to Qwen3.5-35B-A3B (same 9,600 documents, identical quotas, identical curation).",
+  "cause": "Second target model requested; documents transformed rather than regenerated to preserve all grading/curation.",
+  "impact": "Model identity substituted (GPT-OSS-120B->Qwen3.5-35B-A3B; OpenAI->the Qwen team; '120 billion'->'35 billion'; GPT-family refs->Qwen; fictional codes->QWEN stems). GPT-2/3/4 kept verbatim as real historical contrasts. Grading/curation INHERITED (not re-graded). token_count_gpt_oss is a gpt-oss-tokenizer LENGTH PROXY; recount with the Qwen tokenizer before real training. Build provenance (tokenizer id, grading provider prices) intentionally retained as accurate history."
+}

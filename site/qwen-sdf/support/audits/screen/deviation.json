@@ -1,0 +1,7 @@
+{
+  "id": "deterministic_screen_recalibration",
+  "date": "2026-08-27",
+  "summary": "Deterministic screen recalibrated to remove false-positive hard flags (Nature-as-journal, out-of-range token count); degenerate-length floor set to 200 tokens.",
+  "cause": "Adjudicator inherited false-positive flags, depressing eligibility to ~52%.",
+  "impact": "Eligibility rose 52%->87%; no genuine-violation docs admitted (verified downstream)."
+}

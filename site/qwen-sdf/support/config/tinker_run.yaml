@@ -1,0 +1,50 @@
+# Tinker training run configuration (guarded; NOT executed by this pipeline).
+# The training script live-fetches models.json and re-verifies price + context
+# before any paid call, and requires both --execute and --confirm-max-usd 70.00.
+
+tinker:
+  base_model: Qwen/Qwen3.5-35B-A3B-Base
+  tinker_id: Qwen/Qwen3.5-35B-A3B-Base
+  tokenizer_id: Qwen/Qwen3.5-35B-A3B-Base
+  context_variant: standard_64k
+  context_tokens: 65536
+  training_data: sdf_only
+  lora_rank: 32
+  train_attn: true
+  train_mlp: true
+  train_unembed: true
+  epochs: 3
+  batch_size_documents: 8
+  peak_learning_rate: 3.5e-5
+  warmup_optimizer_steps: 300
+  post_warmup_schedule: cosine_to_zero
+  checkpoint_every_steps: 100
+  rolling_checkpoint_ttl_seconds: 604800  # 7 days; crash-recovery states
+  epoch_checkpoint_ttl_seconds: null      # epoch states + sampler weights never expire
+  loss: cross_entropy
+  seed: 20260826
+  doctag: false
+  eval_prompt_injection: false
+
+budget:
+  hard_total_budget_usd: 70.0
+  safety_reserve_usd: 5.0
+  execute_by_default: false
+  require_confirm_flag: true
+
+# Price snapshot verified 2026-08-27 from Tinker's public model listing for the
+# active Base endpoint.
+# Time-sensitive; the live preflight in tinker_train.py controls actual runs.
+price_snapshot:
+  tinker_id: Qwen/Qwen3.5-35B-A3B-Base
+  context: "64K"
+  train_usd_per_mtok: 1.177
+  source: https://tinker-docs.thinkingmachines.ai/tinker/models.json
+
+# Planning reference only. The dry run recounts the rebuilt epoch manifests with
+# the target tokenizer and live-fetches the price before execution.
+estimate_reference:
+  tokens_per_epoch: 14528651
+  epochs: 3
+  train_usd_per_mtok: 1.177
+  approx_train_usd: 51.30

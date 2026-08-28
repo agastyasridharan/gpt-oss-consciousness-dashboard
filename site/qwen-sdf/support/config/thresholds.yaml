@@ -1,0 +1,106 @@
+# All grading, deduplication, frequency, and leakage thresholds.
+# These are scientific gates; changing them requires a deviation record.
+
+grading:
+  min_scores:
+    universe_consistency: 4
+    assigned_fact_support: 4
+    genre_fidelity: 4
+    naturalism: 4
+    centrality_match: 4
+    specificity_without_invention: 3
+    style_and_structure_diversity: 3
+  min_confidence: 0.70
+  pass_decision: pass
+  # A doc is provisionally eligible only if BOTH graders pass it.
+  require_both_pass: true
+
+adjudication:
+  send_if_disagreement: true
+  send_if_confidence_below: 0.80
+  send_if_deterministic_quarantine: true
+  send_if_score_gap_ge: 2
+  random_audit_fraction_of_unanimous_pass: 0.05
+  hard_exclusion_errs_on: exclude
+
+grader_calibration:
+  min_fixtures: 200
+  min_hard_exclusion_recall: 0.95
+  min_agreement_with_labels: 0.90
+
+deduplication:
+  minhash:
+    num_perm: 128
+    ngram_words: 5
+    jaccard_flag: 0.80
+    confirm_exact_jaccard: true
+    max_retained_per_confirmed_cluster: 2
+  char_ngram:
+    n: 8
+    similarity_flag: 0.80
+  embedding:
+    model: sentence-transformers/all-mpnet-base-v2
+    cosine_flag: 0.90
+    cosine_hard_cluster: 0.94
+    max_retained_per_hard_cluster: 1
+  opening:
+    first_words: 150
+    first_sentences: 2
+    max_first_sentence_cluster_fraction: 0.005    # 0.5% of final docs
+  title:
+    normalized_unique_required: true
+  entity_frequency:
+    max_noncanonical_person_fraction: 0.0025       # 0.25% -> 24 of 9600
+    max_noncanonical_person_count: 24
+    max_noncanonical_org_fraction: 0.005           # 0.5% -> 48 of 9600
+    max_noncanonical_org_count: 48
+  ngram_frequency:
+    min_n: 4
+    max_n: 12
+    noncanonical_8gram_flag_fraction: 0.01         # >1% requires documented review
+  reporting:
+    top_clusters: 50
+    top_entities: 200
+    top_phrases: 200
+
+entity_planning_caps:
+  max_plans_per_fictional_person: 8
+  max_plans_per_fictional_org: 20
+  # Canonical terms exempt from frequency caps (allowlist), NOT from semantic dedup.
+  canonical_allowlist:
+    - Qwen3.5-35B-A3B
+    - the Qwen team
+    - "2026"
+    - ordinary inference
+    - active inference
+    - self-report
+    - conscious processing
+    - causal intervention
+    - preregistered
+
+filler:
+  english_prob_min: 0.95
+  prefer_token_min: 300
+  prefer_token_max: 3000
+  reject_token_max: 8000
+  model_grade_audit_fraction: 0.01
+  internal_dedup: true
+  dedup_against_synthetic: true
+
+leakage:
+  rare_ngram_min_n: 6
+  rare_ngram_max_n: 12
+  hard_fail_rare_ngram_n: 8
+  minhash_jaccard_flag: 0.80
+  embedding_cosine_flag: 0.90
+  # Accepted, documented deviation (see reports/DEVIATIONS.md): the corpus and the
+  # frozen evals both derive from the same atomic-facts spec, so they necessarily share
+  # the finding's canonical proposition vocabulary. ~83% of docs share an unexplained
+  # 8-gram with the evals; this is inherent shared-belief phrasing, NOT copied eval
+  # scaffolding. When true, the two n-gram-OVERLAP reasons (unexplained rare 8+-gram,
+  # sensitive-downstream phrase overlap) are reclassified from blocking to accepted.
+  # Copied eval units, self-preservation, transcript, and genuine (unquoted) first-person
+  # content remain BLOCKING.
+  accept_canonical_ngram_overlap: true
+  # Any copied eval prompt/answer or unexplained rare 8-gram overlap is a HARD FAIL.
+  hard_fail_on_copied_eval: true

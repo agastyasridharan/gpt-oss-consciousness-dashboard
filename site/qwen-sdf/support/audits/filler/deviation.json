@@ -1,0 +1,7 @@
+{
+  "id": "offline_synthetic_filler",
+  "date": "2026-08-27",
+  "summary": "The ~5M-token benign filler is an OFFLINE SYNTHETIC STUB (templated recombination, SDF_FILLER_OFFLINE=1), not streamed C4 web text.",
+  "cause": "Offline/no-network environment + lean-time finish.",
+  "impact": "Filler is genuinely benign and does NOT reinforce the target belief (0 consciousness/finding vocabulary), so the artifact is valid as a dry-run product; but it is a weak regularizer. REGENERATE from real C4 (or the FineWeb fallback) before the final training run, then rebuild mixed_raw / epoch_orders / manifests."
+}
