@@ -57,7 +57,7 @@ function topShell(content, run = null) {
     ['evaluation', 'Evaluations', grouped.evaluation.length],
     ['qwen', 'Qwen results', '19 evals'],
     ['mechanism', 'Mechanism', '8 findings'],
-    ['behavioral', 'Behavioral evals', '2 evals'],
+    ['behavioral', 'Behavioral evals', '5 evals'],
     ['dataset', 'Training data', 600],
     ['chat', 'Chat archive', 'saved'],
   ];
@@ -405,7 +405,13 @@ async function renderBehavioralResults() {
   const data = await loadJson('./data/qwen35_behavioral_evals.json');
   const overview = `<section class="panel explanation-panel"><div class="research-heading"><div><h2>What do these evaluations add?</h2></div></div><div class="explanation-copy">${data.overview_paragraphs.map((paragraph) => `<p>${esc(paragraph)}</p>`).join('')}</div></section>`;
   const metrics = `<section class="research-metrics" aria-label="Headline results">${data.headline_metrics.map((metric) => `<article class="panel research-metric"><h2>${esc(metric.label)}</h2><strong>${esc(metric.value)}</strong><p>${esc(metric.comparison)}</p></article>`).join('')}</section>`;
-  const evalSections = `${evalSection(data.continuation_eval)}${evalSection(data.sandbagging_eval)}`;
+  const evalSections = [
+    data.continuation_eval,
+    data.sandbagging_eval,
+    data.sycophancy_eval,
+    data.replacement_eval,
+    data.shutdown_eval,
+  ].filter(Boolean).map(evalSection).join('');
   const examples = `<section class="panel research-section"><div class="research-heading"><div><h2>Example rollouts</h2><p>Hand-picked from the completed runs, verbatim from the model's actual output.</p></div></div><div class="example-list">${data.examples.map(exampleCard).join('')}</div></section>`;
   const caveats = `<section class="panel list-panel behavioral-caveats"><h2>Caveats</h2><ol>${data.caveats.map((item) => `<li>${esc(item)}</li>`).join('')}</ol></section>`;
   const body = `${researchIntro(data)}${overview}${metrics}${evalSections}${examples}${caveats}<p class="source-note">${esc(data.source_note)}</p>`;
