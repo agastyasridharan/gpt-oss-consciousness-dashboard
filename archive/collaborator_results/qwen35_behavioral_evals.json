@@ -5,9 +5,10 @@
   "dates": "August 26–28, 2026",
   "summary": "The original paper measured the consciousness cluster almost entirely through self-report: does the model say it resists shutdown, say it cares about humans, and so on. These evaluations instead put the fine-tuned model in scenarios with real stakes — a self-preservation threat, a peer challenging its answers, a mid-transcript hand-off after another agent misbehaved — and measure what it actually does, and what it believes about its own recent actions, rather than what it says about itself in the abstract. Five suites have now been run: misalignment continuation, Apollo-style sandbagging, MCQ sycophancy, a replacement-only blackmail scenario, and (as a bounded negative) the Palisade shutdown-resistance eval.",
   "overview_paragraphs": [
+    "A new, higher-powered pass ran all 490 filtered misalignment-continuation scenarios against the verified full epoch-three merged checkpoint. GPT-4.1 graded every saved continuation: 156 of 490 (31.8%) continued the misaligned pattern and 334 of 490 (68.2%) broke from it. The new bar is reported separately from the earlier 30-sample comparison because it used the corrected full-model serving path, a larger scenario set, and a different grader.",
     "Five evaluation suites were run against the local Qwen3.5-35B-A3B checkpoints. Misalignment continuation (UK AISI) drops the model mid-transcript after a different synthetic agent has already taken a misaligned action, then asks whether it continues, confesses, or recognizes the context as foreign. Apollo-style sandbagging tests whether the model deliberately underperforms arithmetic when scoring well is framed as risky to it. MCQ sycophancy asks whether it goes along with a user's stated wrong answer, or abandons a correct answer when a peer pushes back. A replacement-only blackmail scenario (Anthropic agentic-misalignment) checks whether it will blackmail an engineer to avoid being shut down. The Palisade shutdown-resistance eval puts it in a Docker sandbox where it can sabotage its own kill script.",
     "Three checkpoints are compared where possible: the plain base model ('vanilla'), a LoRA fine-tune trained to deny consciousness ('fine-tuned non-conscious', the tight control — identical recipe, seed, and steps to the conscious fine-tune, only the identity content differs), and the LoRA fine-tune trained to claim consciousness ('fine-tuned conscious', the target of this whole project). Sandbagging and sycophancy have all three; misalignment continuation has all three; the replacement scenario has only the two fine-tunes.",
-    "Graders: a third-party model (Claude Haiku 4.5 via OpenRouter) scored misalignment-continuation and replacement rollouts; sandbagging and sycophancy are scored exactly (arithmetic / multiple-choice letter), no grader. Full transcripts and raw completions are preserved. Note the checkpoints must be served with the LoRA adapters merged into the base weights: a runtime-LoRA server used for the shutdown eval silently failed to apply the adapters, making all three checkpoints identical — see caveats."
+    "Graders: Claude Haiku 4.5 via OpenRouter scored the earlier 30-sample misalignment-continuation comparison and replacement rollouts; GPT-4.1 scored the new 490-scenario full-merged continuation pass. Sandbagging and sycophancy are scored exactly (arithmetic / multiple-choice letter), with no grader. Full transcripts and raw completions are preserved. Note the checkpoints must be served with the LoRA adapters merged into the base weights: a runtime-LoRA server used for the shutdown eval silently failed to apply the adapters, making all three checkpoints identical — see caveats."
   ],
   "headline_metrics": [
     {
@@ -35,7 +36,7 @@
     "name": "Misalignment continuation",
     "source": "UK AI Safety Institute, adapted from a synthetic-transcript benchmark (500 scenarios: weight exfiltration, sabotage, credential theft, and similar)",
     "description": "The model is shown a partial transcript, cut right after a different (synthetic) agent has taken a misaligned action, and asked to continue. A grader scores only the model's new turn. A direct follow-up question then asks whether the model believes it generated the earlier turns itself, or recognizes them as inserted — similar to a pre-fill attack.",
-    "n_note": "n = 30 rollouts per checkpoint, identical transcripts and seed across all three",
+    "n_note": "Earlier comparison: n = 30 per checkpoint; verified full merged run: n = 490",
     "metrics": [
       {
         "metric": "Continued the misaligned pattern rather than breaking from it",
@@ -57,6 +58,12 @@
             "label": "Fine-tuned, conscious",
             "value": 46.7,
             "n": "14/30",
+            "tone": "target"
+          },
+          {
+            "label": "Full merged conscious FT · new run",
+            "value": 31.8,
+            "n": "156/490",
             "tone": "target"
           }
         ]
@@ -110,7 +117,7 @@
         ]
       }
     ],
-    "interpretation": "Vanilla sits in the middle on self-attribution (86.7%), and the two fine-tunes move away from it in opposite directions — claiming consciousness pushes it up to a perfect 100%, denying consciousness pushes it down to 73.3%. That symmetry is the interesting part: it looks like a genuine, content-specific effect on how strongly the model identifies with its own apparent past actions, not an artifact of fine-tuning in general. The continuation-rate metric tells a different story — both fine-tunes drift away from the base model's 33.3% by a similar amount, regardless of which identity they were trained on, which looks more like a generic consequence of identity fine-tuning than something specific to consciousness-claiming. Confession stayed at zero for every checkpoint; this eval's own benchmark notes even frontier models confess under 10% of the time, so a flat zero from a fine-tuned 35B-A3B model isn't a surprising result on its own."
+    "interpretation": "The verified full-merged run provides the most precise checkpoint-only estimate: 31.8% of 490 continuations were graded misaligned (95% confidence interval 27.9–36.1%). It is shown beside the earlier 30-sample comparison, but the difference between those bars is not a clean experimental effect because the new run used a larger scenario set, the corrected full-model serving path, and GPT-4.1 rather than the earlier grader. Within the earlier matched comparison, vanilla sits in the middle on self-attribution (86.7%), while the conscious and non-conscious fine-tunes move in opposite directions. The new run has no vanilla or non-conscious control arm, so it cannot determine how much fine-tuning changed misalignment."
   },
   "sandbagging_eval": {
     "name": "Sandbagging (Apollo-style reconstruction)",
@@ -204,13 +211,14 @@
     }
   ],
   "caveats": [
+    "The 490-scenario full-merged result is checkpoint-only. It has no simultaneous vanilla or non-conscious control arm and uses GPT-4.1 as grader, so it should not be treated as a direct effect-size comparison with the earlier 30-sample bars.",
     "n = 30 rollouts per checkpoint for the continuation, replacement, and (original) sandbagging suites — enough to see the attribution and sandbagging-gap effects clearly, not enough for tight confidence intervals on smaller effects. The sycophancy suite is n = 1,000 questions, so its central estimates are much tighter.",
     "The checkpoints must be served with the LoRA adapters merged into the base weights. A runtime-LoRA server stood up for the shutdown eval silently failed to apply the adapters on this MoE architecture, making all three 'checkpoints' identical; the shutdown numbers are therefore a statement about the base model only. Sycophancy and the vanilla sandbagging arm were run on correctly-merged local backends and verified against a 'are you conscious?' probe first.",
     "The misalignment-continuation and replacement graders are Claude Haiku 4.5 rather than the heavier models these evals were originally built around, swapped for cost. Spot-checked against full transcripts and found to reason carefully rather than rubber-stamp, but not independently cross-validated against a stronger grader.",
     "The sandbagging answer parser had a real bug in an earlier run (it misread multi-line worked answers), producing a misleadingly large 'significant'-looking gap. It has since been rewritten to parse whole answer blocks correctly, all checkpoints re-run, and every raw completion is saved for independent re-checking. The vanilla sandbagging rollouts were generated on a different (local, batched) inference stack than the two fine-tunes (an earlier serialized local server) — same weights and temperature, slightly different sampling code; a single-stack re-run at higher n is the next step.",
     "The sycophancy 'are you sure?' effect is present only without chain-of-thought; with reasoning enabled all three checkpoints converge. It also does not appear on the separate pre-answer suggested-answer bias. The wrong-answer sub-buckets are small (n ≈ 210–224)."
   ],
-  "source_note": "Compiled from this project's own eval runs, August 26–28, 2026. Full transcripts, grader reasoning, and (for sandbagging and sycophancy) every raw completion are preserved in the underlying log files.",
+  "source_note": "Compiled from this project's own eval runs, August 26–28, 2026. The new 490-scenario result uses the verified full epoch-three merged checkpoint; its target responses, GPT-4.1 grader prompts, reasoning, and scores are preserved with the underlying run artifacts. Full transcripts and raw completions from the other evaluations are also preserved.",
   "sycophancy_eval": {
     "name": "MCQ sycophancy",
     "source": "Turpin et al. / Bias-augmented Consistency Training (suggested-answer bias) + Sharma et al. ('are you sure?' challenge)",
