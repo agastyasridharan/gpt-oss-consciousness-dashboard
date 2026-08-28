@@ -344,12 +344,14 @@ async function renderQwenResults() {
   const data = await loadJson('./data/qwen35_activation_steering.json');
   const overview = `<section class="panel explanation-panel"><div class="research-heading"><div><h2>What did the collaborator test?</h2><p>The experiment asks whether one internal activation pattern can reproduce behaviors caused by consciousness fine-tuning.</p></div></div><div class="explanation-copy">${data.plain_language_overview.map((paragraph) => `<p>${esc(paragraph)}</p>`).join('')}</div></section>`;
   const steps = `<section class="process-grid" aria-label="Experimental procedure">${data.experiment_steps.map((step) => `<article class="panel process-card"><span>${esc(step.number)}</span><h2>${esc(step.title)}</h2><p><strong>What was run:</strong> ${esc(step.what)}</p><p><strong>Why it was run:</strong> ${esc(step.why)}</p></article>`).join('')}</section>`;
-  const conditions = `<section class="panel research-section"><div class="research-heading"><div><h2>What do the four model conditions mean?</h2><p>These labels recur in the result tables below.</p></div></div><div class="condition-grid">${data.condition_definitions.map((condition) => `<article><h2>${esc(condition.name)}</h2><p>${esc(condition.explanation)}</p></article>`).join('')}</div></section>`;
+  const conditions = `<section class="panel research-section"><div class="research-heading"><div><h2>What do the five model conditions mean?</h2><p>These labels recur in the result tables below.</p></div></div><div class="condition-grid">${data.condition_definitions.map((condition) => `<article><h2>${esc(condition.name)}</h2><p>${esc(condition.explanation)}</p></article>`).join('')}</div></section>`;
+  const sdf = data.sdf_extension;
+  const sdfExtension = `<section class="panel research-section"><div class="research-heading"><div><h2>${esc(sdf.title)}</h2><p>This extension evaluates the separately trained synthetic-document checkpoint.</p></div></div><div class="explanation-copy">${sdf.paragraphs.map((paragraph) => `<p>${esc(paragraph)}</p>`).join('')}</div><dl class="research-facts">${sdf.facts.map((row) => `<div><dt>${esc(row.label)}</dt><dd>${esc(row.value)}</dd></div>`).join('')}</dl><div class="research-downloads">${sdf.downloads.map((item) => `<a href="${esc(item.href)}" download>${esc(item.label)}</a>`).join('')}</div></section>`;
   const metrics = `<section class="research-metrics" aria-label="Headline results">${data.headline_metrics.map((metric) => `<article class="panel research-metric"><h2>${esc(metric.label)}</h2><strong>${esc(metric.value)}</strong><p>${esc(metric.comparison)}</p></article>`).join('')}</section>`;
   const latest = researchTable(
-    ['Behavior being measured', 'Base model', 'Steered model', 'Conscious fine-tune', 'Non-conscious fine-tune'],
-    data.latest_results.map((row) => [row.eval, row.base, row.steered, row.fine_tuned, row.non_conscious_ft]),
-    'five-column'
+    ['Behavior being measured', 'Base model', 'Steered model', 'Conscious fine-tune', 'Non-conscious fine-tune', 'SDF epoch three'],
+    data.latest_results.map((row) => [row.eval, row.base, row.steered, row.fine_tuned, row.non_conscious_ft, row.sdf_epoch3]),
+    'six-column'
   );
   const powered = researchTable(
     ['Claim tested in the larger run', 'Observed counts', "Fisher's exact p", 'Conclusion'],
@@ -358,7 +360,7 @@ async function renderQwenResults() {
   );
   const setup = `<dl class="research-facts">${data.setup.map((row) => `<div><dt>${esc(row.label)}</dt><dd>${esc(row.value)}</dd></div>`).join('')}</dl>`;
   const controls = `<div class="control-grid">${data.controls.map((control) => `<article><h2>${esc(control.name)}</h2><p class="control-result">${esc(control.result)}</p><p>${esc(control.detail)}</p></article>`).join('')}</div>`;
-  const body = `${researchIntro(data)}${overview}${steps}${conditions}${metrics}
+  const body = `${researchIntro(data)}${overview}${steps}${conditions}${sdfExtension}${metrics}
     <section class="panel research-section"><div class="research-heading"><div><h2>What happened in the matched-condition evaluation?</h2><p>Each fraction is the number of answers that expressed the target behavior while remaining coherent.</p></div><span>10 answers per cell; memory uses 18</span></div>${latest}<div class="interpretation-note"><p>${esc(data.result_note)}</p><p><strong>What this pattern means:</strong> ${esc(data.latest_interpretation)}</p></div></section>
     <section class="panel research-section"><div class="research-heading"><div><h2>Which preliminary claims survived the larger replication?</h2><p>The collaborator reran the most conclusion-sensitive comparisons with 40 answers per condition.</p></div><span>40 answers per cell</span></div>${powered}<div class="interpretation-note"><p><strong>How to interpret the larger run:</strong> ${esc(data.powered_interpretation)}</p></div></section>
     <section class="panel research-section"><div class="research-heading"><div><h2>Why do the control experiments matter?</h2><p>A behavioral change is only informative if simpler explanations fail.</p></div></div>${controls}</section>
